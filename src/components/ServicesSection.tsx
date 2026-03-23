@@ -24,24 +24,15 @@ const services = [
   },
 ];
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] },
-  }),
-};
-
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-32 px-6 md:px-12 bg-card/50 overflow-hidden">
+    <section id="services" className="py-32 px-6 md:px-12 bg-card/50">
       <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
           <p className="font-body text-sm uppercase tracking-[0.3em] text-primary mb-4">Services</p>
@@ -53,20 +44,13 @@ const ServicesSection = () => {
           {services.map((service, i) => (
             <motion.div
               key={service.title}
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              custom={i}
-              variants={cardVariants}
-              whileHover={{ y: -6, transition: { duration: 0.25 } }}
-              className="group bg-card border border-border rounded-xl p-8 hover:border-primary/50 hover:glow-box transition-all duration-500 cursor-default"
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="group bg-card border border-border rounded-xl p-8 hover:border-primary/50 hover:glow-box transition-all duration-500"
             >
-              <motion.div
-                whileHover={{ rotate: 10, scale: 1.1 }}
-                transition={{ duration: 0.3 }}
-              >
-                <service.icon className="w-10 h-10 text-primary mb-5" strokeWidth={1.5} />
-              </motion.div>
+              <service.icon className="w-10 h-10 text-primary mb-5" strokeWidth={1.5} />
               <h3 className="font-display text-xl font-semibold mb-3">{service.title}</h3>
               <p className="font-body text-muted-foreground text-sm leading-relaxed">{service.description}</p>
             </motion.div>

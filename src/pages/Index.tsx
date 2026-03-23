@@ -7,7 +7,7 @@ import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background scroll-smooth">
+    <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
       <AboutSection />
