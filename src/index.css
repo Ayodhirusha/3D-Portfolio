@@ -6,50 +6,51 @@
 
 @layer base {
   :root {
-    --background: 240 6% 7%;
-    --foreground: 40 20% 92%;
+    --background: 225 15% 6%;
+    --foreground: 210 30% 92%;
 
-    --card: 240 5% 11%;
-    --card-foreground: 40 20% 92%;
+    --card: 225 12% 10%;
+    --card-foreground: 210 30% 92%;
 
-    --popover: 240 5% 11%;
-    --popover-foreground: 40 20% 92%;
+    --popover: 225 12% 10%;
+    --popover-foreground: 210 30% 92%;
 
-    --primary: 38 92% 55%;
-    --primary-foreground: 240 6% 7%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 225 15% 6%;
 
-    --secondary: 240 4% 16%;
-    --secondary-foreground: 40 20% 92%;
+    --secondary: 225 10% 15%;
+    --secondary-foreground: 210 30% 92%;
 
-    --muted: 240 4% 16%;
-    --muted-foreground: 240 5% 55%;
+    --muted: 225 10% 15%;
+    --muted-foreground: 220 10% 50%;
 
-    --accent: 38 92% 55%;
-    --accent-foreground: 240 6% 7%;
+    --accent: 200 95% 50%;
+    --accent-foreground: 225 15% 6%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 240 4% 18%;
-    --input: 240 4% 18%;
-    --ring: 38 92% 55%;
+    --border: 225 10% 16%;
+    --input: 225 10% 16%;
+    --ring: 217 91% 60%;
 
     --radius: 0.75rem;
 
     --font-display: 'Space Grotesk', sans-serif;
     --font-body: 'DM Sans', sans-serif;
 
-    --glow-primary: 0 0 40px hsl(38 92% 55% / 0.15);
-    --glow-strong: 0 0 80px hsl(38 92% 55% / 0.25);
+    --glow-primary: 0 0 40px hsl(217 91% 60% / 0.15);
+    --glow-strong: 0 0 80px hsl(217 91% 60% / 0.25);
+    --glow-accent: 0 0 60px hsl(200 95% 50% / 0.2);
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 38 92% 55%;
-    --sidebar-primary-foreground: 240 6% 7%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 38 92% 55%;
+    --sidebar-background: 225 12% 10%;
+    --sidebar-foreground: 210 30% 92%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 225 15% 6%;
+    --sidebar-accent: 225 10% 15%;
+    --sidebar-accent-foreground: 210 30% 92%;
+    --sidebar-border: 225 10% 16%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 
@@ -67,8 +68,8 @@
   }
 
   ::selection {
-    background: hsl(38 92% 55% / 0.3);
-    color: hsl(40 20% 92%);
+    background: hsl(217 91% 60% / 0.3);
+    color: hsl(210 30% 92%);
   }
 
   ::-webkit-scrollbar {
@@ -76,11 +77,11 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: hsl(240 6% 7%);
+    background: hsl(225 15% 6%);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: hsl(240 4% 22%);
+    background: hsl(225 10% 22%);
     border-radius: 3px;
   }
 }
@@ -88,7 +89,11 @@
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(38 92% 55%), hsl(28 90% 65%));
+    background-image: linear-gradient(135deg, hsl(217 91% 60%), hsl(200 95% 55%), hsl(190 90% 50%));
+  }
+
+  .bg-gradient-blue {
+    background: linear-gradient(135deg, hsl(217 91% 60% / 0.15), hsl(200 95% 50% / 0.08));
   }
 
   .glow-box {
@@ -97,5 +102,41 @@
 
   .glow-box-strong {
     box-shadow: var(--glow-strong);
+  }
+
+  .glow-box-accent {
+    box-shadow: var(--glow-accent);
+  }
+
+  .border-gradient {
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    background-origin: border-box;
+  }
+
+  .image-frame {
+    position: relative;
+  }
+
+  .image-frame::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 1rem;
+    padding: 3px;
+    background: linear-gradient(135deg, hsl(217 91% 60%), hsl(200 95% 50%), hsl(190 90% 50%), hsl(217 91% 60%));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .image-frame::after {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border-radius: 1.5rem;
+    background: linear-gradient(135deg, hsl(217 91% 60% / 0.15), hsl(200 95% 50% / 0.1));
+    filter: blur(20px);
+    z-index: -1;
   }
 }

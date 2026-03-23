@@ -6,25 +6,25 @@ const projects = [
     title: "Nebula Dashboard",
     category: "3D / UI Design",
     description: "An immersive analytics dashboard with real-time 3D data visualization for a fintech startup.",
-    color: "from-amber-500/20 to-orange-600/10",
+    color: "from-blue-500/20 to-cyan-500/10",
   },
   {
     title: "Prism Studio",
     category: "Web Development",
     description: "A creative agency website featuring interactive WebGL backgrounds and fluid page transitions.",
-    color: "from-amber-500/10 to-yellow-500/20",
+    color: "from-indigo-500/15 to-blue-400/15",
   },
   {
     title: "Vertex AR",
     category: "UI/UX Design",
     description: "Mobile-first AR experience app with gesture-based 3D object manipulation and spatial UI.",
-    color: "from-orange-500/15 to-amber-400/10",
+    color: "from-cyan-500/15 to-blue-500/10",
   },
   {
     title: "Echo Commerce",
     category: "Full-Stack / 3D",
     description: "E-commerce platform with 3D product configurator and photorealistic rendering.",
-    color: "from-yellow-600/15 to-amber-500/10",
+    color: "from-blue-600/15 to-indigo-400/10",
   },
 ];
 
@@ -52,7 +52,7 @@ const ProjectsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group relative bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-500 cursor-pointer"
+              className="group relative bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 hover:glow-box transition-all duration-500 cursor-pointer"
             >
               <div className={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center`}>
                 <div className="w-16 h-16 border border-primary/30 rounded-lg rotate-12 group-hover:rotate-45 transition-transform duration-700" />
