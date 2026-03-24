@@ -17,7 +17,6 @@ import {
   SiFlutter 
 } from "react-icons/si";
 
-// Custom Adobe Icons since they were removed from react-icons
 const SiAdobeillustrator = (props: any) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
     <path d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12-12-5.373-12-12 5.373-12 12-12zm-4.604 15.543l.872-2.502h3.454l.859 2.502h2.091L11.085 5.75H8.799L5.312 15.543h2.084zm3.83-4.103H8.761l1.116-3.211 1.057 3.211zm8.381 4.103V9.529h-1.87v6.014h1.87zm0-7.394V6.521h-1.87v1.628h1.87z"/>
@@ -30,35 +29,32 @@ const SiAdobephotoshop = (props: any) => (
   </svg>
 );
 
-// Tech stack with react-icons
 const techStack = [
-  { name: "Angular", category: "Frontend", Icon: SiAngular, color: "#DD0031" },
-  { name: "React", category: "Frontend", Icon: SiReact, color: "#61DAFB" },
-  { name: "Node.js", category: "Backend", Icon: SiNodedotjs, color: "#339933" },
-  { name: "Tailwind CSS", category: "Frontend", Icon: SiTailwindcss, color: "#06B6D4" },
-  { name: "Three.js", category: "Frontend", Icon: SiThreedotjs, color: "#000000" },
-  { name: "HTML5", category: "Frontend", Icon: SiHtml5, color: "#E34F26" },
-  { name: "JavaScript", category: "Language", Icon: SiJavascript, color: "#F7DF1E" },
-  { name: "TypeScript", category: "Language", Icon: SiTypescript, color: "#3178C6" },
-  { name: "MongoDB", category: "Database", Icon: SiMongodb, color: "#47A248" },
-  { name: "Firebase", category: "Database", Icon: SiFirebase, color: "#FFCA28" },
-  { name: "C#", category: "Language", Icon: SiSharp, color: "#512BD4" },
-  { name: "MySQL", category: "Database", Icon: SiMysql, color: "#4479A1" },
-  { name: "Figma", category: "Design", Icon: SiFigma, color: "#F24E1E" },
-  { name: "Illustrator", category: "Design", Icon: SiAdobeillustrator, color: "#330000" },
-  { name: "Photoshop", category: "Design", Icon: SiAdobephotoshop, color: "#001E36" },
-  { name: "Canva", category: "Design", Icon: SiCanva, color: "#00C4CC" },
-  { name: "Flutter", category: "Mobile", Icon: SiFlutter, color: "#02569B" },
+  { name: "Angular", Icon: SiAngular, color: "#DD0031" },
+  { name: "React", Icon: SiReact, color: "#61DAFB" },
+  { name: "Node.js", Icon: SiNodedotjs, color: "#339933" },
+  { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#06B6D4" },
+  { name: "Three.js", Icon: SiThreedotjs, color: "#ffffff" },
+  { name: "HTML5", Icon: SiHtml5, color: "#E34F26" },
+  { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
+  { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
+  { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
+  { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
+  { name: "C#", Icon: SiSharp, color: "#512BD4" },
+  { name: "MySQL", Icon: SiMysql, color: "#4479A1" },
+  { name: "Figma", Icon: SiFigma, color: "#F24E1E" },
+  { name: "Illustrator", Icon: SiAdobeillustrator, color: "#FF9A00" },
+  { name: "Photoshop", Icon: SiAdobephotoshop, color: "#31A8FF" },
+  { name: "Canva", Icon: SiCanva, color: "#00C4CC" },
+  { name: "Flutter", Icon: SiFlutter, color: "#02569B" },
 ];
 
 const TechStackSection = () => {
-  // Double the items for seamless infinite scroll
-  const duplicatedStack = [...techStack, ...techStack];
+  const duplicated = [...techStack, ...techStack];
 
   return (
     <section id="techstack" className="py-20 px-6 md:px-12 bg-card/30 overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,64 +68,55 @@ const TechStackSection = () => {
           </h2>
         </motion.div>
 
-        {/* Horizontal Scrolling Carousel */}
         <div className="relative">
-          {/* Gradient Masks */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-card/30 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-card/30 to-transparent z-10 pointer-events-none" />
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex gap-8 animate-scroll hover:[animation-play-state:paused]"
-          >
-            {duplicatedStack.map((tech, i) => (
+          {/* Edge fade masks */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+
+          <div className="tech-carousel-track flex gap-10 py-4">
+            {duplicated.map((tech, i) => (
               <div
                 key={`${tech.name}-${i}`}
                 className="group flex-shrink-0 flex flex-col items-center gap-3 cursor-pointer"
               >
-                {/* Icon - grayscale by default, colorful on hover */}
-                <div 
-                  className="tech-icon transition-all duration-500 ease-out p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20"
-                >
-                  <tech.Icon 
-                    className="w-12 h-12" 
-                    style={{ color: tech.color }}
+                <div className="tech-icon-wrapper relative p-5 rounded-2xl border border-border/40 bg-card/60 backdrop-blur-sm transition-all duration-500 group-hover:border-primary/50 group-hover:shadow-lg group-hover:shadow-primary/10 group-hover:scale-110">
+                  <tech.Icon
+                    className="w-10 h-10 md:w-12 md:h-12 transition-all duration-500"
+                    style={{ "--icon-color": tech.color } as React.CSSProperties}
                   />
                 </div>
-                
-                {/* Tech Name - appears on hover */}
-                <p className="font-body text-sm font-medium text-transparent group-hover:text-white transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                <p className="font-body text-xs font-medium text-muted-foreground/0 group-hover:text-muted-foreground transition-all duration-300 translate-y-1 group-hover:translate-y-0">
                   {tech.name}
                 </p>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
 
       <style>{`
-        @keyframes scroll {
+        @keyframes carousel-scroll {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
-        
-        .animate-scroll {
-          animation: scroll 30s linear infinite;
+
+        .tech-carousel-track {
+          animation: carousel-scroll 35s linear infinite;
+        }
+        .tech-carousel-track:hover {
+          animation-play-state: paused;
         }
 
-        /* Grayscale effect - icons start black & white */
-        .tech-icon {
-          filter: grayscale(100%) brightness(0.7);
-          transform: scale(1);
+        /* Icons: grayscale + dimmed by default */
+        .tech-icon-wrapper svg {
+          filter: grayscale(100%) brightness(0.6) contrast(0.8);
+          color: #94a3b8 !important;
         }
 
-        /* On hover, icon becomes colorful and scales up */
-        .group:hover .tech-icon {
-          filter: grayscale(0%) brightness(1);
-          transform: scale(1.1);
+        /* On hover: full color */
+        .group:hover .tech-icon-wrapper svg {
+          filter: grayscale(0%) brightness(1) contrast(1);
+          color: var(--icon-color) !important;
         }
       `}</style>
     </section>
