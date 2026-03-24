@@ -3,28 +3,40 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "Nebula Dashboard",
-    category: "3D / UI Design",
-    description: "An immersive analytics dashboard with real-time 3D data visualization for a fintech startup.",
+    title: "Caritas Sri Lanka",
+    category: "Full Stack / React / Node.js",
+    description: "Developed and deployed websites for four Catholic dioceses (Badulla, Colombo, Chilaw, Galle). Built frontend with React.js, backend with Node.js and Express.js, integrated SQL database connections and admin dashboards.",
     color: "from-blue-500/20 to-cyan-500/10",
   },
   {
-    title: "Prism Studio",
-    category: "Web Development",
-    description: "A creative agency website featuring interactive WebGL backgrounds and fluid page transitions.",
+    title: "Pantiles Dental",
+    category: "Frontend / Vite React JS",
+    description: "Modern UI/UX website design project for a UK-based dental client featuring 58 pages. Developed with Vite React JS for optimal performance and user experience.",
     color: "from-indigo-500/15 to-blue-400/15",
   },
   {
-    title: "Vertex AR",
-    category: "UI/UX Design",
-    description: "Mobile-first AR experience app with gesture-based 3D object manipulation and spatial UI.",
+    title: "Fair Heaven Villa",
+    category: "Frontend / Vite React JS",
+    description: "UI/UX website design for a peaceful coastal getaway in Chilaw. Created an engaging frontend with Vite React JS showcasing the villa's amenities and booking features.",
     color: "from-cyan-500/15 to-blue-500/10",
   },
   {
-    title: "Echo Commerce",
-    category: "Full-Stack / 3D",
-    description: "E-commerce platform with 3D product configurator and photorealistic rendering.",
+    title: "Warehouse Management System",
+    category: "Full Stack / Flutter / ASP.NET",
+    description: "Flutter web application for a PC store with MySQL database and ASP.NET (C#) backend. Individual assignment demonstrating full-stack development capabilities.",
     color: "from-blue-600/15 to-indigo-400/10",
+  },
+  {
+    title: "Cinema Booking System",
+    category: "Full Stack / React / Next.js",
+    description: "Complete cinema ticket booking platform with seat selection, payment integration, and admin panel. Built with React and Next.js for optimal performance.",
+    color: "from-purple-500/15 to-pink-400/10",
+  },
+  {
+    title: "Smart Miner Guard",
+    category: "IoT / Safety System",
+    description: "Developed a Smart Miner Guard Safety Helmet using IoT technology. Integrated sensors for monitoring worker safety in mining environments with real-time alerts.",
+    color: "from-green-500/15 to-teal-400/10",
   },
 ];
 
@@ -44,7 +56,7 @@ const ProjectsSection = () => {
             Featured <span className="text-gradient">Projects</span>
           </h2>
         </motion.div>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (
             <motion.div
               key={project.title}

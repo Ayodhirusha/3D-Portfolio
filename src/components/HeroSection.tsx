@@ -12,7 +12,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="font-body text-sm uppercase tracking-[0.3em] text-muted-foreground mb-6"
         >
-          3D Web Developer &amp; UI/UX Designer
+          Software Engineer Intern & UI/UX Designer
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -20,9 +20,9 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-8"
         >
-          Crafting Digital
+          AYOD
           <br />
-          <span className="text-gradient">Experiences</span>
+          <span className="text-gradient">HIRUSHA</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -30,7 +30,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.9 }}
           className="font-body text-lg text-muted-foreground max-w-xl mx-auto mb-10"
         >
-          I design and build immersive web experiences that blend cutting-edge 3D technology with intuitive, human-centered design.
+          BSc (Hons) Software Engineering student at University of Plymouth. I build modern web applications with React, Node.js, and Flutter, creating intuitive digital experiences.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

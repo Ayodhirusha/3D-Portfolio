@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import profileImg from "@/assets/profile-placeholder.jpg";
 
 const stats = [
-  { value: "5+", label: "Years Experience" },
-  { value: "50+", label: "Projects Delivered" },
-  { value: "30+", label: "Happy Clients" },
+  { value: "2+", label: "Years Experience" },
+  { value: "10+", label: "Projects Completed" },
+  { value: "3+", label: "Happy Clients" },
 ];
 
 const AboutSection = () => {
@@ -42,7 +42,7 @@ const AboutSection = () => {
                 <div className="relative image-frame rounded-xl overflow-hidden w-64 h-80 md:w-72 md:h-96">
                   <img
                     src={profileImg}
-                    alt="Profile"
+                    alt="Ayod Hirusha"
                     className="w-full h-full object-cover rounded-xl"
                   />
                   {/* Overlay gradient */}
@@ -55,7 +55,7 @@ const AboutSection = () => {
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute -bottom-3 -left-3 bg-card border border-border rounded-lg px-4 py-2 glow-box"
                 >
-                  <span className="font-display text-xs font-semibold text-gradient">Creative Dev</span>
+                  <span className="font-display text-xs font-semibold text-gradient">Full Stack Dev</span>
                 </motion.div>
               </div>
             </motion.div>
@@ -63,15 +63,15 @@ const AboutSection = () => {
             {/* Text content - 3 cols */}
             <div className="md:col-span-3">
               <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight mb-6">
-                Where Code
+                Passionate About
                 <br />
-                Meets <span className="text-gradient">Design</span>
+                Creating <span className="text-gradient">Digital Solutions</span>
               </h2>
               <p className="font-body text-muted-foreground leading-relaxed mb-4">
-                I'm a multidisciplinary designer and developer passionate about creating memorable digital experiences. With expertise in Three.js, WebGL, and modern frontend frameworks, I bring ideas to life in three dimensions.
+                I am a Software Engineering graduate currently enrolled in the BSc (Hons) Software Engineering program at the University of Plymouth (UK). I have completed a Full Stack Development internship at Ceylon Innovations Pvt Ltd, where I gained practical industry experience.
               </p>
               <p className="font-body text-muted-foreground leading-relaxed mb-8">
-                My approach combines deep technical skill with an obsessive eye for design — every pixel, every interaction, every transition is crafted with intention and purpose.
+                I am now seeking new job opportunities in the IT field to further develop my skills and grow as a well-regarded IT professional. With expertise in React, Node.js, Flutter, and database management, I bring ideas to life through clean code and intuitive design.
               </p>
               
               {/* Stats */}

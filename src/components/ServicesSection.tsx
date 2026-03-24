@@ -1,26 +1,36 @@
 import { motion } from "framer-motion";
-import { Monitor, Layers, Box, Palette } from "lucide-react";
+import { Code, Palette, Database, Globe, Smartphone, Layers } from "lucide-react";
 
 const services = [
   {
-    icon: Box,
-    title: "3D Web Development",
-    description: "Immersive 3D experiences using Three.js, WebGL, and React Three Fiber that push the boundaries of the web.",
+    icon: Code,
+    title: "Web Development",
+    description: "Full-stack web applications using React, Node.js, Express.js, and modern JavaScript frameworks with clean, maintainable code.",
+  },
+  {
+    icon: Smartphone,
+    title: "Mobile Development",
+    description: "Cross-platform mobile applications built with Flutter and Dart, delivering native performance on both iOS and Android.",
   },
   {
     icon: Palette,
     title: "UI/UX Design",
-    description: "Human-centered design systems and interfaces that are beautiful, intuitive, and accessible.",
+    description: "User-centered design using Figma, creating intuitive interfaces and engaging user experiences for web and mobile applications.",
   },
   {
-    icon: Monitor,
+    icon: Database,
+    title: "Database Management",
+    description: "Efficient database design and management with MySQL, SQL, and Firebase, ensuring data integrity and optimal performance.",
+  },
+  {
+    icon: Globe,
     title: "Frontend Development",
-    description: "Pixel-perfect, performant frontends built with React, TypeScript, and modern tooling.",
+    description: "Responsive, pixel-perfect frontends with HTML, CSS, JavaScript, and React, focusing on accessibility and user experience.",
   },
   {
     icon: Layers,
-    title: "Creative Direction",
-    description: "End-to-end creative vision — from concept and branding to motion design and final polish.",
+    title: "Graphic Design",
+    description: "Creative visual content including social media posts, promotional videos, and branding materials using Photoshop and modern tools.",
   },
 ];
 
@@ -40,7 +50,7 @@ const ServicesSection = () => {
             What I <span className="text-gradient">Do</span>
           </h2>
         </motion.div>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
             <motion.div
               key={service.title}

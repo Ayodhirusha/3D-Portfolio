@@ -1,0 +1,169 @@
+import { motion } from "framer-motion";
+import { GraduationCap, Award, BookOpen, School, Calendar } from "lucide-react";
+
+const education = [
+  {
+    degree: "BSc (Hons) Software Engineering",
+    institution: "NSBM Green University - Plymouth University",
+    period: "2022 - 2026",
+    isCurrent: true,
+    description: "Following degree program at Plymouth University, UK with a focus on modern software development practices, web technologies, and database management.",
+    details: [
+      "Completed with Second Class Honours (Upper Division)",
+      "Specialized in full-stack web development and mobile applications",
+      "Gained hands-on experience with React, Node.js, Flutter, and database systems",
+    ],
+  },
+  {
+    degree: "BCI Certificate in English",
+    institution: "Benedict XVI - Catholic Institute of Higher Education",
+    period: "Completed",
+    isCurrent: false,
+    description: "Comprehensive English language certification program focusing on professional communication skills.",
+    details: [
+      "Successfully completed Intermediate Level with Credit",
+      "Developed strong written and verbal communication abilities",
+      "Enhanced professional presentation and documentation skills",
+    ],
+  },
+];
+
+const qualifications = [
+  {
+    icon: BookOpen,
+    title: "LinkedIn Learning - Software Testing/QA",
+    description: "Programming Foundations in Software Testing and Software Quality Assurance",
+  },
+  {
+    icon: BookOpen,
+    title: "LinkedIn Learning - Selenium",
+    description: "Learning Selenium with Test Automation skills",
+  },
+];
+
+const EducationSection = () => {
+  return (
+    <section id="education" className="py-32 px-6 md:px-12">
+      <div className="max-w-4xl mx-auto">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
+          <p className="font-body text-sm uppercase tracking-[0.3em] text-primary mb-4">Education</p>
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+            Academic <span className="text-gradient">Background</span>
+          </h2>
+          <p className="font-body text-muted-foreground max-w-xl mx-auto">
+            A journey of continuous learning — from formal education to professional certifications.
+          </p>
+        </motion.div>
+
+        {/* Timeline */}
+        <div className="relative">
+          {/* Vertical Line */}
+          <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/30 to-transparent" />
+
+          {/* Education Items */}
+          <div className="space-y-12">
+            {education.map((edu, i) => (
+              <motion.div
+                key={edu.institution}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+                className="relative pl-8 md:pl-20"
+              >
+                {/* Timeline Dot */}
+                <div className="absolute left-[-4px] md:left-6 top-6 w-2 h-2 rounded-full bg-primary ring-4 ring-background" />
+                
+                {/* Card */}
+                <div className="group bg-card border border-border rounded-2xl p-6 md:p-8 hover:border-primary/50 hover:glow-box transition-all duration-500">
+                  {/* Header Row */}
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                    <div>
+                      {/* Degree with Badge */}
+                      <div className="flex items-center gap-3 mb-2">
+                        <h3 className="font-display text-xl md:text-2xl font-semibold">
+                          {edu.degree}
+                        </h3>
+                        {edu.isCurrent && (
+                          <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 rounded-full border border-emerald-500/30">
+                            Current
+                          </span>
+                        )}
+                      </div>
+                      
+                      {/* Institution */}
+                      <div className="flex items-center gap-2 text-muted-foreground">
+                        <GraduationCap className="w-4 h-4" />
+                        <span className="font-body text-sm">{edu.institution}</span>
+                      </div>
+                    </div>
+
+                    {/* Date */}
+                    <div className="flex items-center gap-2 text-muted-foreground shrink-0">
+                      <Calendar className="w-4 h-4" />
+                      <span className="font-body text-sm">{edu.period}</span>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="font-body text-muted-foreground text-sm leading-relaxed mb-5">
+                    {edu.description}
+                  </p>
+
+                  {/* Details */}
+                  <ul className="space-y-2">
+                    {edu.details.map((detail, j) => (
+                      <li key={j} className="flex items-start gap-3">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mt-2 shrink-0" />
+                        <span className="font-body text-sm text-muted-foreground/80 leading-relaxed">
+                          {detail}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* School Education Summary */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-12 p-6 bg-card/30 border border-border rounded-xl"
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <School className="w-5 h-5 text-primary" />
+            <h4 className="font-display font-semibold">School Education</h4>
+          </div>
+          <div className="grid md:grid-cols-3 gap-4 text-sm">
+            <div>
+              <span className="text-muted-foreground">School:</span>
+              <p className="font-medium mt-1">St. Joseph's College, Negombo</p>
+            </div>
+            <div>
+              <span className="text-muted-foreground">GCE A/L:</span>
+              <p className="font-medium mt-1">Commerce Stream (2021)</p>
+            </div>
+            <div>
+              <span className="text-muted-foreground">GCE O/L:</span>
+              <p className="font-medium mt-1">2018</p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default EducationSection;
