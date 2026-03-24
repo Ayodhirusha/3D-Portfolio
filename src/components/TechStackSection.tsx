@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import {
   SiReact, SiNodedotjs, SiTailwindcss, SiThreedotjs, SiHtml5,
   SiJavascript, SiTypescript, SiMongodb, SiFirebase, SiMysql,
-  SiFigma, SiFlutter, SiCss3
+  SiFigma, SiFlutter, SiCss as SiCss3
 } from "react-icons/si";
 
 const skills = [
