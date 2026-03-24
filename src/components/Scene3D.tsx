@@ -92,7 +92,7 @@ const CodeBracket = ({ position, rotation, char, color }: { position: [number, n
 
 /* ── Floating UI Cards ── */
 const UICard = ({ position, size, color, delay }: { position: [number, number, number]; size: [number, number]; color: string; delay: number }) => {
-  const mesh = useRef<THREE.Mesh>(null);
+  const mesh = useRef<THREE.Group>(null);
 
   useFrame(({ clock }) => {
     if (mesh.current) {
