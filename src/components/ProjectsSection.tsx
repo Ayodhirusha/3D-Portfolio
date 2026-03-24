@@ -6,44 +6,36 @@ const projects = [
     title: "Caritas Sri Lanka",
     category: "Full Stack / React / Node.js",
     description: "Developed and deployed websites for four Catholic dioceses (Badulla, Colombo, Chilaw, Galle). Built frontend with React.js, backend with Node.js and Express.js, integrated SQL database connections and admin dashboards.",
-    color: "from-blue-500/20 to-cyan-500/10",
   },
   {
     title: "Pantiles Dental",
     category: "Frontend / Vite React JS",
     description: "Modern UI/UX website design project for a UK-based dental client featuring 58 pages. Developed with Vite React JS for optimal performance and user experience.",
-    color: "from-indigo-500/15 to-blue-400/15",
   },
   {
     title: "Fair Heaven Villa",
     category: "Frontend / Vite React JS",
     description: "UI/UX website design for a peaceful coastal getaway in Chilaw. Created an engaging frontend with Vite React JS showcasing the villa's amenities and booking features.",
-    color: "from-cyan-500/15 to-blue-500/10",
   },
   {
     title: "Warehouse Management System",
     category: "Full Stack / Flutter / ASP.NET",
     description: "Flutter web application for a PC store with MySQL database and ASP.NET (C#) backend. Individual assignment demonstrating full-stack development capabilities.",
-    color: "from-blue-600/15 to-indigo-400/10",
   },
   {
     title: "Cinema Booking System",
     category: "Full Stack / React / Next.js",
     description: "Complete cinema ticket booking platform with seat selection, payment integration, and admin panel. Built with React and Next.js for optimal performance.",
-    color: "from-purple-500/15 to-pink-400/10",
-  },
-  {
-    title: "Smart Miner Guard",
-    category: "IoT / Safety System",
-    description: "Developed a Smart Miner Guard Safety Helmet using IoT technology. Integrated sensors for monitoring worker safety in mining environments with real-time alerts.",
-    color: "from-green-500/15 to-teal-400/10",
   },
 ];
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-32 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="relative py-32 px-6 md:px-12 overflow-hidden">
+      {/* Spotlight */}
+      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.06),transparent_70%)] pointer-events-none" />
+
+      <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,26 +48,43 @@ const ProjectsSection = () => {
             Featured <span className="text-gradient">Projects</span>
           </h2>
         </motion.div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div className="space-y-8">
           {projects.map((project, i) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group relative bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 hover:glow-box transition-all duration-500 cursor-pointer"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, delay: i * 0.1 }}
+              className="group glass-card rounded-2xl overflow-hidden hover:border-primary/30 hover:glow-box transition-all duration-700"
             >
-              <div className={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center`}>
-                <div className="w-16 h-16 border border-primary/30 rounded-lg rotate-12 group-hover:rotate-45 transition-transform duration-700" />
-              </div>
-              <div className="p-8">
-                <div className="flex items-center justify-between mb-3">
-                  <p className="font-body text-xs uppercase tracking-widest text-primary">{project.category}</p>
-                  <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+              <div className="flex flex-col md:flex-row">
+                {/* Project visual */}
+                <div className="md:w-2/5 h-56 md:h-auto bg-gradient-primary-subtle flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(146,63,255,0.15),transparent_60%)]" />
+                  <motion.div
+                    whileHover={{ rotate: 90, scale: 1.1 }}
+                    transition={{ duration: 0.7 }}
+                    className="w-20 h-20 border border-primary/30 rounded-2xl rotate-12"
+                  />
+                  <div className="absolute bottom-4 left-4 font-display text-6xl font-bold text-primary/10">
+                    0{i + 1}
+                  </div>
                 </div>
-                <h3 className="font-display text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">{project.description}</p>
+
+                {/* Content */}
+                <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
+                  <div className="flex items-center justify-between mb-3">
+                    <p className="font-body text-xs uppercase tracking-widest text-primary">{project.category}</p>
+                    <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
+                  </div>
+                  <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">{project.title}</h3>
+                  <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6">{project.description}</p>
+                  <button className="self-start font-display text-sm px-6 py-2.5 rounded-full border border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                    View Project
+                  </button>
+                </div>
               </div>
             </motion.div>
           ))}

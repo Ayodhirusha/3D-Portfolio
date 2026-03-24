@@ -1,42 +1,35 @@
 import { motion } from "framer-motion";
-import { Code, Palette, Database, Globe, Smartphone, Layers } from "lucide-react";
+import { Code, Globe, Palette, Cpu } from "lucide-react";
 
 const services = [
   {
     icon: Code,
     title: "Web Development",
-    description: "Full-stack web applications using React, Node.js, Express.js, and modern JavaScript frameworks with clean, maintainable code.",
+    description: "Full-stack web applications using React, Node.js, and modern JavaScript frameworks with clean, maintainable code.",
   },
   {
-    icon: Smartphone,
-    title: "Mobile Development",
-    description: "Cross-platform mobile applications built with Flutter and Dart, delivering native performance on both iOS and Android.",
+    icon: Globe,
+    title: "3D Websites",
+    description: "Immersive, interactive 3D web experiences using Three.js and WebGL that push the boundaries of the web.",
   },
   {
     icon: Palette,
     title: "UI/UX Design",
-    description: "User-centered design using Figma, creating intuitive interfaces and engaging user experiences for web and mobile applications.",
+    description: "User-centered design using Figma, creating intuitive interfaces and engaging experiences for web and mobile.",
   },
   {
-    icon: Database,
-    title: "Database Management",
-    description: "Efficient database design and management with MySQL, SQL, and Firebase, ensuring data integrity and optimal performance.",
-  },
-  {
-    icon: Globe,
-    title: "Frontend Development",
-    description: "Responsive, pixel-perfect frontends with HTML, CSS, JavaScript, and React, focusing on accessibility and user experience.",
-  },
-  {
-    icon: Layers,
-    title: "Graphic Design",
-    description: "Creative visual content including social media posts, promotional videos, and branding materials using Photoshop and modern tools.",
+    icon: Cpu,
+    title: "AI-Powered Web Solutions",
+    description: "Intelligent web applications integrating AI and machine learning capabilities for smarter user experiences.",
   },
 ];
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-32 px-6 md:px-12 bg-card/50">
+    <section id="services" className="relative py-32 px-6 md:px-12 overflow-hidden">
+      {/* Spotlight */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(88,63,255,0.06),transparent_70%)] pointer-events-none" />
+
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -47,10 +40,11 @@ const ServicesSection = () => {
         >
           <p className="font-body text-sm uppercase tracking-[0.3em] text-primary mb-4">Services</p>
           <h2 className="font-display text-4xl md:text-5xl font-bold">
-            What I <span className="text-gradient">Do</span>
+            What I <span className="text-gradient">Offer</span>
           </h2>
         </motion.div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div className="grid md:grid-cols-2 gap-6">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
@@ -58,9 +52,11 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group bg-card border border-border rounded-xl p-8 hover:border-primary/50 hover:glow-box transition-all duration-500"
+              className="group glass-card rounded-2xl p-8 hover:border-primary/30 hover:glow-box transition-all duration-500"
             >
-              <service.icon className="w-10 h-10 text-primary mb-5" strokeWidth={1.5} />
+              <div className="w-14 h-14 rounded-xl bg-gradient-primary-subtle flex items-center justify-center mb-6 group-hover:glow-box transition-shadow duration-500">
+                <service.icon className="w-7 h-7 text-primary" strokeWidth={1.5} />
+              </div>
               <h3 className="font-display text-xl font-semibold mb-3">{service.title}</h3>
               <p className="font-body text-muted-foreground text-sm leading-relaxed">{service.description}</p>
             </motion.div>

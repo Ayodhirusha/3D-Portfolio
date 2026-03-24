@@ -7,6 +7,8 @@ import TechStackSection from "@/components/TechStackSection";
 import EducationSection from "@/components/EducationSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ContactSection from "@/components/ContactSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -14,12 +16,14 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <AboutSection />
-      <ServicesSection />
       <TechStackSection />
+      <ServicesSection />
       <ProjectsSection />
       <EducationSection />
       <ExperienceSection />
+      <TestimonialsSection />
       <ContactSection />
+      <Footer />
     </div>
   );
 };
