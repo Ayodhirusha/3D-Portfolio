@@ -25,7 +25,7 @@ const Navbar = () => {
         className="relative flex items-center gap-8 px-8 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]"
       >
         <span className="font-display text-lg font-bold tracking-tight text-gradient border-r border-white/10 pr-6 mr-2">
-          MiladiCode
+          Ayod.H
         </span>
         <ul className="hidden lg:flex items-center gap-6">
           {navItems.map((item) => (

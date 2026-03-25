@@ -26,7 +26,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="font-body text-sm uppercase tracking-[0.3em] text-muted-foreground mb-6"
         >
-          Software Engineer & UI/UX Designer
+          Software Engineer Intern & UI/UX Designer
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -34,9 +34,9 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-8"
         >
-          Hi, I'm Milad —
+          Hi, I'm Ayod —
           <br />
-          <span className="text-gradient">Creative Web Developer</span>
+          <span className="text-gradient">Full Stack Developer</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -44,7 +44,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.9 }}
           className="font-body text-lg text-muted-foreground max-w-xl mx-auto mb-10"
         >
-          Building immersive, modern, and high-performance websites.
+          I am a Software Engineering Graduate currently enrolled in the BSc (Hons) Software Engineering program at the University of Plymouth (UK).
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

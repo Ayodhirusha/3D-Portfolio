@@ -5,22 +5,22 @@ const services = [
   {
     icon: Code,
     title: "Web Development",
-    description: "Full-stack web applications using React, Node.js, and modern JavaScript frameworks with clean, maintainable code.",
+    description: "Expertise in HTML, CSS, JavaScript, and React to build responsive and dynamic web applications.",
   },
   {
     icon: Globe,
-    title: "3D Websites",
-    description: "Immersive, interactive 3D web experiences using Three.js and WebGL that push the boundaries of the web.",
+    title: "Full Stack Solutions",
+    description: "Developing robust backends using Node.js, Express, and ASP.NET (C#) with SQL database integrations.",
   },
   {
     icon: Palette,
     title: "UI/UX Design",
-    description: "User-centered design using Figma, creating intuitive interfaces and engaging experiences for web and mobile.",
+    description: "Creating intuitive and impactful digital experiences using Figma, focusing on user-centered design principles.",
   },
   {
     icon: Cpu,
-    title: "AI-Powered Web Solutions",
-    description: "Intelligent web applications integrating AI and machine learning capabilities for smarter user experiences.",
+    title: "Mobile Development",
+    description: "Building cross-platform mobile applications using Flutter and Dart for seamless user experiences.",
   },
 ];
 

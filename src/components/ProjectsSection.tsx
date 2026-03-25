@@ -3,11 +3,6 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "Caritas Sri Lanka",
-    category: "Full Stack / React / Node.js",
-    description: "Developed and deployed websites for four Catholic dioceses (Badulla, Colombo, Chilaw, Galle). Built frontend with React.js, backend with Node.js and Express.js, integrated SQL database connections and admin dashboards.",
-  },
-  {
     title: "Pantiles Dental",
     category: "Frontend / Vite React JS",
     description: "Modern UI/UX website design project for a UK-based dental client featuring 58 pages. Developed with Vite React JS for optimal performance and user experience.",
@@ -15,17 +10,27 @@ const projects = [
   {
     title: "Fair Heaven Villa",
     category: "Frontend / Vite React JS",
-    description: "UI/UX website design for a peaceful coastal getaway in Chilaw. Created an engaging frontend with Vite React JS showcasing the villa's amenities and booking features.",
+    description: "Modern UI/UX website design project for a peaceful coastal getaway in Chilaw. Created an engaging frontend with Vite React JS showcasing amenities and booking.",
+  },
+  {
+    title: "Caritas Sri Lanka",
+    category: "Full Stack / Node.js",
+    description: "Successfully developed and fully deployed websites for four Catholic dioceses (Badulla, Colombo, Chilaw, Galle) with complete admin dashboards for site management.",
   },
   {
     title: "Warehouse Management System",
     category: "Full Stack / Flutter / ASP.NET",
-    description: "Flutter web application for a PC store with MySQL database and ASP.NET (C#) backend. Individual assignment demonstrating full-stack development capabilities.",
+    description: "Developed a Flutter web application for a PC store with a MySQL database connection and an ASP.NET (C#) backend.",
   },
   {
-    title: "Cinema Booking System",
-    category: "Full Stack / React / Next.js",
-    description: "Complete cinema ticket booking platform with seat selection, payment integration, and admin panel. Built with React and Next.js for optimal performance.",
+    title: "Car Rental System",
+    category: "Software / .NET Framework",
+    description: "Developed an online car rental system using .Net framework (C#) featuring comprehensive management tools.",
+  },
+  {
+    title: "Smart Miner Guard",
+    category: "IOT / Hardware",
+    description: "Developed a Smart Miner Guard Safety Helmet using IOT technology for improved safety in mining environments.",
   },
 ];
 

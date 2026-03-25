@@ -57,7 +57,7 @@ const AboutSection = () => {
                 <div className="relative image-frame rounded-full overflow-hidden w-56 h-56 md:w-72 md:h-72">
                   <img
                     src={profileImg}
-                    alt="Milad Abdi"
+                    alt="Ayod Hirusha"
                     className="w-full h-full object-cover rounded-full"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent rounded-full" />
@@ -73,10 +73,10 @@ const AboutSection = () => {
                 Creating <span className="text-gradient">Digital Solutions</span>
               </h2>
               <p className="font-body text-muted-foreground leading-relaxed mb-4">
-                I am a Software Engineering graduate currently enrolled in the BSc (Hons) Software Engineering program at the University of Plymouth (UK). I have completed a Full Stack Development internship at Ceylon Innovations Pvt Ltd, where I gained practical industry experience.
+                I am a Software Engineering Graduate currently enrolled in the BSc (Hons) Software Engineering program at the University of Plymouth (UK). I have completed a Full Stack Development internship at Ceylon Innovations Pvt Ltd, where I gained practical industry experience.
               </p>
-              <p className="font-body text-muted-foreground leading-relaxed mb-8">
-                I am now seeking new job opportunities in the IT field to further develop my skills and grow as a well-regarded IT professional. With expertise in React, Node.js, Flutter, and database management, I bring ideas to life through clean code and intuitive design.
+              <p className="font-body text-muted-foreground leading-relaxed">
+                I am now seeking new job opportunities in the IT field to further develop my skills and grow as a well-regarded IT professional.
               </p>
             </div>
           </div>

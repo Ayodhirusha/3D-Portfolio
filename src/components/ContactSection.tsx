@@ -85,8 +85,8 @@ const ContactSection = () => {
         {/* Social links */}
         <div className="flex items-center justify-center gap-6">
           {[
-            { icon: FaGithub, url: "https://github.com", label: "GitHub" },
-            { icon: FaLinkedin, url: "https://linkedin.com/in/ayod-hirusha-533375310", label: "LinkedIn" },
+            { icon: FaGithub, url: "https://github.com/Ayodhirusha", label: "GitHub" },
+            { icon: FaLinkedin, url: "https://www.linkedin.com/in/Ayod-hirusha", label: "LinkedIn" },
             { icon: Mail, url: "mailto:ayodhirusha77@gmail.com", label: "Email" },
           ].map((link) => (
             <a
