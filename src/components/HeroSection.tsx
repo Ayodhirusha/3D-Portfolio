@@ -20,24 +20,28 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="font-body text-sm uppercase tracking-[0.3em] text-muted-foreground mb-6"
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="inline-block mb-6 px-6 py-2 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm"
         >
-          Software Engineer Intern & UI/UX Designer
-        </motion.p>
+          <span className="font-body text-xs uppercase tracking-[0.3em] text-primary">
+            Software Engineer Intern & UI/UX Designer
+          </span>
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-8"
         >
           Hi, I'm Ayod —
           <br />
           <span className="text-gradient">Full Stack Developer</span>
         </motion.h1>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,17 +50,32 @@ const HeroSection = () => {
         >
           I am a Software Engineering Graduate currently enrolled in the BSc (Hons) Software Engineering program at the University of Plymouth (UK).
         </motion.p>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <button
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-            className="font-display text-sm px-10 py-4 rounded-full bg-gradient-primary text-primary-foreground hover:opacity-90 transition-opacity tracking-wide"
+            className="font-display text-sm px-10 py-4 rounded-full bg-gradient-primary text-white tracking-wide relative overflow-hidden group"
+            style={{ boxShadow: "0 10px 40px -10px rgba(146,63,255,0.5)" }}
           >
-            View My Work
-          </button>
+            <div className="absolute inset-0 bg-white/15 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
+            <span className="relative z-10">View My Work</span>
+          </motion.button>
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            className="font-display text-sm px-10 py-4 rounded-full border border-primary/30 text-foreground hover:bg-primary/10 transition-all tracking-wide"
+          >
+            Let's Talk
+          </motion.button>
         </motion.div>
       </div>
 
