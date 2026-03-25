@@ -1,56 +1,30 @@
 import { motion } from "framer-motion";
-import {
-  SiReact, SiNodedotjs, SiTailwindcss, SiThreedotjs, SiHtml5,
-  SiJavascript, SiTypescript, SiMongodb, SiFirebase,
-  SiMysql, SiFigma, SiFlutter, SiNextdotjs, SiGit, SiGithub,
-  SiVite, SiPostman, SiVercel, SiAngular, SiBootstrap,
-  SiSass, SiRedux, SiExpress, SiPostgresql,
-  SiRedis, SiGraphql, SiPrisma,
-  SiWebpack, SiJest, SiDocker, SiKubernetes
-} from "react-icons/si";
-import { FaJava, FaPython, FaAws, FaCss3Alt } from "react-icons/fa";
 
+// Tech stack icons from public folder
 const skills = [
-  { name: "HTML5", Icon: SiHtml5, color: "#E34F26" },
-  { name: "CSS3", Icon: FaCss3Alt, color: "#1572B6" },
-  { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
-  { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
-  { name: "React", Icon: SiReact, color: "#61DAFB" },
-  { name: "Next.js", Icon: SiNextdotjs, color: "#ffffff" },
-  { name: "Angular", Icon: SiAngular, color: "#DD0031" },
-  { name: "Node.js", Icon: SiNodedotjs, color: "#339933" },
-  { name: "Express", Icon: SiExpress, color: "#ffffff" },
-  { name: "Tailwind", Icon: SiTailwindcss, color: "#06B6D4" },
-  { name: "Three.js", Icon: SiThreedotjs, color: "#ffffff" },
-  { name: "Flutter", Icon: SiFlutter, color: "#02569B" },
-  { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
-  { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
-  { name: "MySQL", Icon: SiMysql, color: "#4479A1" },
-  { name: "PostgreSQL", Icon: SiPostgresql, color: "#336791" },
-  { name: "Redis", Icon: SiRedis, color: "#DC382D" },
-  { name: "Java", Icon: FaJava, color: "#f89820" },
-  { name: "Python", Icon: FaPython, color: "#3776AB" },
-  { name: "Git", Icon: SiGit, color: "#F05032" },
-  { name: "GitHub", Icon: SiGithub, color: "#ffffff" },
-  { name: "Docker", Icon: SiDocker, color: "#2496ED" },
-  { name: "AWS", Icon: FaAws, color: "#FF9900" },
-  { name: "Figma", Icon: SiFigma, color: "#F24E1E" },
-  { name: "Vite", Icon: SiVite, color: "#646CFF" },
-  { name: "Webpack", Icon: SiWebpack, color: "#8DD6F9" },
-  { name: "GraphQL", Icon: SiGraphql, color: "#E10098" },
-  { name: "Redux", Icon: SiRedux, color: "#764ABC" },
-  { name: "Bootstrap", Icon: SiBootstrap, color: "#7952B3" },
-  { name: "Sass", Icon: SiSass, color: "#CC6699" },
-  { name: "Jest", Icon: SiJest, color: "#C21325" },
-  { name: "Prisma", Icon: SiPrisma, color: "#2D3748" },
-  { name: "Postman", Icon: SiPostman, color: "#FF6C37" },
-  { name: "Vercel", Icon: SiVercel, color: "#ffffff" },
-  { name: "Kubernetes", Icon: SiKubernetes, color: "#326CE5" },
+  { name: "Tech 1", image: "/6.png" },
+  { name: "Tech 2", image: "/15.png" },
+  { name: "Tech 3", image: "/33.png" },
+  { name: "Tech 4", image: "/34.png" },
+  { name: "Tech 5", image: "/Group.png" },
+  { name: "Tech 6", image: "/Group 4.png" },
+  { name: "Tech 7", image: "/Group 5.png" },
+  { name: "Tech 8", image: "/Group 7.png" },
+  { name: "Tech 9", image: "/Group 8.png" },
+  { name: "Tech 10", image: "/Group 9.png" },
+  { name: "Tech 11", image: "/Group 12.png" },
+  { name: "Tech 12", image: "/Group 13.png" },
+  { name: "Tech 13", image: "/Group 14.png" },
+  { name: "Tech 14", image: "/Group 15.png" },
+  { name: "Tech 15", image: "/Group 16.png" },
+  { name: "Tech 16", image: "/Group 17.png" },
+  { name: "Tech 17", image: "/Programming logos and icons by hrhasnai (32).png" },
+  { name: "Tech 18", image: "/Vector.png" },
 ];
 
 const TechStackSection = () => {
-  // Double the items for seamless infinite scroll
-  const duplicatedSkills = [...skills, ...skills];
+  // Triple the items for smoother seamless infinite scroll
+  const duplicatedSkills = [...skills, ...skills, ...skills];
 
   return (
     <section id="skills" className="relative py-32 px-6 md:px-12 overflow-hidden">
@@ -72,48 +46,37 @@ const TechStackSection = () => {
         </motion.div>
 
         {/* Carousel Container */}
-        <div className="relative group/carousel">
-          {/* Gradient masks */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
-
-          {/* Scrolling Track */}
+        <div className="relative">
+          {/* Scrolling Track - no masks to avoid black lines */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex gap-8 animate-scroll hover:[animation-play-state:paused]"
+            className="flex gap-4 animate-scroll hover:[animation-play-state:paused]"
           >
             {duplicatedSkills.map((skill, i) => (
               <div
                 key={`${skill.name}-${i}`}
-                className="group flex-shrink-0 flex flex-col items-center gap-4 cursor-pointer"
+                className="group flex-shrink-0 flex flex-col items-center gap-3 cursor-pointer px-2"
               >
-                {/* Icon Container with 3D effect */}
-                <div className="relative tech-icon-wrapper">
-                  {/* 3D shadow/depth layers */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  {/* Main icon container */}
+                {/* Icon Container */}
+                <div className="relative">
                   <div
-                    className="relative tech-icon p-6 rounded-2xl bg-card/60 border border-border/50 
-                      shadow-[0_8px_30px_rgb(0,0,0,0.12)] 
-                      hover:shadow-[0_8px_30px_rgba(146,63,255,0.25)]
-                      hover:border-primary/30 hover:-translate-y-2
-                      transition-all duration-500 ease-out
-                      backdrop-blur-sm"
+                    className="tech-icon p-6 rounded-2xl bg-[#12121a] border border-white/5 
+                      hover:border-primary/40 hover:-translate-y-2
+                      transition-all duration-500 shadow-2xl"
                   >
-                    <skill.Icon
-                      className="w-14 h-14 transition-all duration-500"
-                      style={{ color: skill.color }}
+                    <img
+                      src={skill.image}
+                      alt={skill.name}
+                      className="w-16 h-16 md:w-20 md:h-20 object-contain transition-all duration-500"
                     />
                   </div>
                 </div>
 
                 {/* Tech Name */}
-                <p className="font-body text-sm font-medium text-muted-foreground group-hover:text-white transition-all duration-300 opacity-60 group-hover:opacity-100">
+                <p className="font-body text-xs text-muted-foreground group-hover:text-white transition-all">
                   {skill.name}
                 </p>
               </div>
@@ -133,23 +96,25 @@ const TechStackSection = () => {
         }
 
         .animate-scroll {
-          animation: scroll 40s linear infinite;
+          animation: scroll 25s linear infinite;
         }
 
-        /* Grayscale effect - icons start grayscale */
-        .tech-icon svg {
-          filter: grayscale(100%) brightness(0.7);
-          transition: filter 0.5s ease-out;
+        /* Grayscale effect - images start grayscale */
+        .tech-icon img {
+          filter: grayscale(100%) brightness(0.6);
+          transition: all 0.5s ease-in-out;
         }
 
-        /* On hover, icon becomes colorful with glow */
-        .group:hover .tech-icon svg {
-          filter: grayscale(0%) brightness(1) drop-shadow(0 0 10px currentColor);
+        /* On hover, image becomes colorful and bright */
+        .group:hover .tech-icon img {
+          filter: grayscale(0%) brightness(1);
+          transform: scale(1.1);
         }
 
         /* 3D pop effect on hover */
         .tech-icon:hover {
-          transform: translateY(-8px) scale(1.05);
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(146,63,255,0.2);
         }
       `}</style>
     </section>

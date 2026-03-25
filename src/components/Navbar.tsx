@@ -17,61 +17,66 @@ const Navbar = () => {
   };
 
   return (
-    <motion.nav
-      initial={{ y: -40, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, delay: 0.2 }}
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-background/60 backdrop-blur-xl border-b border-border/50"
-    >
-      <span className="font-display text-xl font-bold tracking-tight text-gradient">
-        MiladiCode
-      </span>
-      <ul className="hidden lg:flex items-center gap-8">
-        {navItems.map((item) => (
-          <li key={item}>
-            <button
-              onClick={() => scrollTo(item)}
-              className="font-body text-sm text-muted-foreground hover:text-primary transition-colors duration-300 tracking-wide"
-            >
-              {item}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <button
-        onClick={() => scrollTo("Contact")}
-        className="hidden md:block font-display text-sm px-6 py-2.5 rounded-full bg-gradient-primary text-primary-foreground hover:opacity-90 transition-opacity"
+    <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-6">
+      <motion.nav
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="relative flex items-center gap-8 px-8 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]"
       >
-        Let's Talk
-      </button>
+        <span className="font-display text-lg font-bold tracking-tight text-gradient border-r border-white/10 pr-6 mr-2">
+          MiladiCode
+        </span>
+        <ul className="hidden lg:flex items-center gap-6">
+          {navItems.map((item) => (
+            <li key={item}>
+              <button
+                onClick={() => scrollTo(item)}
+                className="font-body text-xs text-white/70 hover:text-white transition-all duration-300 tracking-wider uppercase"
+              >
+                {item}
+              </button>
+            </li>
+          ))}
+        </ul>
 
-      {/* Mobile menu button */}
-      <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden text-foreground">
-        {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-      </button>
+        <div className="flex items-center gap-4 ml-2 border-l border-white/10 pl-6">
+          <button
+            onClick={() => scrollTo("Contact")}
+            className="hidden md:block font-display text-xs px-5 py-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-all border border-white/10"
+          >
+            Let's Talk
+          </button>
 
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border p-6 lg:hidden"
-        >
-          <ul className="flex flex-col gap-4">
-            {navItems.map((item) => (
-              <li key={item}>
-                <button
-                  onClick={() => scrollTo(item)}
-                  className="font-body text-sm text-muted-foreground hover:text-primary transition-colors w-full text-left"
-                >
-                  {item}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-      )}
-    </motion.nav>
+          {/* Mobile menu button */}
+          <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden text-white/70 hover:text-white">
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
+
+        {/* Mobile menu */}
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="absolute top-full left-0 right-0 mt-4 bg-[#12121a]/95 backdrop-blur-xl border border-white/10 p-6 rounded-2xl lg:hidden shadow-2xl"
+          >
+            <ul className="flex flex-col gap-4">
+              {navItems.map((item) => (
+                <li key={item}>
+                  <button
+                    onClick={() => scrollTo(item)}
+                    className="font-body text-sm text-white/70 hover:text-white transition-colors w-full text-left"
+                  >
+                    {item}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </motion.nav>
+    </div>
   );
 };
 
