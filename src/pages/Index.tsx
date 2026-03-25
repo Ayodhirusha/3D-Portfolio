@@ -9,10 +9,14 @@ import ExperienceSection from "@/components/ExperienceSection";
 import ContactSection from "@/components/ContactSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
+import ParticleBackground from "@/components/ParticleBackground";
+import FloatingGlassElements from "@/components/FloatingGlassElements";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <ParticleBackground />
+      <FloatingGlassElements />
       <Navbar />
       <HeroSection />
       <AboutSection />
