@@ -6,38 +6,43 @@ const projects = [
     title: "Pantiles Dental",
     category: "Frontend / Vite React JS",
     description: "Modern UI/UX website design project for a UK-based dental client featuring 58 pages. Developed with Vite React JS for optimal performance and user experience.",
+    num: "01",
   },
   {
-    title: "Fair Heaven Villa",
+    title: "Fair Haven Villa",
     category: "Frontend / Vite React JS",
     description: "Modern UI/UX website design project for a peaceful coastal getaway in Chilaw. Created an engaging frontend with Vite React JS showcasing amenities and booking.",
+    num: "02",
   },
   {
     title: "Caritas Sri Lanka",
     category: "Full Stack / Node.js",
     description: "Successfully developed and fully deployed websites for four Catholic dioceses (Badulla, Colombo, Chilaw, Galle) with complete admin dashboards for site management.",
+    num: "03",
   },
   {
     title: "Warehouse Management System",
     category: "Full Stack / Flutter / ASP.NET",
     description: "Developed a Flutter web application for a PC store with a MySQL database connection and an ASP.NET (C#) backend.",
+    num: "04",
   },
   {
     title: "Car Rental System",
     category: "Software / .NET Framework",
     description: "Developed an online car rental system using .Net framework (C#) featuring comprehensive management tools.",
+    num: "05",
   },
   {
     title: "Smart Miner Guard",
     category: "IOT / Hardware",
     description: "Developed a Smart Miner Guard Safety Helmet using IOT technology for improved safety in mining environments.",
+    num: "06",
   },
 ];
 
 const ProjectsSection = () => {
   return (
     <section id="projects" className="relative py-32 px-6 md:px-12 overflow-hidden">
-      {/* Spotlight */}
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.06),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto">
@@ -62,8 +67,17 @@ const ProjectsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, delay: i * 0.1 }}
-              className="group glass-card rounded-2xl overflow-hidden hover:border-primary/30 hover:glow-box transition-all duration-700"
+              whileHover={{ y: -4 }}
+              className="group relative rounded-2xl overflow-hidden transition-all duration-700"
+              style={{
+                background: "rgba(255,255,255,0.02)",
+                backdropFilter: "blur(20px)",
+                border: "1px solid rgba(146,63,255,0.1)",
+              }}
             >
+              {/* Hover glow overlay */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
+
               <div className="flex flex-col md:flex-row">
                 {/* Project visual */}
                 <div className="md:w-2/5 h-56 md:h-auto bg-gradient-primary-subtle flex items-center justify-center relative overflow-hidden">
@@ -73,24 +87,31 @@ const ProjectsSection = () => {
                     transition={{ duration: 0.7 }}
                     className="w-20 h-20 border border-primary/30 rounded-2xl rotate-12"
                   />
-                  <div className="absolute bottom-4 left-4 font-display text-6xl font-bold text-primary/10">
-                    0{i + 1}
+                  <div className="absolute bottom-4 left-4 font-display text-7xl font-black text-gradient opacity-20">
+                    {project.num}
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
+                <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-center relative">
                   <div className="flex items-center justify-between mb-3">
                     <p className="font-body text-xs uppercase tracking-widest text-primary">{project.category}</p>
                     <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
                   </div>
-                  <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">{project.title}</h3>
+                  <h3 className="font-display text-2xl md:text-3xl font-bold mb-4 group-hover:text-gradient transition-all duration-500">{project.title}</h3>
                   <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6">{project.description}</p>
-                  <button className="self-start font-display text-sm px-6 py-2.5 rounded-full border border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="self-start font-display text-sm px-6 py-2.5 rounded-full border border-primary/30 text-primary hover:bg-gradient-primary hover:text-white hover:border-transparent transition-all duration-300"
+                  >
                     View Project
-                  </button>
+                  </motion.button>
                 </div>
               </div>
+
+              {/* Bottom accent line */}
+              <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
             </motion.div>
           ))}
         </div>

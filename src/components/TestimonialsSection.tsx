@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
@@ -17,7 +17,7 @@ const testimonials = [
   },
   {
     name: "Sarah Williams",
-    role: "Owner, Fair Heaven Villa",
+    role: "Owner, Fair Haven Villa",
     feedback: "The website perfectly captures the essence of our villa. Beautiful design, fast performance, and a seamless booking experience. Our guests love it!",
     avatar: "SW",
   },
@@ -31,7 +31,7 @@ const TestimonialsSection = () => {
 
   return (
     <section id="testimonials" className="relative py-32 px-6 md:px-12 overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.05),transparent_70%)] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.06),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto">
         <motion.div
@@ -48,46 +48,66 @@ const TestimonialsSection = () => {
         </motion.div>
 
         <div className="relative">
-          <motion.div
-            key={active}
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -40 }}
-            transition={{ duration: 0.5 }}
-            className="glass-card rounded-2xl p-10 md:p-14 text-center glow-box"
-          >
-            <Quote className="w-10 h-10 text-primary/30 mx-auto mb-6" />
-            <p className="font-body text-lg md:text-xl text-foreground/90 leading-relaxed mb-8 italic">
-              "{testimonials[active].feedback}"
-            </p>
-            <div className="flex items-center justify-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center font-display font-bold text-sm text-primary-foreground">
-                {testimonials[active].avatar}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, y: 30, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -30, scale: 0.97 }}
+              transition={{ duration: 0.5 }}
+              className="relative rounded-3xl p-10 md:p-14 text-center overflow-hidden"
+              style={{
+                background: "linear-gradient(145deg, rgba(146,63,255,0.05), rgba(0,0,0,0.4), rgba(125,191,255,0.03))",
+                backdropFilter: "blur(20px)",
+                border: "1px solid rgba(146,63,255,0.12)",
+                boxShadow: "0 25px 60px -20px rgba(146,63,255,0.15)",
+              }}
+            >
+              <Quote className="w-12 h-12 text-primary/20 mx-auto mb-6" />
+              <p className="font-body text-lg md:text-xl text-foreground/90 leading-relaxed mb-8 italic">
+                "{testimonials[active].feedback}"
+              </p>
+              <div className="flex items-center justify-center gap-4">
+                <div className="w-14 h-14 rounded-full bg-gradient-primary flex items-center justify-center font-display font-bold text-sm text-white shadow-lg"
+                  style={{ boxShadow: "0 0 25px rgba(146,63,255,0.3)" }}
+                >
+                  {testimonials[active].avatar}
+                </div>
+                <div className="text-left">
+                  <p className="font-display font-semibold text-lg">{testimonials[active].name}</p>
+                  <p className="font-body text-sm text-muted-foreground">{testimonials[active].role}</p>
+                </div>
               </div>
-              <div className="text-left">
-                <p className="font-display font-semibold">{testimonials[active].name}</p>
-                <p className="font-body text-sm text-muted-foreground">{testimonials[active].role}</p>
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </AnimatePresence>
 
           {/* Navigation */}
           <div className="flex items-center justify-center gap-4 mt-8">
-            <button onClick={prev} className="w-10 h-10 rounded-full border border-border hover:border-primary/50 flex items-center justify-center transition-colors">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={prev}
+              className="w-11 h-11 rounded-full border border-border hover:border-primary/50 hover:bg-primary/10 flex items-center justify-center transition-all duration-300"
+            >
               <ChevronLeft className="w-5 h-5 text-muted-foreground" />
-            </button>
+            </motion.button>
             <div className="flex gap-2">
               {testimonials.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setActive(i)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${i === active ? "bg-primary w-6" : "bg-muted-foreground/30"}`}
+                  className={`h-2 rounded-full transition-all duration-500 ${i === active ? "bg-gradient-primary w-8" : "bg-muted-foreground/20 w-2 hover:bg-muted-foreground/40"}`}
                 />
               ))}
             </div>
-            <button onClick={next} className="w-10 h-10 rounded-full border border-border hover:border-primary/50 flex items-center justify-center transition-colors">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={next}
+              className="w-11 h-11 rounded-full border border-border hover:border-primary/50 hover:bg-primary/10 flex items-center justify-center transition-all duration-300"
+            >
               <ChevronRight className="w-5 h-5 text-muted-foreground" />
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>

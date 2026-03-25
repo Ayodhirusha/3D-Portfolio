@@ -3,16 +3,15 @@ import { Zap, Code, Award, Layers } from "lucide-react";
 import profileImg from "@/assets/profile-placeholder.jpg";
 
 const highlights = [
-  { icon: Zap, title: "Experience", value: "2+ Years", desc: "Hands-on development" },
-  { icon: Code, title: "Technologies", value: "15+", desc: "Tools & frameworks" },
-  { icon: Layers, title: "Specialties", value: "Full Stack", desc: "Web & Mobile" },
-  { icon: Award, title: "Achievements", value: "10+", desc: "Projects delivered" },
+  { icon: Zap, title: "Experience", value: "2+", suffix: "Years", desc: "Hands-on development" },
+  { icon: Code, title: "Technologies", value: "15+", suffix: "", desc: "Tools & frameworks" },
+  { icon: Layers, title: "Specialties", value: "Full", suffix: "Stack", desc: "Web & Mobile" },
+  { icon: Award, title: "Achievements", value: "10+", suffix: "", desc: "Projects delivered" },
 ];
 
 const AboutSection = () => {
   return (
     <section id="about" className="relative py-32 px-6 md:px-12 overflow-hidden">
-      {/* Spotlight */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(88,63,255,0.08),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">
@@ -38,20 +37,27 @@ const AboutSection = () => {
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-[-20px] rounded-full border border-dashed border-primary/20"
+                  className="absolute inset-[-24px] rounded-full border border-dashed border-primary/20"
+                />
+                {/* Second ring */}
+                <motion.div
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-[-40px] rounded-full border border-dotted border-accent/10"
                 />
                 {/* Glowing dots on ring */}
                 <motion.div
                   animate={{ rotate: -360 }}
                   transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-[-20px] rounded-full"
+                  className="absolute inset-[-24px] rounded-full"
                 >
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary" />
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-2 h-2 rounded-full bg-accent" />
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-primary" style={{ boxShadow: "0 0 12px rgba(146,63,255,0.6)" }} />
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-2.5 h-2.5 rounded-full bg-accent" style={{ boxShadow: "0 0 12px rgba(125,191,255,0.6)" }} />
+                  <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-secondary" style={{ boxShadow: "0 0 10px rgba(88,63,255,0.5)" }} />
                 </motion.div>
 
                 {/* Glow behind */}
-                <div className="absolute inset-4 bg-primary/15 rounded-full blur-3xl" />
+                <div className="absolute inset-4 bg-primary/20 rounded-full blur-3xl" />
 
                 {/* Image with gradient border */}
                 <div className="relative image-frame rounded-full overflow-hidden w-56 h-56 md:w-72 md:h-72">
@@ -90,12 +96,23 @@ const AboutSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="glass-card rounded-xl p-6 text-center hover:border-primary/30 hover:glow-box transition-all duration-500 group"
+                whileHover={{ y: -6 }}
+                className="group relative rounded-xl p-6 text-center overflow-hidden transition-all duration-500"
+                style={{
+                  background: "rgba(255,255,255,0.02)",
+                  backdropFilter: "blur(20px)",
+                  border: "1px solid rgba(146,63,255,0.1)",
+                }}
               >
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-b from-primary/5 to-transparent" />
                 <item.icon className="w-8 h-8 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" strokeWidth={1.5} />
                 <span className="font-display text-2xl font-bold text-gradient">{item.value}</span>
+                {item.suffix && <span className="font-display text-lg font-bold text-gradient ml-1">{item.suffix}</span>}
                 <p className="font-display text-sm font-semibold mt-1">{item.title}</p>
                 <p className="font-body text-xs text-muted-foreground mt-1">{item.desc}</p>
+
+                {/* Bottom line */}
+                <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
               </motion.div>
             ))}
           </div>
