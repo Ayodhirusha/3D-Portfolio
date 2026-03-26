@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Scene3D from "./Scene3D";
 
 const HeroSection = () => {
   return (
