@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Scene3D from "./Scene3D";
 
 const HeroSection = () => {
   return (
@@ -8,8 +7,17 @@ const HeroSection = () => {
       <div className="absolute top-[-200px] left-[-100px] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,hsl(var(--primary)/0.12),transparent_70%)] pointer-events-none" />
       <div className="absolute bottom-[-200px] right-[-100px] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,hsl(var(--accent)/0.08),transparent_70%)] pointer-events-none" />
 
-      {/* 3D Scene */}
-      <Scene3D />
+      {/* 3D Spline Scene */}
+      <div className="absolute inset-0 z-0">
+        <iframe
+          src="https://my.spline.design/lostorbinthemountains-A3skrxIvNeTYZbfp07EPK8Pg/"
+          frameBorder="0"
+          width="100%"
+          height="100%"
+          style={{ border: 'none' }}
+          title="3D Scene"
+        />
+      </div>
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <motion.div
