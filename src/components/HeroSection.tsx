@@ -1,23 +1,15 @@
 import { motion } from "framer-motion";
+import Scene3D from "./Scene3D";
 
 const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Spotlight effects */}
-      <div className="absolute top-[-200px] left-[-100px] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.12),transparent_70%)] pointer-events-none" />
-      <div className="absolute bottom-[-200px] right-[-100px] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(125,191,255,0.08),transparent_70%)] pointer-events-none" />
+      <div className="absolute top-[-200px] left-[-100px] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,hsl(var(--primary)/0.12),transparent_70%)] pointer-events-none" />
+      <div className="absolute bottom-[-200px] right-[-100px] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,hsl(var(--accent)/0.08),transparent_70%)] pointer-events-none" />
 
-      {/* Spline 3D embed */}
-      <div className="absolute inset-0 z-0">
-        <iframe
-          src="https://my.spline.design/prismcoin-TFkW8LvFbdYhyu8hfADWKjSw/"
-          frameBorder="0"
-          width="100%"
-          height="100%"
-          className="pointer-events-auto"
-          title="3D Hero"
-        />
-      </div>
+      {/* 3D Scene */}
+      <Scene3D />
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <motion.div
@@ -61,8 +53,8 @@ const HeroSection = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-            className="font-display text-sm px-10 py-4 rounded-full bg-gradient-primary text-white tracking-wide relative overflow-hidden group"
-            style={{ boxShadow: "0 10px 40px -10px rgba(146,63,255,0.5)" }}
+            className="font-display text-sm px-10 py-4 rounded-full bg-gradient-primary text-primary-foreground tracking-wide relative overflow-hidden group"
+            style={{ boxShadow: "0 10px 40px -10px hsl(var(--primary) / 0.5)" }}
           >
             <div className="absolute inset-0 bg-white/15 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
             <span className="relative z-10">View My Work</span>
