@@ -33,7 +33,7 @@ const Index = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: isLoading ? 0 : 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="min-h-screen bg-background relative"
+        className="min-h-screen bg-background relative overflow-x-hidden w-full"
       >
         <ParticleBackground />
         <FloatingGlassElements />
