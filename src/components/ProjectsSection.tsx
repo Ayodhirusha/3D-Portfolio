@@ -71,7 +71,6 @@ const projects = [
 
 const ProjectsSection = () => {
   const [activeTab, setActiveTab] = useState("Development");
-
   const filteredProjects = projects.filter(project => project.category === activeTab);
 
   return (
@@ -98,7 +97,6 @@ const ProjectsSection = () => {
           </p>
         </motion.div>
 
-        {/* Tab Switcher */}
         <div className="flex justify-center mb-16">
           <div className="inline-flex p-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm shadow-xl flex-wrap justify-center">
             {["Development", "UI/UX Design", "Graphic Design"].map((tab) => (
@@ -106,9 +104,7 @@ const ProjectsSection = () => {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-6 sm:px-8 py-2.5 rounded-full font-display text-sm font-medium transition-all duration-500 relative whitespace-nowrap ${
-                  activeTab === tab 
-                    ? "text-white" 
-                    : "text-white/40 hover:text-white/60"
+                  activeTab === tab ? "text-white" : "text-white/40 hover:text-white/60"
                 }`}
               >
                 {activeTab === tab && (
@@ -124,15 +120,15 @@ const ProjectsSection = () => {
           </div>
         </div>
 
-        {/* Projects Grid */}
+        {/* Projects Grid with slide-in cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, i) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              initial={{ opacity: 0, y: 60, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.6, delay: i * 0.12, type: "spring", bounce: 0.2 }}
               whileHover={{ y: -10 }}
               className="group relative flex flex-col h-full rounded-3xl overflow-hidden transition-all duration-700"
               style={{
@@ -141,17 +137,14 @@ const ProjectsSection = () => {
                 border: "1px solid rgba(146,63,255,0.1)",
               }}
             >
-              {/* Image Container */}
               <div className={`relative overflow-hidden ${activeTab === 'Graphic Design' ? 'h-full aspect-square flex items-center justify-center bg-black/20' : 'h-64'}`}>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent z-10 opacity-60" />
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className={`w-full h-full transition-transform duration-700 group-hover:scale-110 ${activeTab === 'Graphic Design' ? 'object-contain' : 'object-cover'}`}
                 />
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20" />
-                
-                {/* Type Tag on Image */}
                 <div className="absolute top-6 left-6 z-30">
                   <span className="text-[10px] font-bold tracking-widest text-primary bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-primary/20 uppercase">
                     {project.type}
@@ -159,7 +152,6 @@ const ProjectsSection = () => {
                 </div>
               </div>
 
-              {/* Content - Hidden for Graphic Design */}
               {activeTab !== 'Graphic Design' && (
                 <div className="flex-1 p-8 flex flex-col relative z-30">
                   <h3 className="font-display text-2xl font-bold mb-4 text-white group-hover:text-primary transition-colors duration-500">
@@ -168,20 +160,13 @@ const ProjectsSection = () => {
                   <p className="font-body text-sm text-white/50 leading-relaxed mb-8 line-clamp-4 group-hover:text-white/70 transition-colors duration-500">
                     {project.description}
                   </p>
-
-                  {/* Tags */}
                   <div className="flex flex-wrap gap-2 mt-auto mb-8">
                     {project.tags.map((tag) => (
-                      <span 
-                        key={tag}
-                        className="px-3 py-1 rounded-lg bg-white/5 border border-white/5 text-[10px] text-white/40 font-medium"
-                      >
+                      <span key={tag} className="px-3 py-1 rounded-lg bg-white/5 border border-white/5 text-[10px] text-white/40 font-medium">
                         {tag}
                       </span>
                     ))}
                   </div>
-
-                  {/* Footer Link */}
                   <div className="flex items-center justify-between pt-6 border-t border-white/5">
                     <motion.button
                       whileHover={{ scale: 1.05 }}
@@ -196,7 +181,6 @@ const ProjectsSection = () => {
                 </div>
               )}
 
-              {/* Bottom Glow */}
               <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center" />
             </motion.div>
           ))}

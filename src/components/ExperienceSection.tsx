@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Building2, Calendar } from "lucide-react";
+import { useRef } from "react";
 
 const experiences = [
   {
@@ -59,10 +60,13 @@ const experiences = [
 ];
 
 const ExperienceSection = () => {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
   return (
-    <section id="experience" className="py-32 px-6 md:px-12 bg-card/30">
+    <section ref={ref} id="experience" className="py-32 px-6 md:px-12 bg-card/30">
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -79,43 +83,44 @@ const ExperienceSection = () => {
           </p>
         </motion.div>
 
-        {/* Timeline */}
         <div className="relative">
-          {/* Vertical Line */}
-          <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/30 to-transparent" />
+          {/* Animated vertical line that grows on scroll */}
+          <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-border/30">
+            <motion.div
+              className="w-full bg-gradient-to-b from-primary via-secondary to-accent"
+              style={{ height: lineHeight }}
+            />
+          </div>
 
-          {/* Experience Items */}
           <div className="space-y-12">
             {experiences.map((exp, i) => (
               <motion.div
                 key={`${exp.company}-${i}`}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
+                initial={{ opacity: 0, x: -60, filter: "blur(6px)" }}
+                whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.7, delay: i * 0.1, ease: [0.25, 0.4, 0.25, 1] }}
                 className="relative pl-8 md:pl-20"
               >
-                {/* Timeline Dot */}
-                <div className="absolute left-[-4px] md:left-6 top-6 w-2 h-2 rounded-full bg-primary ring-4 ring-background" />
-                
-                {/* Card */}
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.2 + i * 0.1, type: "spring" }}
+                  className="absolute left-[-4px] md:left-6 top-6 w-2 h-2 rounded-full bg-primary ring-4 ring-background"
+                />
+
                 <div className="group bg-card border border-border rounded-2xl p-6 md:p-8 hover:border-primary/50 hover:glow-box transition-all duration-500">
-                  {/* Header Row */}
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                     <div>
-                      {/* Role with Badge */}
-                      <div className="flex items-center gap-3 mb-2">
-                        <h3 className="font-display text-xl md:text-2xl font-semibold">
-                          {exp.role}
-                        </h3>
+                      <div className="flex items-center gap-3 mb-2 flex-wrap">
+                        <h3 className="font-display text-xl md:text-2xl font-semibold">{exp.role}</h3>
                         {exp.isCurrent && (
                           <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 rounded-full border border-emerald-500/30">
                             Current
                           </span>
                         )}
                       </div>
-                      
-                      {/* Company */}
                       <div className="flex items-center gap-2 text-muted-foreground">
                         <Building2 className="w-4 h-4" />
                         <span className="font-body text-sm">
@@ -125,28 +130,27 @@ const ExperienceSection = () => {
                         </span>
                       </div>
                     </div>
-
-                    {/* Date */}
                     <div className="flex items-center gap-2 text-muted-foreground shrink-0">
                       <Calendar className="w-4 h-4" />
                       <span className="font-body text-sm">{exp.period}</span>
                     </div>
                   </div>
 
-                  {/* Description */}
-                  <p className="font-body text-muted-foreground text-sm leading-relaxed mb-5">
-                    {exp.description}
-                  </p>
+                  <p className="font-body text-muted-foreground text-sm leading-relaxed mb-5">{exp.description}</p>
 
-                  {/* Achievements */}
                   <ul className="space-y-2">
                     {exp.achievements.map((achievement, j) => (
-                      <li key={j} className="flex items-start gap-3">
+                      <motion.li
+                        key={j}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: 0.3 + j * 0.08 }}
+                        className="flex items-start gap-3"
+                      >
                         <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mt-2 shrink-0" />
-                        <span className="font-body text-sm text-muted-foreground/80 leading-relaxed">
-                          {achievement}
-                        </span>
-                      </li>
+                        <span className="font-body text-sm text-muted-foreground/80 leading-relaxed">{achievement}</span>
+                      </motion.li>
                     ))}
                   </ul>
                 </div>

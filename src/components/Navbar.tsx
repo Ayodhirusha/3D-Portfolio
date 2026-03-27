@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -7,6 +7,18 @@ const navItems = ["About", "Experience", "Education", "Skills", "Projects", "Ser
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeItem, setActiveItem] = useState("About");
+  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const prev = scrollY.getPrevious() ?? 0;
+    if (latest > prev && latest > 200) {
+      setHidden(true);
+      setMobileOpen(false);
+    } else {
+      setHidden(false);
+    }
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,9 +49,7 @@ const Navbar = () => {
   const scrollTo = (id: string) => {
     setActiveItem(id);
     let elementId = id.toLowerCase();
-    
     if (id === "Skills") elementId = "techstack";
-    
     const element = document.getElementById(elementId);
     if (element) {
       const offset = 100;
@@ -47,49 +57,53 @@ const Navbar = () => {
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
       const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
     }
     setMobileOpen(false);
   };
 
   return (
-    <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-6">
+    <motion.div
+      className="fixed top-6 left-0 right-0 z-50 flex justify-center px-6"
+      animate={{ y: hidden ? -120 : 0, opacity: hidden ? 0 : 1 }}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+    >
       <motion.nav
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         className="relative flex items-center gap-6 px-6 py-3 bg-black/40 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl"
       >
-        {/* Logo */}
         <div className="flex items-center gap-4 border-r border-white/10 pr-6 mr-2">
           <span className="font-display text-lg font-bold tracking-tight text-gradient">
             Ayod.H
           </span>
         </div>
 
-        {/* Nav Items */}
         <ul className="hidden lg:flex items-center gap-6">
           {navItems.map((item) => (
             <li key={item}>
               <button
                 onClick={() => scrollTo(item)}
-                className={`font-display text-[11px] uppercase tracking-widest transition-all duration-300 ${
-                  activeItem === item 
-                    ? "text-white" 
+                className={`font-display text-[11px] uppercase tracking-widest transition-all duration-300 relative ${
+                  activeItem === item
+                    ? "text-white"
                     : "text-white/40 hover:text-white/80"
                 }`}
               >
                 {item}
+                {activeItem === item && (
+                  <motion.div
+                    layoutId="navIndicator"
+                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-primary rounded-full"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
               </button>
             </li>
           ))}
         </ul>
 
-        {/* Separator & Let's Talk */}
         <div className="hidden lg:flex items-center gap-6 border-l border-white/10 pl-6 ml-2">
           <button
             onClick={() => scrollTo("Contact")}
@@ -105,7 +119,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile menu */}
         {mobileOpen && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -127,7 +140,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </motion.nav>
-    </div>
+    </motion.div>
   );
 };
 

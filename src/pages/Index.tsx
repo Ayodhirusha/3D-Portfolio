@@ -9,11 +9,11 @@ import TechStackSection from "@/components/TechStackSection";
 import EducationSection from "@/components/EducationSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ContactSection from "@/components/ContactSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import ParticleBackground from "@/components/ParticleBackground";
 import FloatingGlassElements from "@/components/FloatingGlassElements";
 import LoadingScreen from "@/components/LoadingScreen";
+import CustomCursor from "@/components/CustomCursor";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +24,7 @@ const Index = () => {
 
   return (
     <>
+      <CustomCursor />
       <AnimatePresence>
         {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
       </AnimatePresence>
