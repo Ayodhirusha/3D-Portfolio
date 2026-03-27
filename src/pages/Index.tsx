@@ -39,12 +39,11 @@ const Index = () => {
         <Navbar />
         <HeroSection />
         <AboutSection />
-        <TechStackSection />
-        <ServicesSection />
-        <ProjectsSection />
-        <EducationSection />
         <ExperienceSection />
-        <TestimonialsSection />
+        <EducationSection />
+        <TechStackSection />
+        <ProjectsSection />
+        <ServicesSection />
         <ContactSection />
         <Footer />
       </motion.div>

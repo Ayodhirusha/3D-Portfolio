@@ -19,12 +19,12 @@ const HeroSection = () => {
         />
       </div>
 
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <div className="relative z-10 text-left px-6 md:px-12 lg:px-24 max-w-7xl mx-auto w-full">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="inline-block mb-6 px-6 py-2 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm"
+          className="inline-block mb-8 px-6 py-2 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm"
         >
           <span className="font-body text-xs uppercase tracking-[0.3em] text-primary">
             Software Engineer Intern & UI/UX Designer
@@ -35,18 +35,18 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-8"
+          className="font-display text-6xl md:text-8xl lg:text-9xl font-bold leading-[0.95] tracking-tight mb-8"
         >
-          Hi, I'm Ayod —
+          Hi, I'm <span className="text-white">Ayod</span> —
           <br />
           <span className="text-gradient">Full Stack Developer</span>
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
-          className="font-body text-lg text-muted-foreground max-w-xl mx-auto mb-10"
+          className="font-body text-lg md:text-xl text-muted-foreground max-w-2xl mb-12 leading-relaxed"
         >
           I am a Software Engineering Graduate currently enrolled in the BSc (Hons) Software Engineering program at the University of Plymouth (UK).
         </motion.p>
@@ -55,14 +55,13 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-6 justify-start items-center"
         >
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-            className="font-display text-sm px-10 py-4 rounded-full bg-gradient-primary text-primary-foreground tracking-wide relative overflow-hidden group"
-            style={{ boxShadow: "0 10px 40px -10px hsl(var(--primary) / 0.5)" }}
+            className="w-full sm:w-auto font-display text-sm px-10 py-5 rounded-full bg-gradient-primary text-white tracking-wide relative overflow-hidden group shadow-[0_10px_40px_-10px_rgba(146,63,255,0.5)]"
           >
             <div className="absolute inset-0 bg-white/15 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
             <span className="relative z-10">View My Work</span>
@@ -72,7 +71,7 @@ const HeroSection = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            className="font-display text-sm px-10 py-4 rounded-full border border-primary/30 text-foreground hover:bg-primary/10 transition-all tracking-wide"
+            className="w-full sm:w-auto font-display text-sm px-10 py-5 rounded-full border border-white/10 text-white hover:bg-white/5 transition-all tracking-wide backdrop-blur-sm"
           >
             Let's Talk
           </motion.button>

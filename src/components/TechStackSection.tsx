@@ -28,6 +28,7 @@ const TechStackSection = () => {
 
   return (
     <section id="skills" className="relative py-32 px-6 md:px-12 overflow-hidden">
+      <div id="techstack" className="absolute top-0" />
       {/* Spotlight */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.06),transparent_70%)] pointer-events-none" />
 
