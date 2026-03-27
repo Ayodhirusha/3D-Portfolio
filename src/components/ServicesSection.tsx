@@ -30,7 +30,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="relative py-32 px-6 md:px-12 overflow-hidden">
+    <section id="services" className="relative py-24 px-6 md:px-12 overflow-hidden">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(88,63,255,0.06),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">

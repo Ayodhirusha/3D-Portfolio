@@ -8,7 +8,7 @@ const ContactSection = () => {
   const [focused, setFocused] = useState<string | null>(null);
 
   return (
-    <section id="contact" className="relative py-32 px-6 md:px-12 overflow-hidden">
+    <section id="contact" className="relative py-24 px-6 md:px-12 overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.08),transparent_60%)] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(125,191,255,0.06),transparent_60%)] pointer-events-none" />
 

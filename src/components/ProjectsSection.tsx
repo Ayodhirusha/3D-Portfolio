@@ -74,7 +74,7 @@ const ProjectsSection = () => {
   const filteredProjects = projects.filter(project => project.category === activeTab);
 
   return (
-    <section id="projects" className="relative py-32 px-6 md:px-12 overflow-hidden">
+    <section id="projects" className="relative py-24 px-6 md:px-12 overflow-hidden">
       <div id="gallery" className="absolute top-0" />
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.06),transparent_70%)] pointer-events-none" />
 

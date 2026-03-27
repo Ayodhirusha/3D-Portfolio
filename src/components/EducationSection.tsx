@@ -43,7 +43,7 @@ const qualifications = [
 
 const EducationSection = () => {
   return (
-    <section id="education" className="py-32 px-6 md:px-12">
+    <section id="education" className="py-24 px-6 md:px-12">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <motion.div

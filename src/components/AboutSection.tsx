@@ -16,7 +16,7 @@ const AboutSection = () => {
   const parallaxY = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
   return (
-    <section ref={ref} id="about" className="relative py-32 px-6 md:px-12 overflow-hidden">
+    <section ref={ref} id="about" className="relative py-24 px-6 md:px-12 overflow-hidden">
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(88,63,255,0.08),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">

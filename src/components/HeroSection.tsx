@@ -97,10 +97,8 @@ const HeroSection = () => {
           <div className="absolute inset-0 z-[1] bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none z-[2]" />
 
-
-
           {/* Text Content Overlay */}
-          <div className="relative z-10 w-full px-6 md:px-12 h-[100vh] flex flex-col justify-center items-start text-left mt-24 md:mt-32">
+          <div className="relative z-10 w-full px-6 md:px-12 h-[100vh] flex flex-col justify-center items-start text-left mt-24 md:mt-32 pointer-events-none">
             <motion.h1
               initial="hidden"
               whileInView="visible"
