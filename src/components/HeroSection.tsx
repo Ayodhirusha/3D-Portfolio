@@ -12,9 +12,9 @@ const HeroSection = () => {
     offset: ["start start", "end end"],
   });
 
-  // Zoom in deeply (from 1 to 6) and fade out
-  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 6]);
-  const bgOpacity = useTransform(scrollYProgress, [0.6, 1], [1, 0]);
+  // Zoom in deeply (from 1 to 5) and fade out
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 5]);
+  const bgOpacity = useTransform(scrollYProgress, [0.5, 0.9], [1, 0]);
   const indicatorOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   const letterVariants = {
@@ -56,9 +56,9 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative flex flex-col w-full bg-background">
+    <section id="home" className="relative flex flex-col w-full bg-background mb-[-15vh]">
       {/* 3D Module Container with Sticky Zoom Effect */}
-      <div ref={containerRef} className="relative h-[200vh] w-full">
+      <div ref={containerRef} className="relative h-[180vh] w-full">
         <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
           {/* Spotlight effects */}
           <div className="absolute top-[-200px] left-[-100px] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,hsl(var(--primary)/0.12),transparent_70%)] pointer-events-none" />
