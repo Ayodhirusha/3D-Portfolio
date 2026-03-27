@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 
-// Tech stack icons from public folder
 const skills = [
   { name: "Tech 1", image: "/6.png" },
   { name: "Tech 2", image: "/15.png" },
@@ -23,13 +22,11 @@ const skills = [
 ];
 
 const TechStackSection = () => {
-  // Triple the items for smoother seamless infinite scroll
   const duplicatedSkills = [...skills, ...skills, ...skills];
 
   return (
     <section id="skills" className="relative py-32 px-6 md:px-12 overflow-hidden">
       <div id="techstack" className="absolute top-0" />
-      {/* Spotlight */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.06),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto">
@@ -46,9 +43,51 @@ const TechStackSection = () => {
           </h2>
         </motion.div>
 
+        {/* Progress bars for key skills */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20 max-w-4xl mx-auto"
+        >
+          {[
+            { name: "React / Next.js", level: 90 },
+            { name: "TypeScript / JavaScript", level: 85 },
+            { name: "UI/UX Design (Figma)", level: 88 },
+            { name: "Node.js / Express", level: 75 },
+            { name: "Flutter / Dart", level: 70 },
+            { name: "Database (SQL / MongoDB)", level: 72 },
+          ].map((skill, i) => (
+            <motion.div
+              key={skill.name}
+              initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="space-y-2"
+            >
+              <div className="flex justify-between items-center">
+                <span className="font-display text-sm font-medium text-foreground">{skill.name}</span>
+                <span className="font-display text-xs text-primary">{skill.level}%</span>
+              </div>
+              <div className="h-2 bg-muted rounded-full overflow-hidden">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${skill.level}%` }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, delay: 0.3 + i * 0.1, ease: [0.25, 0.4, 0.25, 1] }}
+                  className="h-full bg-gradient-primary rounded-full relative"
+                >
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white shadow-[0_0_10px_rgba(146,63,255,0.6)]" />
+                </motion.div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
         {/* Carousel Container */}
         <div className="relative">
-          {/* Scrolling Track - no masks to avoid black lines */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -61,13 +100,8 @@ const TechStackSection = () => {
                 key={`${skill.name}-${i}`}
                 className="group flex-shrink-0 flex flex-col items-center gap-3 cursor-pointer px-2"
               >
-                {/* Icon Container */}
                 <div className="relative">
-                  <div
-                    className="tech-icon p-6 rounded-2xl bg-[#12121a] border border-white/5 
-                      hover:border-primary/40 hover:-translate-y-2
-                      transition-all duration-500 shadow-2xl"
-                  >
+                  <div className="tech-icon p-6 rounded-2xl bg-[#12121a] border border-white/5 hover:border-primary/40 hover:-translate-y-2 transition-all duration-500 shadow-2xl">
                     <img
                       src={skill.image}
                       alt={skill.name}
@@ -75,11 +109,7 @@ const TechStackSection = () => {
                     />
                   </div>
                 </div>
-
-                {/* Tech Name */}
-                <p className="font-body text-xs text-muted-foreground group-hover:text-white transition-all">
-                  {skill.name}
-                </p>
+                <p className="font-body text-xs text-muted-foreground group-hover:text-white transition-all">{skill.name}</p>
               </div>
             ))}
           </motion.div>
@@ -88,31 +118,20 @@ const TechStackSection = () => {
 
       <style>{`
         @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
-
         .animate-scroll {
           animation: scroll 25s linear infinite;
         }
-
-        /* Grayscale effect - images start grayscale */
         .tech-icon img {
           filter: grayscale(100%) brightness(0.6);
           transition: all 0.5s ease-in-out;
         }
-
-        /* On hover, image becomes colorful and bright */
         .group:hover .tech-icon img {
           filter: grayscale(0%) brightness(1);
           transform: scale(1.1);
         }
-
-        /* 3D pop effect on hover */
         .tech-icon:hover {
           transform: translateY(-8px);
           box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(146,63,255,0.2);

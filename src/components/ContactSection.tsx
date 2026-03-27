@@ -9,14 +9,13 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="relative py-32 px-6 md:px-12 overflow-hidden">
-      {/* Large spotlight */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.08),transparent_60%)] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(125,191,255,0.06),transparent_60%)] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 60, filter: "blur(10px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
@@ -33,10 +32,9 @@ const ContactSection = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-8">
-          {/* Contact Info Cards */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -50, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
             className="lg:col-span-2 space-y-6"
@@ -49,10 +47,11 @@ const ContactSection = () => {
               <motion.a
                 key={item.label}
                 href={item.href}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
+                transition={{ duration: 0.5, delay: 0.3 + i * 0.12 }}
+                whileHover={{ x: 8 }}
                 className="group flex items-center gap-5 p-5 rounded-2xl glass-card hover:border-primary/30 hover:glow-box transition-all duration-500"
               >
                 <div className="w-14 h-14 rounded-xl bg-gradient-primary-subtle flex items-center justify-center group-hover:glow-box transition-shadow duration-500 flex-shrink-0">
@@ -65,12 +64,11 @@ const ContactSection = () => {
               </motion.a>
             ))}
 
-            {/* Social Icons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
               className="pt-4"
             >
               <p className="font-body text-xs text-muted-foreground uppercase tracking-wider mb-4">Find me on</p>
@@ -87,11 +85,9 @@ const ContactSection = () => {
                     rel="noopener noreferrer"
                     className="group/icon relative w-12 h-12 rounded-full flex items-center justify-center overflow-hidden transition-all duration-500"
                   >
-                    {/* Gradient bg on hover */}
                     <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover/icon:opacity-100 transition-opacity duration-500 rounded-full" />
                     <div className="absolute inset-0 rounded-full border border-border group-hover/icon:border-transparent transition-colors duration-500" />
                     <link.icon className="w-5 h-5 text-muted-foreground group-hover/icon:text-white relative z-10 transition-colors duration-300" />
-                    {/* Glow */}
                     <div className="absolute inset-0 rounded-full opacity-0 group-hover/icon:opacity-100 transition-opacity duration-500 glow-box" />
                   </a>
                 ))}
@@ -99,15 +95,13 @@ const ContactSection = () => {
             </motion.div>
           </motion.div>
 
-          {/* Contact Form - Dark glassmorphic card */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 50, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:col-span-3 relative"
           >
-            {/* Decorative corner glow */}
             <div className="absolute -top-4 -right-4 w-32 h-32 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -119,7 +113,6 @@ const ContactSection = () => {
                 boxShadow: "0 25px 80px -20px rgba(146,63,255,0.15), inset 0 1px 0 rgba(255,255,255,0.05)",
               }}
             >
-              {/* Form header */}
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-3 h-3 rounded-full bg-red-500/80" />
                 <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
@@ -160,9 +153,7 @@ const ContactSection = () => {
               <div className="relative group">
                 <label
                   className={`absolute left-4 font-body text-xs transition-all duration-300 pointer-events-none z-10 ${
-                    focused === "subject" || formData.subject
-                      ? "top-2 text-primary"
-                      : "top-4 text-muted-foreground"
+                    focused === "subject" || formData.subject ? "top-2 text-primary" : "top-4 text-muted-foreground"
                   }`}
                 >
                   Subject
@@ -183,9 +174,7 @@ const ContactSection = () => {
               <div className="relative group">
                 <label
                   className={`absolute left-4 font-body text-xs transition-all duration-300 pointer-events-none z-10 ${
-                    focused === "message" || formData.message
-                      ? "top-2 text-primary"
-                      : "top-4 text-muted-foreground"
+                    focused === "message" || formData.message ? "top-2 text-primary" : "top-4 text-muted-foreground"
                   }`}
                 >
                   Your Message
@@ -203,15 +192,12 @@ const ContactSection = () => {
                 />
               </div>
 
-              {/* Submit button */}
               <motion.button
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full font-display text-sm py-4 rounded-xl bg-gradient-primary text-white hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-3 relative overflow-hidden group"
-                style={{
-                  boxShadow: "0 10px 40px -10px rgba(146,63,255,0.4)",
-                }}
+                style={{ boxShadow: "0 10px 40px -10px rgba(146,63,255,0.4)" }}
               >
                 <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
                 <Send className="w-4 h-4 relative z-10" />
