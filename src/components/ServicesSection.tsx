@@ -30,11 +30,17 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="relative py-24 px-6 md:px-12 overflow-hidden">
-      <div className="absolute inset-0 -z-10 mx-4 md:mx-8 rounded-3xl" style={{ background: 'linear-gradient(135deg, rgba(30,58,138,0.12), rgba(15,23,42,0.8), rgba(37,99,235,0.06))', border: '1px solid rgba(59,130,246,0.08)' }} />
+    <section id="services" className="relative py-24 px-4 md:px-8 overflow-hidden">
+      <div className="max-w-6xl mx-auto relative rounded-3xl px-6 md:px-12 py-16" style={{
+        background: 'linear-gradient(145deg, rgba(15,23,42,0.95), rgba(10,15,30,0.9))',
+        border: '1px solid rgba(59,130,246,0.15)',
+        boxShadow: '0 0 60px rgba(37,99,235,0.08), inset 0 1px 0 rgba(255,255,255,0.03)',
+      }}>
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(88,63,255,0.06),transparent_70%)] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto">
+      <div>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -81,6 +87,7 @@ const ServicesSection = () => {
             </motion.div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );
