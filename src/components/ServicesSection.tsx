@@ -40,7 +40,7 @@ const ServicesSection = () => {
         <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(88,63,255,0.06),transparent_70%)] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto">
+      <div>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -87,6 +87,7 @@ const ServicesSection = () => {
             </motion.div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

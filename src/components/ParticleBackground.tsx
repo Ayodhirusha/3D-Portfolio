@@ -7,22 +7,10 @@ interface Particle {
   vy: number;
   size: number;
   opacity: number;
-  color: string;
-  type: "dot" | "code" | "ring";
-  char?: string;
+  glowSize: number;
   pulseSpeed: number;
   pulsePhase: number;
 }
-
-const COLORS = [
-  "rgba(30, 64, 175,",    // deep blue
-  "rgba(59, 130, 246,",   // blue
-  "rgba(96, 165, 250,",   // light blue
-  "rgba(37, 99, 235,",    // vivid blue
-  "rgba(56, 89, 200,",    // mid blue
-];
-
-const CODE_CHARS = ["{", "}", "<", ">", "/", ";", "=", "(", ")", "[]", "//", "=>", "< />", "{ }", "&&", "||", "01", "10"];
 
 const ParticleBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -32,23 +20,19 @@ const ParticleBackground = () => {
   const time = useRef(0);
 
   const createParticles = useCallback((width: number, height: number) => {
-    const count = Math.min(300, Math.floor((width * height) / 4000));
+    const count = Math.min(180, Math.floor((width * height) / 6000));
     const result: Particle[] = [];
 
     for (let i = 0; i < count; i++) {
-      const rand = Math.random();
-      const type = rand > 0.65 ? "code" : rand > 0.1 ? "dot" : "ring";
       result.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.25 - 0.15,
-        size: type === "dot" ? Math.random() * 3 + 1 : type === "ring" ? Math.random() * 8 + 6 : Math.random() * 11 + 9,
-        opacity: Math.random() * 0.5 + 0.15,
-        color: COLORS[Math.floor(Math.random() * COLORS.length)],
-        type,
-        char: type === "code" ? CODE_CHARS[Math.floor(Math.random() * CODE_CHARS.length)] : undefined,
-        pulseSpeed: Math.random() * 0.02 + 0.005,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.2 - 0.1,
+        size: Math.random() * 2.5 + 1,
+        opacity: Math.random() * 0.6 + 0.2,
+        glowSize: Math.random() * 15 + 8,
+        pulseSpeed: Math.random() * 0.015 + 0.005,
         pulsePhase: Math.random() * Math.PI * 2,
       });
     }
@@ -88,42 +72,43 @@ const ParticleBackground = () => {
         if (p.y < -50) p.y = canvas.height + 50;
         if (p.y > canvas.height + 50) p.y = -50;
 
-        const pulse = Math.sin(time.current * p.pulseSpeed + p.pulsePhase) * 0.3 + 0.7;
+        const pulse = Math.sin(time.current * p.pulseSpeed + p.pulsePhase) * 0.35 + 0.65;
         const currentOpacity = p.opacity * pulse;
 
+        // Mouse interaction - gentle push
         const dx = p.x - mouse.current.x;
         const dy = p.y - mouse.current.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 200) {
-          const force = (200 - dist) / 200;
-          p.x += (dx / dist) * force * 1.2;
-          p.y += (dy / dist) * force * 1.2;
+        if (dist < 150) {
+          const force = (150 - dist) / 150;
+          p.x += (dx / dist) * force * 0.8;
+          p.y += (dy / dist) * force * 0.8;
         }
 
-        if (p.type === "dot") {
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-          ctx.fillStyle = `${p.color} ${currentOpacity})`;
-          ctx.fill();
+        // Outer glow
+        const glowGradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.glowSize);
+        glowGradient.addColorStop(0, `rgba(59, 130, 246, ${currentOpacity * 0.25})`);
+        glowGradient.addColorStop(0.4, `rgba(37, 99, 235, ${currentOpacity * 0.1})`);
+        glowGradient.addColorStop(1, `rgba(37, 99, 235, 0)`);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.glowSize, 0, Math.PI * 2);
+        ctx.fillStyle = glowGradient;
+        ctx.fill();
 
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.size * 4, 0, Math.PI * 2);
-          ctx.fillStyle = `${p.color} ${currentOpacity * 0.12})`;
-          ctx.fill();
-        } else if (p.type === "ring") {
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-          ctx.strokeStyle = `${p.color} ${currentOpacity * 0.4})`;
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        } else {
-          ctx.font = `${p.size}px 'Space Grotesk', monospace`;
-          ctx.fillStyle = `${p.color} ${currentOpacity * 0.5})`;
-          ctx.fillText(p.char || "{", p.x, p.y);
-        }
+        // Core dot
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(96, 165, 250, ${currentOpacity})`;
+        ctx.fill();
+
+        // Bright center
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size * 0.4, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(191, 219, 254, ${currentOpacity * 0.8})`;
+        ctx.fill();
       });
 
-      // Connection lines - blue themed
+      // Connection lines between nearby particles
       for (let i = 0; i < particles.current.length; i++) {
         for (let j = i + 1; j < particles.current.length; j++) {
           const a = particles.current[i];
@@ -131,12 +116,12 @@ const ParticleBackground = () => {
           const dx = a.x - b.x;
           const dy = a.y - b.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 140) {
+          if (dist < 120) {
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = `rgba(59, 130, 246, ${0.08 * (1 - dist / 140)})`;
-            ctx.lineWidth = 0.6;
+            ctx.strokeStyle = `rgba(59, 130, 246, ${0.06 * (1 - dist / 120)})`;
+            ctx.lineWidth = 0.5;
             ctx.stroke();
           }
         }
@@ -158,7 +143,7 @@ const ParticleBackground = () => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 z-0 pointer-events-none"
-      style={{ opacity: 0.85 }}
+      style={{ opacity: 0.9 }}
     />
   );
 };

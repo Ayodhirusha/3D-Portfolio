@@ -36,7 +36,7 @@ const TechStackSection = () => {
       <div id="techstack" className="absolute top-0" />
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.06),transparent_70%)] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto">
+      <div>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -144,6 +144,8 @@ const TechStackSection = () => {
           box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(146,63,255,0.2);
         }
       `}</style>
+      </div>
+      </div>
     </section>
   );
 };
