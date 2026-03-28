@@ -33,9 +33,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-white/[0.01] backdrop-blur-2xl pt-16 pb-8 px-6 overflow-hidden border-t border-white/10">
-      {/* Background Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-primary/10 blur-[100px] rounded-full pointer-events-none" />
+    <footer className="relative bg-white/[0.03] backdrop-blur-xl pt-16 pb-8 px-6 overflow-hidden border-t border-white/10">
+      {/* White Glow Effect */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[200px] bg-white/5 blur-[80px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10 flex flex-col items-center">
         {/* Large Centered Name - Reduced Size */}
@@ -46,13 +46,13 @@ const Footer = () => {
           transition={{ duration: 0.8 }}
           className="mb-8 text-center w-full"
         >
-          <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/20 uppercase">
+          <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/30 uppercase">
             AYOD HIRUSHA
           </h1>
-          <div className="h-[1px] w-full max-w-2xl mx-auto bg-gradient-to-r from-transparent via-white/10 to-transparent mt-4" />
+          <div className="h-[1px] w-full max-w-2xl mx-auto bg-gradient-to-r from-transparent via-white/20 to-transparent mt-4" />
         </motion.div>
 
-        {/* Social Icons - Smaller and closer */}
+        {/* Social Icons - White Glass Effect */}
         <div className="flex items-center gap-4 mb-8">
           {socialLinks.map((social, i) => (
             <motion.a
@@ -60,8 +60,8 @@ const Footer = () => {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.15)", borderColor: "rgba(255,255,255,0.4)" }}
-              className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:text-white transition-all duration-300 bg-white/[0.05] backdrop-blur-xl shadow-2xl"
+              whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.2)", borderColor: "rgba(255,255,255,0.5)" }}
+              className="w-12 h-12 rounded-full border border-white/15 flex items-center justify-center text-white/80 hover:text-white transition-all duration-300 bg-white/[0.08] backdrop-blur-lg shadow-lg"
             >
               <social.icon className="w-5 h-5" />
             </motion.a>
