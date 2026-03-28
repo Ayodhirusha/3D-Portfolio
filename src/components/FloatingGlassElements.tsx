@@ -9,8 +9,8 @@ const FloatingGlassElements = () => {
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-[8%] right-[3%] w-[350px] h-[350px] rounded-full"
         style={{
-          background: "radial-gradient(circle at 30% 30%, rgba(146, 63, 255, 0.1), rgba(125, 191, 255, 0.04), transparent 70%)",
-          border: "1px solid rgba(146, 63, 255, 0.08)",
+          background: "radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.04), transparent 70%)",
+          border: "1px solid rgba(59, 130, 246, 0.08)",
           backdropFilter: "blur(3px)",
         }}
       />
@@ -21,8 +21,8 @@ const FloatingGlassElements = () => {
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 3 }}
         className="absolute top-[55%] left-[-5%] w-[400px] h-[400px] rounded-full"
         style={{
-          background: "radial-gradient(circle at 60% 40%, rgba(88, 63, 255, 0.07), transparent 65%)",
-          border: "1px solid rgba(88, 63, 255, 0.05)",
+          background: "radial-gradient(circle at 60% 40%, rgba(30, 64, 175, 0.07), transparent 65%)",
+          border: "1px solid rgba(30, 64, 175, 0.05)",
           backdropFilter: "blur(2px)",
         }}
       />
@@ -33,8 +33,8 @@ const FloatingGlassElements = () => {
         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-[35%] left-[5%] w-[140px] h-[140px]"
         style={{
-          background: "linear-gradient(135deg, rgba(88, 63, 255, 0.08), rgba(125, 191, 255, 0.05))",
-          border: "1px solid rgba(88, 63, 255, 0.1)",
+          background: "linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(96, 165, 250, 0.05))",
+          border: "1px solid rgba(37, 99, 235, 0.1)",
           borderRadius: "24px",
           transform: "rotate(45deg)",
           backdropFilter: "blur(3px)",
@@ -47,8 +47,8 @@ const FloatingGlassElements = () => {
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         className="absolute bottom-[18%] left-[12%] w-[100px] h-[100px] rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(125, 191, 255, 0.1), transparent 70%)",
-          border: "1px solid rgba(125, 191, 255, 0.1)",
+          background: "radial-gradient(circle, rgba(96, 165, 250, 0.1), transparent 70%)",
+          border: "1px solid rgba(96, 165, 250, 0.1)",
           backdropFilter: "blur(2px)",
         }}
       />
@@ -59,7 +59,7 @@ const FloatingGlassElements = () => {
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-[20%] right-[10%] w-[1px] h-[250px]"
         style={{
-          background: "linear-gradient(to bottom, transparent, rgba(146, 63, 255, 0.4), rgba(125, 191, 255, 0.3), transparent)",
+          background: "linear-gradient(to bottom, transparent, rgba(59, 130, 246, 0.4), rgba(96, 165, 250, 0.3), transparent)",
         }}
       />
 
@@ -69,7 +69,7 @@ const FloatingGlassElements = () => {
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 4 }}
         className="absolute top-[60%] left-[8%] w-[1px] h-[200px]"
         style={{
-          background: "linear-gradient(to bottom, transparent, rgba(88, 63, 255, 0.3), rgba(146, 63, 255, 0.2), transparent)",
+          background: "linear-gradient(to bottom, transparent, rgba(30, 64, 175, 0.3), rgba(59, 130, 246, 0.2), transparent)",
         }}
       />
 
@@ -79,7 +79,7 @@ const FloatingGlassElements = () => {
         transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
         className="absolute bottom-[8%] right-[6%] w-[200px] h-[200px] rounded-full"
         style={{
-          border: "1px solid rgba(146, 63, 255, 0.08)",
+          border: "1px solid rgba(59, 130, 246, 0.08)",
           background: "transparent",
         }}
       />
@@ -90,12 +90,12 @@ const FloatingGlassElements = () => {
         transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
         className="absolute top-[70%] right-[15%] w-[120px] h-[120px] rounded-full"
         style={{
-          border: "1px solid rgba(125, 191, 255, 0.06)",
+          border: "1px solid rgba(96, 165, 250, 0.06)",
           background: "transparent",
         }}
       />
 
-      {/* Floating small dots */}
+      {/* Floating small dots - blue themed */}
       {[
         { top: "15%", left: "20%", delay: 0, size: 6 },
         { top: "45%", left: "85%", delay: 2, size: 4 },
@@ -113,8 +113,8 @@ const FloatingGlassElements = () => {
             left: dot.left,
             width: dot.size,
             height: dot.size,
-            background: "rgba(146, 63, 255, 0.6)",
-            boxShadow: "0 0 12px rgba(146, 63, 255, 0.4)",
+            background: "rgba(59, 130, 246, 0.6)",
+            boxShadow: "0 0 12px rgba(59, 130, 246, 0.4)",
           }}
         />
       ))}
