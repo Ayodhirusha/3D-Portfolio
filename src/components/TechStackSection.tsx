@@ -26,6 +26,7 @@ const TechStackSection = () => {
 
   return (
     <section id="skills" className="relative py-24 px-6 md:px-12 overflow-hidden">
+      <div className="absolute inset-0 -z-10 mx-4 md:mx-8 rounded-3xl" style={{ background: 'linear-gradient(135deg, rgba(30,58,138,0.12), rgba(15,23,42,0.8), rgba(37,99,235,0.06))', border: '1px solid rgba(59,130,246,0.08)' }} />
       <div id="techstack" className="absolute top-0" />
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.06),transparent_70%)] pointer-events-none" />
 

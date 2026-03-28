@@ -65,7 +65,8 @@ const ExperienceSection = () => {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section ref={ref} id="experience" className="py-24 px-6 md:px-12 bg-card/30">
+    <section ref={ref} id="experience" className="py-24 px-6 md:px-12">
+      <div className="absolute inset-0 -z-10 mx-4 md:mx-8 rounded-3xl" style={{ background: 'linear-gradient(135deg, rgba(30,58,138,0.12), rgba(15,23,42,0.8), rgba(37,99,235,0.06))', border: '1px solid rgba(59,130,246,0.08)' }} />
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

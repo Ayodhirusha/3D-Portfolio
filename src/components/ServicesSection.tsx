@@ -31,6 +31,7 @@ const services = [
 const ServicesSection = () => {
   return (
     <section id="services" className="relative py-24 px-6 md:px-12 overflow-hidden">
+      <div className="absolute inset-0 -z-10 mx-4 md:mx-8 rounded-3xl" style={{ background: 'linear-gradient(135deg, rgba(30,58,138,0.12), rgba(15,23,42,0.8), rgba(37,99,235,0.06))', border: '1px solid rgba(59,130,246,0.08)' }} />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(88,63,255,0.06),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">

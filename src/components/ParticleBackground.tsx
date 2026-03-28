@@ -18,8 +18,8 @@ const COLORS = [
   "rgba(30, 64, 175,",    // deep blue
   "rgba(59, 130, 246,",   // blue
   "rgba(96, 165, 250,",   // light blue
-  "rgba(125, 191, 255,",  // sky blue
   "rgba(37, 99, 235,",    // vivid blue
+  "rgba(56, 89, 200,",    // mid blue
 ];
 
 const CODE_CHARS = ["{", "}", "<", ">", "/", ";", "=", "(", ")", "[]", "//", "=>", "< />", "{ }", "&&", "||", "01", "10"];
@@ -32,7 +32,7 @@ const ParticleBackground = () => {
   const time = useRef(0);
 
   const createParticles = useCallback((width: number, height: number) => {
-    const count = Math.min(250, Math.floor((width * height) / 5000));
+    const count = Math.min(300, Math.floor((width * height) / 4000));
     const result: Particle[] = [];
 
     for (let i = 0; i < count; i++) {

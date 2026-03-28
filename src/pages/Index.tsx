@@ -33,10 +33,16 @@ const Index = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="min-h-screen bg-background relative overflow-x-hidden w-full"
       >
-        {/* Deep Blue Spotlight Background */}
+        {/* Deep Dark Background with Blue Spotlight Patches */}
         <div className="fixed inset-0 z-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.1),transparent_50%),radial-gradient(circle_at_50%_100%,rgba(37,99,235,0.05),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[rgba(2,6,23,0.3)]" />
+          {/* Top spotlight */}
+          <div className="absolute top-[-10%] left-[20%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(30,58,138,0.15),transparent_70%)]" />
+          {/* Center-right spotlight */}
+          <div className="absolute top-[30%] right-[-5%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(37,99,235,0.08),transparent_65%)]" />
+          {/* Bottom-left spotlight */}
+          <div className="absolute bottom-[10%] left-[-5%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(30,58,138,0.12),transparent_65%)]" />
+          {/* Mid subtle glow */}
+          <div className="absolute top-[60%] left-[40%] w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.06),transparent_70%)]" />
         </div>
         <Navbar />
         <HeroSection />
