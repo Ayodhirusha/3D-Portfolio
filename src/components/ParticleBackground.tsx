@@ -15,10 +15,11 @@ interface Particle {
 }
 
 const COLORS = [
-  "rgba(146, 63, 255,",
-  "rgba(88, 63, 255,",
-  "rgba(125, 191, 255,",
-  "rgba(180, 120, 255,",
+  "rgba(30, 64, 175,",    // deep blue
+  "rgba(59, 130, 246,",   // blue
+  "rgba(96, 165, 250,",   // light blue
+  "rgba(125, 191, 255,",  // sky blue
+  "rgba(37, 99, 235,",    // vivid blue
 ];
 
 const CODE_CHARS = ["{", "}", "<", ">", "/", ";", "=", "(", ")", "[]", "//", "=>", "< />", "{ }", "&&", "||", "01", "10"];
@@ -31,7 +32,7 @@ const ParticleBackground = () => {
   const time = useRef(0);
 
   const createParticles = useCallback((width: number, height: number) => {
-    const count = Math.min(200, Math.floor((width * height) / 6000));
+    const count = Math.min(250, Math.floor((width * height) / 5000));
     const result: Particle[] = [];
 
     for (let i = 0; i < count; i++) {
@@ -87,11 +88,9 @@ const ParticleBackground = () => {
         if (p.y < -50) p.y = canvas.height + 50;
         if (p.y > canvas.height + 50) p.y = -50;
 
-        // Pulsing opacity
         const pulse = Math.sin(time.current * p.pulseSpeed + p.pulsePhase) * 0.3 + 0.7;
         const currentOpacity = p.opacity * pulse;
 
-        // Mouse interaction
         const dx = p.x - mouse.current.x;
         const dy = p.y - mouse.current.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
@@ -102,13 +101,11 @@ const ParticleBackground = () => {
         }
 
         if (p.type === "dot") {
-          // Core dot
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
           ctx.fillStyle = `${p.color} ${currentOpacity})`;
           ctx.fill();
 
-          // Outer glow
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.size * 4, 0, Math.PI * 2);
           ctx.fillStyle = `${p.color} ${currentOpacity * 0.12})`;
@@ -126,7 +123,7 @@ const ParticleBackground = () => {
         }
       });
 
-      // Connection lines
+      // Connection lines - blue themed
       for (let i = 0; i < particles.current.length; i++) {
         for (let j = i + 1; j < particles.current.length; j++) {
           const a = particles.current[i];
@@ -138,7 +135,7 @@ const ParticleBackground = () => {
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = `rgba(146, 63, 255, ${0.08 * (1 - dist / 140)})`;
+            ctx.strokeStyle = `rgba(59, 130, 246, ${0.08 * (1 - dist / 140)})`;
             ctx.lineWidth = 0.6;
             ctx.stroke();
           }
