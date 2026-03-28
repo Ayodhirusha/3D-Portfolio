@@ -122,6 +122,7 @@ const TechStackSection = () => {
           </motion.div>
         </div>
       </div>
+      </div>
 
       <style>{`
         @keyframes scroll {
@@ -144,8 +145,6 @@ const TechStackSection = () => {
           box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(146,63,255,0.2);
         }
       `}</style>
-      </div>
-      </div>
     </section>
   );
 };
