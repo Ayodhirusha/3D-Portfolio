@@ -20,7 +20,7 @@ const ParticleBackground = () => {
   const time = useRef(0);
 
   const createParticles = useCallback((width: number, height: number) => {
-    const count = Math.min(180, Math.floor((width * height) / 6000));
+    const count = Math.min(250, Math.floor((width * height) / 4000));
     const result: Particle[] = [];
 
     for (let i = 0; i < count; i++) {
@@ -55,7 +55,7 @@ const ParticleBackground = () => {
     window.addEventListener("resize", resize);
 
     const handleMouse = (e: MouseEvent) => {
-      mouse.current = { x: e.clientX, y: e.clientY + window.scrollY };
+      mouse.current = { x: e.clientX, y: e.clientY };
     };
     window.addEventListener("mousemove", handleMouse);
 
