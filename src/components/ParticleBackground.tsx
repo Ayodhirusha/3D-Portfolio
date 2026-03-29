@@ -47,7 +47,7 @@ const ParticleBackground = () => {
 
     const resize = () => {
       canvas.width = window.innerWidth;
-      canvas.height = document.documentElement.scrollHeight;
+      canvas.height = window.innerHeight;
       particles.current = createParticles(canvas.width, canvas.height);
     };
 
