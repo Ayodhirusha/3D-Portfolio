@@ -3,56 +3,6 @@ import { motion } from "framer-motion";
 const FloatingGlassElements = () => {
   return (
     <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-      {/* Large glass orb top-right */}
-      <motion.div
-        animate={{ y: [0, -40, 0], x: [0, 20, 0], rotate: [0, 8, 0] }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[8%] right-[3%] w-[350px] h-[350px] rounded-full"
-        style={{
-          background: "radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.04), transparent 70%)",
-          border: "1px solid rgba(59, 130, 246, 0.08)",
-          backdropFilter: "blur(3px)",
-        }}
-      />
-
-      {/* Extra large orb left */}
-      <motion.div
-        animate={{ y: [0, 30, 0], x: [0, -15, 0] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-        className="absolute top-[55%] left-[-5%] w-[400px] h-[400px] rounded-full"
-        style={{
-          background: "radial-gradient(circle at 60% 40%, rgba(30, 64, 175, 0.07), transparent 65%)",
-          border: "1px solid rgba(30, 64, 175, 0.05)",
-          backdropFilter: "blur(2px)",
-        }}
-      />
-
-      {/* Medium glass diamond mid-left */}
-      <motion.div
-        animate={{ y: [0, 25, 0], rotate: [45, 55, 45] }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[35%] left-[5%] w-[140px] h-[140px]"
-        style={{
-          background: "linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(96, 165, 250, 0.05))",
-          border: "1px solid rgba(37, 99, 235, 0.1)",
-          borderRadius: "24px",
-          transform: "rotate(45deg)",
-          backdropFilter: "blur(3px)",
-        }}
-      />
-
-      {/* Small glass circle bottom-left */}
-      <motion.div
-        animate={{ y: [0, -30, 0], x: [0, 15, 0] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute bottom-[18%] left-[12%] w-[100px] h-[100px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(96, 165, 250, 0.1), transparent 70%)",
-          border: "1px solid rgba(96, 165, 250, 0.1)",
-          backdropFilter: "blur(2px)",
-        }}
-      />
-
       {/* Gradient line accent right */}
       <motion.div
         animate={{ opacity: [0.3, 0.7, 0.3], scaleY: [1, 1.2, 1] }}
@@ -102,6 +52,9 @@ const FloatingGlassElements = () => {
         { top: "75%", left: "30%", delay: 4, size: 5 },
         { top: "25%", left: "70%", delay: 1, size: 3 },
         { top: "85%", left: "60%", delay: 3, size: 4 },
+        { top: "10%", left: "50%", delay: 1.5, size: 5 },
+        { top: "55%", left: "15%", delay: 3.5, size: 4 },
+        { top: "90%", left: "40%", delay: 0.5, size: 3 },
       ].map((dot, i) => (
         <motion.div
           key={i}
