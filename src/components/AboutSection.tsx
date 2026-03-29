@@ -30,6 +30,32 @@ const AboutSection = () => {
 
   return (
     <section ref={ref} id="about" className="relative py-24 px-6 md:px-12 overflow-hidden bg-background">
+      {/* Section floating dots */}
+      {[
+        { top: "10%", left: "5%", size: 4, delay: 0, dur: 7 },
+        { top: "20%", left: "90%", size: 5, delay: 1, dur: 8 },
+        { top: "50%", left: "3%", size: 3, delay: 2, dur: 6 },
+        { top: "70%", left: "95%", size: 4, delay: 0.5, dur: 9 },
+        { top: "85%", left: "15%", size: 5, delay: 1.5, dur: 7 },
+        { top: "30%", left: "80%", size: 3, delay: 3, dur: 8 },
+        { top: "60%", left: "50%", size: 4, delay: 2.5, dur: 6 },
+        { top: "40%", left: "25%", size: 3, delay: 1, dur: 10 },
+      ].map((dot, i) => (
+        <motion.div
+          key={`about-dot-${i}`}
+          animate={{ y: [0, -25, 0], opacity: [0.2, 0.7, 0.2] }}
+          transition={{ duration: dot.dur, repeat: Infinity, ease: "easeInOut", delay: dot.delay }}
+          className="absolute rounded-full z-[1] pointer-events-none"
+          style={{
+            top: dot.top,
+            left: dot.left,
+            width: dot.size,
+            height: dot.size,
+            background: "rgba(59, 130, 246, 0.6)",
+            boxShadow: "0 0 14px rgba(59, 130, 246, 0.5)",
+          }}
+        />
+      ))}
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <motion.h2 
