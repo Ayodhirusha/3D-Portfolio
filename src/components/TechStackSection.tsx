@@ -26,17 +26,10 @@ const TechStackSection = () => {
 
   return (
     <section id="skills" className="relative py-24 px-4 md:px-8 overflow-hidden">
-      <div className="max-w-7xl mx-auto relative rounded-3xl px-6 md:px-12 py-16" style={{
-        background: 'linear-gradient(145deg, rgba(15,23,42,0.95), rgba(10,15,30,0.9))',
-        border: '1px solid rgba(59,130,246,0.15)',
-        boxShadow: '0 0 60px rgba(37,99,235,0.08), inset 0 1px 0 rgba(255,255,255,0.03)',
-      }}>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
-      <div id="techstack" className="absolute top-0" />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.06),transparent_70%)] pointer-events-none" />
+      <div className="max-w-7xl mx-auto relative px-6 md:px-12 py-16">
+        <div id="techstack" className="absolute top-0" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.06),transparent_70%)] pointer-events-none" />
 
-      <div>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -92,36 +85,35 @@ const TechStackSection = () => {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Carousel Container */}
-        <div className="relative">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex gap-4 animate-scroll hover:[animation-play-state:paused]"
-          >
-            {duplicatedSkills.map((skill, i) => (
-              <div
-                key={`${skill.name}-${i}`}
-                className="group flex-shrink-0 flex flex-col items-center gap-3 cursor-pointer px-2"
-              >
-                <div className="relative">
-                  <div className="tech-icon p-6 rounded-2xl bg-[#12121a] border border-white/5 hover:border-primary/40 hover:-translate-y-2 transition-all duration-500 shadow-2xl">
-                    <img
-                      src={skill.image}
-                      alt={skill.name}
-                      className="w-16 h-16 md:w-20 md:h-20 object-contain transition-all duration-500"
-                    />
-                  </div>
-                </div>
-                <p className="font-body text-xs text-muted-foreground group-hover:text-white transition-all">{skill.name}</p>
-              </div>
-            ))}
-          </motion.div>
-        </div>
       </div>
+
+      {/* Carousel Container - Outside the blue box */}
+      <div className="relative mt-12 w-full max-w-7xl mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex gap-4 animate-scroll hover:[animation-play-state:paused]"
+        >
+          {duplicatedSkills.map((skill, i) => (
+            <div
+              key={`${skill.name}-${i}`}
+              className="group flex-shrink-0 flex flex-col items-center gap-3 cursor-pointer px-2"
+            >
+              <div className="relative">
+                <div className="tech-icon p-6 rounded-2xl bg-[#12121a] border border-white/5 hover:border-primary/40 hover:-translate-y-2 transition-all duration-500 shadow-2xl">
+                  <img
+                    src={skill.image}
+                    alt={skill.name}
+                    className="w-16 h-16 md:w-20 md:h-20 object-contain transition-all duration-500"
+                  />
+                </div>
+              </div>
+              <p className="font-body text-xs text-muted-foreground group-hover:text-white transition-all">{skill.name}</p>
+            </div>
+          ))}
+        </motion.div>
       </div>
 
       <style>{`

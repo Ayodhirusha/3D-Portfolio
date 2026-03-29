@@ -14,7 +14,7 @@ const HeroSection = () => {
 
   // Zoom in deeply (from 1 to 5) and fade out
   const bgScale = useTransform(scrollYProgress, [0, 1], [1, 5]);
-  const bgOpacity = useTransform(scrollYProgress, [0.5, 0.9], [1, 0]);
+  const bgOpacity = useTransform(scrollYProgress, [0.7, 0.95], [1, 0]);
   const indicatorOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   const letterVariants = {
@@ -56,7 +56,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative flex flex-col w-full bg-background mb-[-15vh]">
+    <section id="home" className="relative flex flex-col w-full bg-background mb-[-35vh]">
       {/* 3D Module Container with Sticky Zoom Effect */}
       <div ref={containerRef} className="relative h-[180vh] w-full">
         <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">

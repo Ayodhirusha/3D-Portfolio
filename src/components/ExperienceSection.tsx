@@ -66,13 +66,7 @@ const ExperienceSection = () => {
 
   return (
     <section ref={ref} id="experience" className="relative py-24 px-4 md:px-8">
-      <div className="max-w-5xl mx-auto relative rounded-3xl px-6 md:px-12 py-16" style={{
-        background: 'linear-gradient(145deg, rgba(15,23,42,0.95), rgba(10,15,30,0.9))',
-        border: '1px solid rgba(59,130,246,0.15)',
-        boxShadow: '0 0 60px rgba(37,99,235,0.08), inset 0 1px 0 rgba(255,255,255,0.03)',
-      }}>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
+      <div className="max-w-5xl mx-auto relative px-6 md:px-12 py-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Award, BookOpen, School, Calendar } from "lucide-react";
+import { GraduationCap, Award, BookOpen, Calendar } from "lucide-react";
 
 const education = [
   {
@@ -133,34 +133,6 @@ const EducationSection = () => {
             ))}
           </div>
         </div>
-
-        {/* School Education Summary */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 p-6 bg-card/30 border border-border rounded-xl"
-        >
-          <div className="flex items-center gap-3 mb-4">
-            <School className="w-5 h-5 text-primary" />
-            <h4 className="font-display font-semibold">School Education</h4>
-          </div>
-          <div className="grid md:grid-cols-3 gap-4 text-sm">
-            <div>
-              <span className="text-muted-foreground">School:</span>
-              <p className="font-medium mt-1">St. Joseph's College, Negombo</p>
-            </div>
-            <div>
-              <span className="text-muted-foreground">GCE A/L:</span>
-              <p className="font-medium mt-1">Commerce Stream (2021)</p>
-            </div>
-            <div>
-              <span className="text-muted-foreground">GCE O/L:</span>
-              <p className="font-medium mt-1">2018</p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
