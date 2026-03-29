@@ -31,13 +31,13 @@ const ContactSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-8">
+        <div className="grid lg:grid-cols-5 gap-6 md:gap-8">
           <motion.div
             initial={{ opacity: 0, x: -50, filter: "blur(8px)" }}
             whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="lg:col-span-2 space-y-6"
+            className="lg:col-span-2 space-y-4 md:space-y-6"
           >
             {[
               { icon: Mail, label: "Email", value: "ayodhirusha77@gmail.com", href: "mailto:ayodhirusha77@gmail.com" },
@@ -52,14 +52,14 @@ const ContactSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.12 }}
                 whileHover={{ x: 8 }}
-                className="group flex items-center gap-5 p-5 rounded-2xl glass-card hover:border-primary/30 hover:glow-box transition-all duration-500"
+                className="group flex items-center gap-4 md:gap-5 p-4 md:p-5 rounded-2xl glass-card hover:border-primary/30 hover:glow-box transition-all duration-500"
               >
-                <div className="w-14 h-14 rounded-xl bg-gradient-primary-subtle flex items-center justify-center group-hover:glow-box transition-shadow duration-500 flex-shrink-0">
-                  <item.icon className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-primary-subtle flex items-center justify-center group-hover:glow-box transition-shadow duration-500 flex-shrink-0">
+                  <item.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                 </div>
-                <div>
-                  <p className="font-body text-xs text-muted-foreground uppercase tracking-wider">{item.label}</p>
-                  <p className="font-display text-sm font-medium text-foreground">{item.value}</p>
+                <div className="min-w-0 flex-1">
+                  <p className="font-body text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider">{item.label}</p>
+                  <p className="font-display text-xs md:text-sm font-medium text-foreground truncate">{item.value}</p>
                 </div>
               </motion.a>
             ))}
@@ -107,30 +107,30 @@ const ContactSection = () => {
 
             <form
               onSubmit={(e) => e.preventDefault()}
-              className="relative glass-card rounded-3xl p-8 md:p-10 space-y-6 border-primary/10"
+              className="relative glass-card rounded-3xl p-6 md:p-10 space-y-4 md:space-y-6 border-primary/10"
               style={{
                 background: "linear-gradient(145deg, rgba(146,63,255,0.04), rgba(0,0,0,0.6), rgba(125,191,255,0.03))",
                 boxShadow: "0 25px 80px -20px rgba(146,63,255,0.15), inset 0 1px 0 rgba(255,255,255,0.05)",
               }}
             >
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                <span className="font-body text-xs text-muted-foreground ml-4">contact_form.tsx</span>
+              <div className="flex items-center gap-2 md:gap-3 mb-2">
+                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500/80" />
+                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500/80" />
+                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500/80" />
+                <span className="font-body text-[10px] md:text-xs text-muted-foreground ml-2 md:ml-4">contact_form.tsx</span>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-5">
+              <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
                 {[
                   { key: "name", label: "Your Name", type: "text" },
                   { key: "email", label: "Your Email", type: "email" },
                 ].map((field) => (
                   <div key={field.key} className="relative group">
                     <label
-                      className={`absolute left-4 font-body text-xs transition-all duration-300 pointer-events-none z-10 ${
+                      className={`absolute left-4 font-body text-[10px] md:text-xs transition-all duration-300 pointer-events-none z-10 ${
                         focused === field.key || formData[field.key as keyof typeof formData]
-                          ? "top-2 text-primary"
-                          : "top-4 text-muted-foreground"
+                          ? "top-1.5 md:top-2 text-primary"
+                          : "top-3.5 md:top-4 text-muted-foreground"
                       }`}
                     >
                       {field.label}
@@ -141,7 +141,7 @@ const ContactSection = () => {
                       onChange={(e) => setFormData({ ...formData, [field.key]: e.target.value })}
                       onFocus={() => setFocused(field.key)}
                       onBlur={() => setFocused(null)}
-                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 pt-6 pb-2.5 font-body text-sm text-foreground focus:border-primary/60 focus:bg-white/[0.05] focus:outline-none transition-all duration-300"
+                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 pt-5 md:pt-6 pb-2 md:pb-2.5 font-body text-xs md:text-sm text-foreground focus:border-primary/60 focus:bg-white/[0.05] focus:outline-none transition-all duration-300"
                       style={{
                         boxShadow: focused === field.key ? "0 0 20px rgba(146,63,255,0.1), inset 0 0 20px rgba(146,63,255,0.03)" : "none",
                       }}

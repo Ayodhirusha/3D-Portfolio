@@ -74,9 +74,9 @@ const ProjectsSection = () => {
   const filteredProjects = projects.filter(project => project.category === activeTab);
 
   return (
-    <section id="projects" className="relative py-24 px-6 md:px-12 overflow-hidden">
+    <section id="projects" className="relative py-16 md:py-24 px-4 sm:px-6 md:px-12 overflow-hidden">
       <div id="gallery" className="absolute top-0" />
-      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.06),transparent_70%)] pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.06),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -84,26 +84,26 @@ const ProjectsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
           <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm">
             <span className="font-body text-[10px] uppercase tracking-[0.3em] text-primary font-bold">Projects</span>
           </div>
-          <h2 className="font-display text-4xl md:text-6xl font-bold mb-6 text-white">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-white">
             Selected <span className="text-gradient">Work</span>
           </h2>
-          <p className="font-body text-muted-foreground max-w-2xl mx-auto text-sm">
+          <p className="font-body text-muted-foreground max-w-2xl mx-auto text-xs sm:text-sm">
             A curated selection of engineering projects and design case studies.
           </p>
         </motion.div>
 
-        <div className="flex justify-center mb-16">
-          <div className="inline-flex p-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm shadow-xl flex-wrap justify-center">
+        <div className="flex justify-center mb-12 md:mb-16">
+          <div className="inline-flex p-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm shadow-xl flex-wrap justify-center max-w-full">
             {["Development", "UI/UX Design", "Graphic Design"].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-6 sm:px-8 py-2.5 rounded-full font-display text-sm font-medium transition-all duration-500 relative whitespace-nowrap ${
+                className={`px-4 sm:px-8 py-2 md:py-2.5 rounded-full font-display text-[10px] sm:text-sm font-medium transition-all duration-500 relative whitespace-nowrap ${
                   activeTab === tab ? "text-white" : "text-white/40 hover:text-white/60"
                 }`}
               >
@@ -121,7 +121,7 @@ const ProjectsSection = () => {
         </div>
 
         {/* Projects Grid with slide-in cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {filteredProjects.map((project, i) => (
             <motion.div
               key={project.title}
@@ -130,14 +130,14 @@ const ProjectsSection = () => {
               viewport={{ once: true, margin: "-30px" }}
               transition={{ duration: 0.6, delay: i * 0.12, type: "spring", bounce: 0.2 }}
               whileHover={{ y: -10 }}
-              className="group relative flex flex-col h-full rounded-3xl overflow-hidden transition-all duration-700"
+              className="group relative flex flex-col h-full rounded-2xl md:rounded-3xl overflow-hidden transition-all duration-700"
               style={{
                 background: "rgba(255,255,255,0.02)",
                 backdropFilter: "blur(20px)",
                 border: "1px solid rgba(146,63,255,0.1)",
               }}
             >
-              <div className={`relative overflow-hidden ${activeTab === 'Graphic Design' ? 'h-full aspect-square flex items-center justify-center bg-black/20' : 'h-64'}`}>
+              <div className={`relative overflow-hidden ${activeTab === 'Graphic Design' ? 'h-full aspect-square flex items-center justify-center bg-black/20' : 'h-48 md:h-64'}`}>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent z-10 opacity-60" />
                 <img
                   src={project.image}
@@ -145,38 +145,38 @@ const ProjectsSection = () => {
                   className={`w-full h-full transition-transform duration-700 group-hover:scale-110 ${activeTab === 'Graphic Design' ? 'object-contain' : 'object-cover'}`}
                 />
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20" />
-                <div className="absolute top-6 left-6 z-30">
-                  <span className="text-[10px] font-bold tracking-widest text-primary bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-primary/20 uppercase">
+                <div className="absolute top-4 left-4 md:top-6 md:left-6 z-30">
+                  <span className="text-[8px] md:text-[10px] font-bold tracking-widest text-primary bg-black/40 backdrop-blur-md px-2 md:px-3 py-1 rounded-full border border-primary/20 uppercase">
                     {project.type}
                   </span>
                 </div>
               </div>
 
               {activeTab !== 'Graphic Design' && (
-                <div className="flex-1 p-8 flex flex-col relative z-30">
-                  <h3 className="font-display text-2xl font-bold mb-4 text-white group-hover:text-primary transition-colors duration-500">
+                <div className="flex-1 p-6 md:p-8 flex flex-col relative z-30">
+                  <h3 className="font-display text-xl md:text-2xl font-bold mb-3 md:mb-4 text-white group-hover:text-primary transition-colors duration-500">
                     {project.title}
                   </h3>
-                  <p className="font-body text-sm text-white/50 leading-relaxed mb-8 line-clamp-4 group-hover:text-white/70 transition-colors duration-500">
+                  <p className="font-body text-xs md:text-sm text-white/50 leading-relaxed mb-6 md:mb-8 line-clamp-3 md:line-clamp-4 group-hover:text-white/70 transition-colors duration-500">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mt-auto mb-8">
+                  <div className="flex flex-wrap gap-1.5 md:gap-2 mt-auto mb-6 md:mb-8">
                     {project.tags.map((tag) => (
-                      <span key={tag} className="px-3 py-1 rounded-lg bg-white/5 border border-white/5 text-[10px] text-white/40 font-medium">
+                      <span key={tag} className="px-2 md:px-3 py-1 rounded-lg bg-white/5 border border-white/5 text-[8px] md:text-[10px] text-white/40 font-medium">
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <div className="flex items-center justify-between pt-6 border-t border-white/5">
+                  <div className="flex items-center justify-between pt-4 md:pt-6 border-t border-white/5">
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 text-xs font-bold text-white/40 group-hover:text-primary transition-colors duration-500"
+                      className="flex items-center gap-2 text-[10px] md:text-xs font-bold text-white/40 group-hover:text-primary transition-colors duration-500"
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-3.5 h-3.5 md:w-4 h-4" />
                       <span>View Details</span>
                     </motion.button>
-                    <ArrowUpRight className="w-5 h-5 text-white/20 group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500" />
+                    <ArrowUpRight className="w-4 h-4 md:w-5 h-5 text-white/20 group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500" />
                   </div>
                 </div>
               )}

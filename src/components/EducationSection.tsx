@@ -43,7 +43,7 @@ const qualifications = [
 
 const EducationSection = () => {
   return (
-    <section id="education" className="py-24 px-6 md:px-12">
+    <section id="education" className="py-16 md:py-24 px-4 sm:px-6 md:px-12">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <motion.div
@@ -51,13 +51,13 @@ const EducationSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
-          <p className="font-body text-sm uppercase tracking-[0.3em] text-primary mb-4">Education</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <p className="font-body text-[10px] md:text-sm uppercase tracking-[0.3em] text-primary mb-4">Education</p>
+          <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
             Academic <span className="text-gradient">Background</span>
           </h2>
-          <p className="font-body text-muted-foreground max-w-xl mx-auto">
+          <p className="font-body text-xs md:text-sm text-muted-foreground max-w-xl mx-auto px-4">
             A journey of continuous learning — from formal education to professional certifications.
           </p>
         </motion.div>
@@ -68,7 +68,7 @@ const EducationSection = () => {
           <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/30 to-transparent" />
 
           {/* Education Items */}
-          <div className="space-y-12">
+          <div className="space-y-8 md:space-y-12">
             {education.map((edu, i) => (
               <motion.div
                 key={edu.institution}
@@ -76,23 +76,23 @@ const EducationSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
-                className="relative pl-8 md:pl-20"
+                className="relative pl-6 md:pl-20"
               >
                 {/* Timeline Dot */}
                 <div className="absolute left-[-4px] md:left-6 top-6 w-2 h-2 rounded-full bg-primary ring-4 ring-background" />
                 
                 {/* Card */}
-                <div className="group bg-card border border-border rounded-2xl p-6 md:p-8 hover:border-primary/50 hover:glow-box transition-all duration-500">
+                <div className="group bg-card border border-border rounded-xl md:rounded-2xl p-5 md:p-8 hover:border-primary/50 hover:glow-box transition-all duration-500">
                   {/* Header Row */}
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                    <div>
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 md:gap-4 mb-4">
+                    <div className="min-w-0">
                       {/* Degree with Badge */}
-                      <div className="flex items-center gap-3 mb-2">
-                        <h3 className="font-display text-xl md:text-2xl font-semibold">
+                      <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                        <h3 className="font-display text-lg md:text-2xl font-semibold leading-tight">
                           {edu.degree}
                         </h3>
                         {edu.isCurrent && (
-                          <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 rounded-full border border-emerald-500/30">
+                          <span className="px-2 py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 rounded-full border border-emerald-500/30 whitespace-nowrap">
                             Current
                           </span>
                         )}
@@ -100,29 +100,29 @@ const EducationSection = () => {
                       
                       {/* Institution */}
                       <div className="flex items-center gap-2 text-muted-foreground">
-                        <GraduationCap className="w-4 h-4" />
-                        <span className="font-body text-sm">{edu.institution}</span>
+                        <GraduationCap className="w-3.5 h-3.5 md:w-4 md:h-4 shrink-0" />
+                        <span className="font-body text-xs md:text-sm truncate">{edu.institution}</span>
                       </div>
                     </div>
 
                     {/* Date */}
                     <div className="flex items-center gap-2 text-muted-foreground shrink-0">
-                      <Calendar className="w-4 h-4" />
-                      <span className="font-body text-sm">{edu.period}</span>
+                      <Calendar className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                      <span className="font-body text-[10px] md:text-sm">{edu.period}</span>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="font-body text-muted-foreground text-sm leading-relaxed mb-5">
+                  <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed mb-4 md:mb-5">
                     {edu.description}
                   </p>
 
                   {/* Details */}
-                  <ul className="space-y-2">
+                  <ul className="space-y-1.5 md:space-y-2">
                     {edu.details.map((detail, j) => (
-                      <li key={j} className="flex items-start gap-3">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mt-2 shrink-0" />
-                        <span className="font-body text-sm text-muted-foreground/80 leading-relaxed">
+                      <li key={j} className="flex items-start gap-2 md:gap-3">
+                        <span className="w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-primary/60 mt-1.5 md:mt-2 shrink-0" />
+                        <span className="font-body text-[11px] md:text-sm text-muted-foreground/80 leading-relaxed">
                           {detail}
                         </span>
                       </li>

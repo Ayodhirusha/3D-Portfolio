@@ -97,8 +97,7 @@ const HeroSection = () => {
           <div className="absolute inset-0 z-[1] bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none z-[2]" />
 
-          {/* Text Content Overlay */}
-          <div className="relative z-10 w-full px-6 md:px-12 h-[100vh] flex flex-col justify-center items-start text-left mt-24 md:mt-32 pointer-events-none">
+          <div className="relative z-10 w-full px-6 md:px-12 h-screen flex flex-col justify-center items-start text-left pt-20 pointer-events-none">
             <motion.h1
               initial="hidden"
               whileInView="visible"
@@ -106,7 +105,7 @@ const HeroSection = () => {
               className="font-display font-bold leading-[1.1] tracking-tight mb-6 pointer-events-auto"
               style={{ perspective: "1000px" }}
             >
-              <span className="flex flex-wrap overflow-hidden text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <span className="flex flex-wrap overflow-hidden text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
                 {renderAnimatedText(title1, 0, false)}
               </span>
             </motion.h1>
@@ -116,13 +115,13 @@ const HeroSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="font-display font-medium text-lg md:text-xl tracking-wide mb-6 pointer-events-auto flex items-center gap-2"
+              className="font-display font-medium text-base sm:text-lg md:text-xl tracking-wide mb-6 pointer-events-auto flex flex-wrap items-center gap-x-2 gap-y-1"
             >
-              <span className="text-[#B292FF] drop-shadow-[0_0_10px_rgba(178,146,255,0.3)]">Software Engineer</span>
-              <span className="text-white/20">•</span>
-              <span className="text-[#B292FF] drop-shadow-[0_0_10px_rgba(178,146,255,0.3)]">UI/UX Designer</span>
-              <span className="text-white/20">•</span>
-              <span className="text-[#B292FF] drop-shadow-[0_0_10px_rgba(178,146,255,0.3)]">Graphic Designer</span>
+              <span className="text-[#B292FF] drop-shadow-[0_0_10px_rgba(178,146,255,0.3)] whitespace-nowrap">Software Engineer</span>
+              <span className="text-white/20 hidden sm:inline">•</span>
+              <span className="text-[#B292FF] drop-shadow-[0_0_10px_rgba(178,146,255,0.3)] whitespace-nowrap">UI/UX Designer</span>
+              <span className="text-white/20 hidden sm:inline">•</span>
+              <span className="text-[#B292FF] drop-shadow-[0_0_10px_rgba(178,146,255,0.3)] whitespace-nowrap">Graphic Designer</span>
             </motion.h2>
 
             <motion.p
@@ -130,42 +129,50 @@ const HeroSection = () => {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="font-body text-base sm:text-lg md:text-xl text-muted-foreground/80 max-w-2xl mb-10 leading-relaxed pointer-events-auto"
+              className="font-body text-sm sm:text-base md:text-lg text-muted-foreground/80 max-w-2xl mb-10 leading-relaxed pointer-events-auto"
             >
-              Crafting intuitive digital experiences at the intersection of engineering and design. Currently building products at <span className="text-white font-medium">MOB</span>.
+              Crafting intuitive digital products at the intersection of engineering and design. Currently building products at <span className="text-white font-medium">MOB</span>.
             </motion.p>
 
-            <motion.a
-              href="/cv.pdf"
-              target="_blank"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-3 px-8 py-3 rounded-full border border-white/10 text-white/90 font-display text-sm tracking-wide backdrop-blur-sm pointer-events-auto mb-16"
-            >
-              Download CV <Download className="w-4 h-4" />
-            </motion.a>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12 w-full sm:w-auto">
+              <motion.a
+                href="/cv.pdf"
+                target="_blank"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                whileHover={{ scale: 1.02, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+                whileTap={{ scale: 0.98 }}
+                className="flex items-center justify-center gap-3 px-8 py-4 rounded-2xl border border-white/10 text-white/90 font-display text-xs tracking-widest uppercase backdrop-blur-sm pointer-events-auto"
+              >
+                Download CV <Download className="w-4 h-4" />
+              </motion.a>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="flex items-center gap-4 mb-8 pointer-events-auto"
-            >
-              <a href="#" className="p-4 rounded-2xl bg-white/5 border border-white/5 text-white/70 hover:text-white hover:bg-white/10 transition-all">
-                <FaGithub className="w-5 h-5" />
-              </a>
-              <a href="#" className="p-4 rounded-2xl bg-white/5 border border-white/5 text-white/70 hover:text-white hover:bg-white/10 transition-all">
-                <FaLinkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="p-4 rounded-2xl bg-white/5 border border-white/5 text-white/70 hover:text-white hover:bg-white/10 transition-all">
-                <FaTiktok className="w-5 h-5" />
-              </a>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+                className="flex items-center justify-center sm:justify-start gap-3 pointer-events-auto"
+              >
+                {[
+                  { Icon: FaGithub, href: "https://github.com/Ayodhirusha" },
+                  { Icon: FaLinkedin, href: "https://www.linkedin.com/in/Ayod-hirusha" },
+                  { Icon: FaTiktok, href: "#" }
+                ].map((social, i) => (
+                  <a 
+                    key={i}
+                    href={social.href} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-4 rounded-2xl bg-white/5 border border-white/5 text-white/70 hover:text-white hover:bg-white/10 transition-all"
+                  >
+                    <social.Icon className="w-5 h-5" />
+                  </a>
+                ))}
+              </motion.div>
+            </div>
           </div>
 
           {/* Scroll Indicator positioned absolutely at bottom center */}

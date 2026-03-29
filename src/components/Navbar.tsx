@@ -121,21 +121,34 @@ const Navbar = () => {
 
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="absolute top-full left-0 right-0 mt-4 bg-[#12121a]/95 backdrop-blur-xl border border-white/10 p-6 rounded-2xl lg:hidden shadow-2xl"
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-full left-0 right-0 mt-4 bg-black/90 backdrop-blur-2xl border border-white/10 p-6 rounded-3xl lg:hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-50"
           >
-            <ul className="flex flex-col gap-4">
+            <ul className="flex flex-col gap-2">
               {navItems.map((item) => (
                 <li key={item}>
                   <button
                     onClick={() => scrollTo(item)}
-                    className="font-body text-sm text-white/70 hover:text-white transition-colors w-full text-left"
+                    className={`font-display text-xs uppercase tracking-[0.2em] w-full text-left py-4 px-6 rounded-2xl transition-all duration-300 ${
+                      activeItem === item
+                        ? "bg-primary/20 text-white border border-primary/20"
+                        : "text-white/40 hover:text-white/70 hover:bg-white/5"
+                    }`}
                   >
                     {item}
                   </button>
                 </li>
               ))}
+              <li className="mt-4 pt-4 border-t border-white/5">
+                <button
+                  onClick={() => scrollTo("Contact")}
+                  className="w-full font-display text-xs uppercase tracking-widest py-4 rounded-2xl bg-primary text-white shadow-[0_10px_30px_rgba(146,63,255,0.3)]"
+                >
+                  Let's Talk
+                </button>
+              </li>
             </ul>
           </motion.div>
         )}
