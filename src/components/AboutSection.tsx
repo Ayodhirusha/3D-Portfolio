@@ -29,7 +29,7 @@ const AboutSection = () => {
   const blur = useTransform(scrollYProgress, [0, 0.8], ["20px", "0px"]);
 
   return (
-    <section ref={ref} id="about" className="relative py-24 px-6 md:px-12 overflow-hidden bg-background">
+    <section ref={ref} id="about" className="relative py-16 md:py-24 px-4 sm:px-6 md:px-12 overflow-hidden">
       {/* Section floating dots */}
       {[
         { top: "10%", left: "5%", size: 4, delay: 0, dur: 7 },
@@ -77,16 +77,16 @@ const AboutSection = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column - Profile Card */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="sm:col-span-2 lg:col-span-1 space-y-6"
+            className="lg:col-span-5 xl:col-span-4 space-y-6 w-full max-w-[400px] mx-auto lg:max-w-none"
           >
-            <div className="group relative rounded-3xl overflow-hidden bg-card border border-border p-6 md:p-8 flex flex-col items-center text-center hover:border-primary/50 hover:glow-box transition-all duration-500 shadow-2xl">
-              <div className="relative w-full aspect-square sm:aspect-[4/5] rounded-2xl overflow-hidden mb-6 md:mb-8 group-inner">
+            <div className="group relative rounded-3xl overflow-hidden bg-card border border-border p-5 md:p-8 flex flex-col items-center text-center hover:border-primary/50 hover:glow-box transition-all duration-500 shadow-2xl">
+              <div className="relative w-full aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden mb-6 md:mb-8 group-inner">
                 <img 
                   src="/IMG-20260327-WA0015.jpg" 
                   alt="Profile" 
@@ -127,7 +127,7 @@ const AboutSection = () => {
           </motion.div>
 
           {/* Right Column - Info Blocks */}
-          <div className="sm:col-span-2 lg:col-span-3 space-y-4 md:space-y-6">
+          <div className="lg:col-span-7 xl:col-span-8 space-y-4 md:space-y-6">
             {/* Bio Block */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}

@@ -56,7 +56,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative flex flex-col w-full bg-background mb-[-35vh]">
+    <section id="home" className="relative flex flex-col w-full mb-[-35vh]">
       {/* 3D Module Container with Sticky Zoom Effect */}
       <div ref={containerRef} className="relative h-[180vh] w-full">
         <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
@@ -95,7 +95,8 @@ const HeroSection = () => {
 
           {/* Gradient overlays to blend edges */}
           <div className="absolute inset-0 z-[1] bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none z-[2]" />
+          <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none z-[2]" />
+          <div className="absolute inset-x-0 bottom-[-1px] h-32 bg-background pointer-events-none z-[3] blur-xl opacity-50" />
 
           <div className="relative z-10 w-full px-6 md:px-12 h-screen flex flex-col justify-center items-start text-left pt-20 pointer-events-none">
             <motion.h1

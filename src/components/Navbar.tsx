@@ -24,7 +24,6 @@ const Navbar = () => {
     const handleScroll = () => {
       const sections = navItems.map(item => {
         let id = item.toLowerCase();
-        if (item === "Skills") id = "techstack";
         return { id, name: item };
       });
 
@@ -49,7 +48,6 @@ const Navbar = () => {
   const scrollTo = (id: string) => {
     setActiveItem(id);
     let elementId = id.toLowerCase();
-    if (id === "Skills") elementId = "techstack";
     const element = document.getElementById(elementId);
     if (element) {
       const offset = 100;
@@ -64,95 +62,102 @@ const Navbar = () => {
 
   return (
     <motion.div
-      className="fixed top-6 left-0 right-0 z-50 flex justify-center px-6"
+      className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 pointer-events-none"
       animate={{ y: hidden ? -120 : 0, opacity: hidden ? 0 : 1 }}
       transition={{ duration: 0.35, ease: "easeInOut" }}
     >
-      <motion.nav
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative flex items-center gap-6 px-6 py-3 bg-black/40 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl"
-      >
-        <div className="flex items-center gap-4 border-r border-white/10 pr-6 mr-2">
-          <span className="font-display text-lg font-bold tracking-tight text-gradient">
-            Ayod.H
-          </span>
-        </div>
+      <div className="w-full flex justify-center max-w-7xl pointer-events-none relative">
+        <motion.nav
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="hidden lg:flex relative items-center lg:w-auto gap-6 px-4 lg:px-6 py-3 bg-black/40 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl pointer-events-auto"
+        >
+          <div className="flex items-center gap-4 border-r border-white/10 pr-6 mr-2">
+            <span className="font-display text-lg font-bold tracking-tight text-gradient">
+              Ayod Hirusha
+            </span>
+          </div>
 
-        <ul className="hidden lg:flex items-center gap-6">
-          {navItems.map((item) => (
-            <li key={item}>
-              <button
-                onClick={() => scrollTo(item)}
-                className={`font-display text-[11px] uppercase tracking-widest transition-all duration-300 relative ${
-                  activeItem === item
-                    ? "text-white"
-                    : "text-white/40 hover:text-white/80"
-                }`}
-              >
-                {item}
-                {activeItem === item && (
-                  <motion.div
-                    layoutId="navIndicator"
-                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-primary rounded-full"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
-              </button>
-            </li>
-          ))}
-        </ul>
-
-        <div className="hidden lg:flex items-center gap-6 border-l border-white/10 pl-6 ml-2">
-          <button
-            onClick={() => scrollTo("Contact")}
-            className="font-display text-[11px] uppercase tracking-widest px-6 py-2.5 rounded-full bg-primary text-white hover:bg-primary/90 transition-all duration-300 shadow-[0_0_20px_rgba(146,63,255,0.4)]"
-          >
-            Let's Talk
-          </button>
-        </div>
-
-        <div className="lg:hidden flex items-center">
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="text-white/70 hover:text-white p-2">
-            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
-        </div>
-
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 mt-4 bg-black/90 backdrop-blur-2xl border border-white/10 p-6 rounded-3xl lg:hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-50"
-          >
-            <ul className="flex flex-col gap-2">
-              {navItems.map((item) => (
-                <li key={item}>
-                  <button
-                    onClick={() => scrollTo(item)}
-                    className={`font-display text-xs uppercase tracking-[0.2em] w-full text-left py-4 px-6 rounded-2xl transition-all duration-300 ${
-                      activeItem === item
-                        ? "bg-primary/20 text-white border border-primary/20"
-                        : "text-white/40 hover:text-white/70 hover:bg-white/5"
-                    }`}
-                  >
-                    {item}
-                  </button>
-                </li>
-              ))}
-              <li className="mt-4 pt-4 border-t border-white/5">
+          <ul className="flex items-center gap-6">
+            {navItems.map((item) => (
+              <li key={item}>
                 <button
-                  onClick={() => scrollTo("Contact")}
-                  className="w-full font-display text-xs uppercase tracking-widest py-4 rounded-2xl bg-primary text-white shadow-[0_10px_30px_rgba(146,63,255,0.3)]"
+                  onClick={() => scrollTo(item)}
+                  className={`font-display text-[11px] uppercase tracking-widest transition-all duration-300 relative ${
+                    activeItem === item
+                      ? "text-white"
+                      : "text-white/40 hover:text-white/80"
+                  }`}
                 >
-                  Let's Talk
+                  {item}
+                  {activeItem === item && (
+                    <motion.div
+                      layoutId="navIndicator"
+                      className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-primary rounded-full"
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    />
+                  )}
                 </button>
               </li>
-            </ul>
-          </motion.div>
-        )}
-      </motion.nav>
+            ))}
+          </ul>
+
+          <div className="flex items-center gap-6 border-l border-white/10 pl-6 ml-2">
+            <button
+              onClick={() => scrollTo("Contact")}
+              className="font-display text-[11px] uppercase tracking-widest px-6 py-2.5 rounded-full bg-primary text-white hover:bg-primary/90 transition-all duration-300 shadow-[0_0_20px_rgba(146,63,255,0.4)]"
+            >
+              Let's Talk
+            </button>
+          </div>
+        </motion.nav>
+
+        {/* Mobile Hamburger - Positioned Absolute to the right */}
+        <div className="lg:hidden absolute right-0 flex items-center pointer-events-auto">
+          <button 
+            onClick={() => setMobileOpen(!mobileOpen)} 
+            className="text-white hover:text-primary transition-all duration-300 p-2"
+            aria-label="Toggle Menu"
+          >
+            {mobileOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+          </button>
+          
+          {mobileOpen && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: -20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -20 }}
+              className="absolute top-full right-0 mt-4 w-64 bg-black/90 backdrop-blur-2xl border border-white/10 p-6 rounded-3xl lg:hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-50 origin-top-right"
+            >
+              <ul className="flex flex-col gap-2">
+                {navItems.map((item) => (
+                  <li key={item}>
+                    <button
+                      onClick={() => scrollTo(item)}
+                      className={`font-display text-xs uppercase tracking-[0.2em] w-full text-left py-4 px-6 rounded-2xl transition-all duration-300 ${
+                        activeItem === item
+                          ? "bg-primary/20 text-white border border-primary/20"
+                          : "text-white/40 hover:text-white/70 hover:bg-white/5"
+                      }`}
+                    >
+                      {item}
+                    </button>
+                  </li>
+                ))}
+                <li className="mt-4 pt-4 border-t border-white/5">
+                  <button
+                    onClick={() => scrollTo("Contact")}
+                    className="w-full font-display text-xs uppercase tracking-widest py-4 rounded-2xl bg-primary text-white shadow-[0_10px_30px_rgba(146,63,255,0.3)]"
+                  >
+                    Let's Talk
+                  </button>
+                </li>
+              </ul>
+            </motion.div>
+          )}
+        </div>
+      </div>
     </motion.div>
   );
 };

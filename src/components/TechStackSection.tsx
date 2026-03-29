@@ -25,10 +25,9 @@ const TechStackSection = () => {
   const duplicatedSkills = [...skills, ...skills, ...skills];
 
   return (
-    <section id="skills" className="relative py-24 px-4 md:px-8 overflow-hidden">
-      <div className="max-w-7xl mx-auto relative px-6 md:px-12 py-16">
-        <div id="techstack" className="absolute top-0" />
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.06),transparent_70%)] pointer-events-none" />
+    <section id="skills" className="relative py-16 md:py-24 px-4 sm:px-6 md:px-12 overflow-hidden">
+      <div className="max-w-7xl mx-auto relative px-4 sm:px-6 md:px-12 py-8 md:py-16">
+        <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.06),transparent_70%)] pointer-events-none" />
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
