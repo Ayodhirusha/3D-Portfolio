@@ -44,6 +44,8 @@ const Index = () => {
           {/* Mid subtle glow */}
           <div className="absolute top-[60%] left-[40%] w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.06),transparent_70%)]" />
         </div>
+        <ParticleBackground />
+        <FloatingGlassElements />
         <Navbar />
         <HeroSection />
         <AboutSection />
