@@ -13,12 +13,13 @@ const Footer = () => {
   }, []);
 
   const navLinks = [
+    { name: "Home", id: "home" },
     { name: "About", id: "about" },
     { name: "Experience", id: "experience" },
     { name: "Education", id: "education" },
-    { name: "Skills", id: "skills" },
     { name: "Projects", id: "projects" },
     { name: "Services", id: "services" },
+    { name: "Contact", id: "contact" },
   ];
 
 
@@ -49,9 +50,12 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-black pt-12 pb-8 px-6 md:px-12 overflow-hidden border-t border-white/5">
-      {/* Background Gradient Effect - Bottom to Top Blue */}
-      <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 via-black to-black pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-[radial-gradient(circle_at_bottom,rgba(37,99,235,0.15),transparent_70%)] pointer-events-none" />
+      {/* Background Gradient Effect - Mirroring the reference image */}
+      <div className="absolute inset-0 bg-[#000000] pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 top-0 bg-gradient-to-t from-blue-600/20 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute -bottom-[40%] left-[10%] w-[80%] h-[100%] bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.3),transparent_70%)] pointer-events-none blur-[120px]" />
+      <div className="absolute -bottom-[40%] right-[10%] w-[80%] h-[100%] bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.3),transparent_70%)] pointer-events-none blur-[120px]" />
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Top Bar */}
@@ -64,7 +68,7 @@ const Footer = () => {
               Your next idea, beautifully designed and flawlessly built
             </p>
           </div>
-          
+
           <div className="flex items-center gap-2">
             {socialLinks.map((social, i) => (
               <motion.a
@@ -92,7 +96,7 @@ const Footer = () => {
             >
               LET'S MAKE IT <br /> HAPPEN NOW
             </motion.h2>
-            
+
             <div className="flex flex-wrap gap-3">
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -114,17 +118,23 @@ const Footer = () => {
 
           <div className="lg:col-span-5 lg:pt-4">
             <div>
-              <h4 className="font-display text-[9px] uppercase tracking-[0.2em] text-white/40 mb-6">Navigate</h4>
-              <ul className="grid grid-cols-2 gap-x-8 gap-y-3">
+              <h4 className="font-display text-xs uppercase tracking-[0.3em] text-white/40 mb-6">Navigate</h4>
+              <ul className="flex flex-wrap items-center gap-2.5">
                 {navLinks.map((link) => (
                   <li key={link.name}>
-                    <button
+                    <motion.button
+                      whileHover={{
+                        scale: 1.1,
+                        backgroundColor: "rgba(37, 99, 235, 0.15)",
+                        borderColor: "rgba(37, 99, 235, 0.4)",
+                        boxShadow: "0 0 20px rgba(37, 99, 235, 0.2)"
+                      }}
+                      whileTap={{ scale: 0.95 }}
                       onClick={() => scrollTo(link.id)}
-                      className="group flex items-center gap-2 font-display text-[10px] uppercase tracking-widest text-white/60 hover:text-white transition-all text-left"
+                      className="whitespace-nowrap px-4 py-2 rounded-full border border-white/5 font-display text-[9px] md:text-[10px] uppercase tracking-widest text-white/60 hover:text-white transition-all text-center backdrop-blur-md"
                     >
-                      <span className="text-blue-500 font-bold group-hover:scale-125 transition-transform">*</span>
                       {link.name}
-                    </button>
+                    </motion.button>
                   </li>
                 ))}
               </ul>
@@ -149,7 +159,7 @@ const Footer = () => {
                 {time.toLocaleTimeString('en-US', { hour12: true })} , GMT +5:30
               </div>
             </div>
-            
+
             <motion.button
               whileHover={{ y: -5, scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
