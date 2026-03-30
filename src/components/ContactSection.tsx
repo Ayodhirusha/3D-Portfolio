@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Send, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
-import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
@@ -77,6 +77,7 @@ const ContactSection = () => {
                   { icon: FaGithub, url: "https://github.com/Ayodhirusha", label: "GitHub" },
                   { icon: FaLinkedin, url: "https://www.linkedin.com/in/Ayod-hirusha", label: "LinkedIn" },
                   { icon: FaWhatsapp, url: "https://wa.me/94770336504", label: "WhatsApp" },
+                  { icon: FaInstagram, url: "https://www.instagram.com/_mr.bay_nx_613_?igsh=MWJlaWdhcm5tYmM0ZQ==", label: "Instagram" },
                 ].map((link) => (
                   <a
                     key={link.label}

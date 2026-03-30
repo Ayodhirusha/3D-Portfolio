@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaInstagram, FaFacebookF, FaWhatsapp, FaYoutube } from "react-icons/fa";
-import { ArrowUp, ArrowRight, MessageSquare, Mail, Phone, MapPin, Globe, Download, Twitter, Send, Zap } from "lucide-react";
+import { FaGithub, FaLinkedin, FaInstagram, FaFacebookF, FaWhatsapp } from "react-icons/fa";
+import { ArrowUp, ArrowRight, MessageSquare, Mail, Phone, MapPin, Download, Send, Zap } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const Footer = () => {
@@ -24,12 +24,9 @@ const Footer = () => {
 
 
   const socialLinks = [
-    { icon: Globe, url: "#" },
-    { icon: FaYoutube, url: "#" },
     { icon: FaWhatsapp, url: "https://wa.me/94770336504" },
-    { icon: FaInstagram, url: "https://www.instagram.com/ayod_hirusha" },
+    { icon: FaInstagram, url: "https://www.instagram.com/_mr.bay_nx_613_?igsh=MWJlaWdhcm5tYmM0ZQ==" },
     { icon: FaGithub, url: "https://github.com/Ayodhirusha" },
-    { icon: Twitter, url: "#" },
   ];
 
   const scrollTo = (id: string) => {

@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Zap, Code, Award, Layers, Github, Linkedin, Instagram, Twitter, Mail, ExternalLink } from "lucide-react";
+import { Zap, Code, Award, Layers, Github, Linkedin, Instagram, Mail, ExternalLink } from "lucide-react";
 import { useRef } from "react";
 import profileImg from "@/assets/profile-placeholder.jpg";
 import { Button } from "@/components/ui/button";
@@ -107,7 +107,7 @@ const AboutSection = () => {
                 </p>
 
                 <div className="flex gap-3 md:gap-4 mb-6 md:mb-8 justify-center">
-                  {[Instagram, Linkedin, Github, Twitter].map((Icon, i) => (
+                  {[Instagram, Linkedin, Github].map((Icon, i) => (
                     <motion.a
                       key={i}
                       href="#"
