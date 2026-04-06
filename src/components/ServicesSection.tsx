@@ -59,9 +59,9 @@ const ServicesSection = () => {
                 whileHover={{ y: -8 }}
                 className="group relative rounded-2xl p-6 md:p-8 overflow-hidden transition-all duration-500"
                 style={{
-                  background: "rgba(255,255,255,0.02)",
+                  background: "hsla(var(--foreground) / 0.02)",
                   backdropFilter: "blur(20px)",
-                  border: "1px solid rgba(146,63,255,0.1)",
+                  border: "1px solid hsla(var(--primary) / 0.1)",
                 }}
               >
                 {/* Hover glow */}

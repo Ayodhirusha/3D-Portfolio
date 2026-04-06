@@ -51,14 +51,14 @@ const AboutSection = () => {
             left: dot.left,
             width: dot.size,
             height: dot.size,
-            background: "rgba(59, 130, 246, 0.6)",
+            background: "hsla(var(--primary) / 0.6)",
             boxShadow: "0 0 14px rgba(59, 130, 246, 0.5)",
           }}
         />
       ))}
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -66,7 +66,7 @@ const AboutSection = () => {
           >
             About Me
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -79,7 +79,7 @@ const AboutSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column - Profile Card */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -87,10 +87,10 @@ const AboutSection = () => {
           >
             <div className="group relative rounded-3xl overflow-hidden bg-card border border-border p-5 md:p-8 flex flex-col items-center text-center hover:border-primary/50 hover:glow-box transition-all duration-500 shadow-2xl">
               <div className="relative w-full aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden mb-6 md:mb-8 group-inner">
-                <img 
-                  src="/IMG-20260327-WA0015.jpg" 
-                  alt="Profile" 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100" 
+                <img
+                  src="/IMG-20260327-WA0015.jpg"
+                  alt="Profile"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
               </div>
@@ -112,7 +112,7 @@ const AboutSection = () => {
                       key={i}
                       href="#"
                       whileHover={{ y: -3, scale: 1.1 }}
-                      className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-muted-foreground hover:text-white hover:border-white/20 transition-colors"
+                      className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/20 transition-colors"
                     >
                       <Icon size={16} />
                     </motion.a>
@@ -129,7 +129,7 @@ const AboutSection = () => {
           {/* Right Column - Info Blocks */}
           <div className="lg:col-span-7 xl:col-span-8 space-y-4 md:space-y-6">
             {/* Bio Block */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -147,7 +147,7 @@ const AboutSection = () => {
             </motion.div>
 
             {/* Tech Stack Block */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -161,7 +161,7 @@ const AboutSection = () => {
                     <motion.div
                       key={i}
                       whileHover={{ scale: 1.1, rotate: 5 }}
-                      className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center p-2 md:p-2.5 grayscale hover:grayscale-0 transition-all cursor-pointer"
+                      className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-foreground/5 border border-foreground/10 flex items-center justify-center p-2 md:p-2.5 grayscale hover:grayscale-0 transition-all cursor-pointer"
                       title={tech.name}
                     >
                       <img src={tech.icon} alt={tech.name} className="w-full h-full object-contain" />
@@ -172,7 +172,7 @@ const AboutSection = () => {
             </motion.div>
 
             {/* Experience Block */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -183,7 +183,7 @@ const AboutSection = () => {
               <div className="space-y-4 md:space-y-6">
                 {experience.map((exp, i) => (
                   <div key={i} className="group-item relative">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between py-3 md:py-4 border-b border-white/5 group-item-last:border-0 gap-1 sm:gap-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between py-3 md:py-4 border-b border-foreground/5 group-item-last:border-0 gap-1 sm:gap-4">
                       <div className="space-y-0.5 md:space-y-1">
                         <p className="font-body text-sm md:text-base font-medium group-hover:text-primary transition-colors">{exp.role}</p>
                         <p className="text-xs md:text-sm text-muted-foreground">{exp.company}</p>

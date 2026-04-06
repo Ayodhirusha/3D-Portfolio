@@ -22,7 +22,8 @@ const skills = [
 ];
 
 const TechStackSection = () => {
-  const duplicatedSkills = [...skills, ...skills, ...skills];
+  // Use exactly 2 copies for perfect seamless loop
+  const duplicatedSkills = [...skills, ...skills];
 
   return (
     <section id="skills" className="relative py-16 md:py-24 px-4 sm:px-6 md:px-12 overflow-hidden">
@@ -93,7 +94,7 @@ const TechStackSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex gap-4 animate-scroll hover:[animation-play-state:paused]"
+          className="flex gap-4 animate-scroll"
         >
           {duplicatedSkills.map((skill, i) => (
             <div
@@ -101,7 +102,7 @@ const TechStackSection = () => {
               className="group flex-shrink-0 flex flex-col items-center gap-3 cursor-pointer px-2"
             >
               <div className="relative">
-                <div className="tech-icon p-6 rounded-2xl bg-[#12121a] border border-white/5 hover:border-primary/40 hover:-translate-y-2 transition-all duration-500 shadow-2xl">
+                <div className="tech-icon p-6 rounded-2xl bg-[#111] border border-foreground/10 hover:border-primary/40 hover:-translate-y-2 transition-all duration-500 shadow-2xl">
                   <img
                     src={skill.image}
                     alt={skill.name}
@@ -109,7 +110,7 @@ const TechStackSection = () => {
                   />
                 </div>
               </div>
-              <p className="font-body text-xs text-muted-foreground group-hover:text-white transition-all">{skill.name}</p>
+              <p className="font-body text-xs text-muted-foreground group-hover:text-foreground transition-all">{skill.name}</p>
             </div>
           ))}
         </motion.div>
@@ -121,7 +122,11 @@ const TechStackSection = () => {
           100% { transform: translateX(-50%); }
         }
         .animate-scroll {
-          animation: scroll 25s linear infinite;
+          animation: scroll 15s linear infinite;
+          will-change: transform;
+        }
+        .animate-scroll:hover {
+          animation-play-state: paused;
         }
         .tech-icon img {
           filter: grayscale(100%) brightness(0.6);

@@ -4,69 +4,270 @@ import { useState } from "react";
 
 const projects = [
   {
-    title: "Wego Travels",
+    title: "Caritas Sri Lanka",
     category: "Development",
     type: "WEB-SITE",
-    description: "Wego Travels is a fully responsive travel website offering personalized inbound and outbound trips. With interactive features, smooth animations, and an intuitive interface, it makes planning, booking, and exploring your adventures seamless and enjoyable across all devices.",
-    tags: ["React", "TypeScript", "Vite", "Tailwind CSS"],
-    image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop",
+    description: "A comprehensive digital platform for Caritas Sri Lanka, focusing on social justice and community development. Features include real-time project tracking, donation integration, and a multi-language content management system.",
+    tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
+    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop",
   },
   {
-    title: "Digital Points",
+    title: "Pantiles Dental Center",
     category: "Development",
     type: "WEB-SITE",
-    description: "Our digital printing website lets you create custom products like banners, mugs, and posters with interactive previews and smooth animations, delivering a seamless, responsive experience and professional-quality prints across all devices.",
-    tags: ["React", "Vite", "Tailwind CSS", "TypeScript"],
-    image: "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?q=80&w=1932&auto=format&fit=crop",
-  },
-  {
-    title: "Optivex",
-    category: "Development",
-    type: "FRONTEND DEVELOPMENT",
-    description: "Our electronics e-commerce website offers a fully responsive, user-friendly platform for browsing and purchasing products like smartphones, laptops, and accessories. With interactive product previews, smooth animations, and intuitive navigation, it ensures a seamless shopping experience across all devices while showcasing products effectively.",
-    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
-    image: "https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    title: "Pantiles Dental",
-    category: "UI/UX Design",
-    type: "UI/UX DESIGN",
-    description: "Modern UI/UX website design project for a UK-based dental client featuring 58 pages. Focused on optimal performance and professional aesthetic.",
-    tags: ["Figma", "UI/UX", "Adobe XD"],
+    description: "An extensive patient management and appointment scheduling platform for a UK-based dental clinic. Features 58+ custom pages with a focus on accessibility, medical security standards, and seamless user experience.",
+    tags: ["React", "TypeScript", "Node.js", "Tailwind CSS", "Medical UI"],
     image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?q=80&w=2070&auto=format&fit=crop",
   },
   {
     title: "Fair Haven Villa",
     category: "UI/UX Design",
-    type: "UI/UX DESIGN",
-    description: "Modern UI/UX website design project for a peaceful coastal getaway in Chilaw. Created an engaging design showcasing amenities and booking.",
-    tags: ["Figma", "Responsive Design"],
+    type: "UX-DESIGN",
+    description: "Designed a premium booking experience for a luxury villa in Chilaw. Created a visual identity that reflects tranquility and elegance, with a focus on high-conversion landing pages and immersive property showcases.",
+    tags: ["Figma", "Visual Identity", "Responsive Design"],
     image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2070&auto=format&fit=crop",
   },
   {
-    title: "Graphic Design Services",
+    title: "NFC Google Review Card",
     category: "Graphic Design",
-    type: "SOCIAL MEDIA POST",
-    description: "Professional graphic design services advertisement post.",
-    tags: ["Photoshop", "Illustrator", "Figma"],
+    type: "PRODUCT DESIGN",
+    description: "Modern NFC-enabled Google Review card design for XTap. Features a clean, professional layout optimized for high-quality PVC printing and contactless technology integration.",
+    tags: ["Photoshop", "Branding", "Product Design"],
+    image: "/Postcard Promo.jpg",
+  },
+  {
+    title: "Educational Seminar Posters",
+    category: "Graphic Design",
+    type: "ADVERTISEMENT",
+    description: "Series of high-impact educational posters for Economics and Accounting seminars. Designed to be eye-catching for G.C.E. A/L and O/L students while maintaining professional clarity.",
+    tags: ["Photoshop", "Typography", "Marketing"],
     image: "/Social Media Post New.jpg",
   },
   {
-    title: "Brand Identity Design",
+    title: "Personalised Postcards",
     category: "Graphic Design",
-    type: "GRAPHIC DESIGN",
-    description: "Modern brand identity design featuring a clean, professional aesthetic for a tech startup.",
-    tags: ["Photoshop", "Illustrator"],
-    image: "/Group 17.png",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/Google Review post.jpg",
   },
   {
-    title: "Social Media Campaign",
+    title: "Personalised Postcards",
     category: "Graphic Design",
-    type: "GRAPHIC DESIGN",
-    description: "Engaging social media post designs created for a summer marketing campaign.",
-    tags: ["Photoshop", "Social Media"],
-    image: "/Group.png",
-  }
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/Maximum Pre school.png",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/thiwanka  Fitness Promo Post.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/dutch Banner.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/Bill Till post.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/travel tourism copy.jpg",
+  },
+    {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/vesak copy.jpg",
+  },
+    {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/yoga post copy.jpg",
+  },
+    {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/Rashen aiya  A4 flyer B&W copy.jpg",
+  },
+    {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/Rashen Aiya posts copy Economics.jpg",
+  },
+    {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/Rashen Aiya posts copy.jpg",
+  },
+    {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/Copy of japan busineess post2.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/Esela perehara copy.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/Hela Osuwa copy.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/japan student visa.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/nm digitals copy2.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/Senu wedding cake post copy.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/teachers posts copy.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/A4 size Rashen aiya copy.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/Enosh class Post.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/NM digitals.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/qatar post.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/Rashen Aiya grade 11.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/Russia Post.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/Travel post.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/curtain banner new.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/perehara ticket copy.jpg",
+  },
+  {
+    title: "Personalised Postcards",
+    category: "Graphic Design",
+    type: "MARKETING",
+    description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
+    tags: ["Illustrator", "Vintage Design", "Layout"],
+    image: "/Mushroom Soup Powder Tin package copy.jpg",
+  },
+
 ];
 
 const ProjectsSection = () => {
@@ -89,7 +290,7 @@ const ProjectsSection = () => {
           <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm">
             <span className="font-body text-[10px] uppercase tracking-[0.3em] text-primary font-bold">Projects</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-white">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-foreground">
             Selected <span className="text-gradient">Work</span>
           </h2>
           <p className="font-body text-muted-foreground max-w-2xl mx-auto text-xs sm:text-sm">
@@ -98,14 +299,13 @@ const ProjectsSection = () => {
         </motion.div>
 
         <div className="flex justify-center mb-12 md:mb-16">
-          <div className="inline-flex p-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm shadow-xl flex-wrap justify-center max-w-full">
+          <div className="inline-flex p-1 rounded-full bg-foreground/5 border border-foreground/10 backdrop-blur-sm shadow-xl flex-wrap justify-center max-w-full">
             {["Development", "UI/UX Design", "Graphic Design"].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 sm:px-8 py-2 md:py-2.5 rounded-full font-display text-[10px] sm:text-sm font-medium transition-all duration-500 relative whitespace-nowrap ${
-                  activeTab === tab ? "text-white" : "text-white/40 hover:text-white/60"
-                }`}
+                className={`px-4 sm:px-8 py-2 md:py-2.5 rounded-full font-display text-[10px] sm:text-sm font-medium transition-all duration-500 relative whitespace-nowrap ${activeTab === tab ? "text-foreground" : "text-muted-foreground hover:text-foreground/60"
+                  }`}
               >
                 {activeTab === tab && (
                   <motion.div
@@ -132,9 +332,9 @@ const ProjectsSection = () => {
               whileHover={{ y: -10 }}
               className="group relative flex flex-col h-full rounded-2xl md:rounded-3xl overflow-hidden transition-all duration-700"
               style={{
-                background: "rgba(255,255,255,0.02)",
+                background: "hsla(var(--foreground) / 0.02)",
                 backdropFilter: "blur(20px)",
-                border: "1px solid rgba(146,63,255,0.1)",
+                border: "1px solid hsla(var(--primary) / 0.1)",
               }}
             >
               <div className={`relative overflow-hidden ${activeTab === 'Graphic Design' ? 'h-full aspect-square flex items-center justify-center bg-black/20' : 'h-48 md:h-64'}`}>
@@ -154,24 +354,24 @@ const ProjectsSection = () => {
 
               {activeTab !== 'Graphic Design' && (
                 <div className="flex-1 p-6 md:p-8 flex flex-col relative z-30">
-                  <h3 className="font-display text-xl md:text-2xl font-bold mb-3 md:mb-4 text-white group-hover:text-primary transition-colors duration-500">
+                  <h3 className="font-display text-xl md:text-2xl font-bold mb-3 md:mb-4 text-foreground group-hover:text-primary transition-colors duration-500">
                     {project.title}
                   </h3>
-                  <p className="font-body text-xs md:text-sm text-white/50 leading-relaxed mb-6 md:mb-8 line-clamp-3 md:line-clamp-4 group-hover:text-white/70 transition-colors duration-500">
+                  <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed mb-6 md:mb-8 line-clamp-3 md:line-clamp-4 group-hover:text-foreground/70 transition-colors duration-500">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-1.5 md:gap-2 mt-auto mb-6 md:mb-8">
                     {project.tags.map((tag) => (
-                      <span key={tag} className="px-2 md:px-3 py-1 rounded-lg bg-white/5 border border-white/5 text-[8px] md:text-[10px] text-white/40 font-medium">
+                      <span key={tag} className="px-2 md:px-3 py-1 rounded-lg bg-foreground/5 border border-foreground/5 text-[8px] md:text-[10px] text-muted-foreground font-medium">
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <div className="flex items-center justify-between pt-4 md:pt-6 border-t border-white/5">
+                  <div className="flex items-center justify-between pt-4 md:pt-6 border-t border-foreground/5">
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 text-[10px] md:text-xs font-bold text-white/40 group-hover:text-primary transition-colors duration-500"
+                      className="flex items-center gap-2 text-[10px] md:text-xs font-bold text-muted-foreground group-hover:text-primary transition-colors duration-500"
                     >
                       <ExternalLink className="w-3.5 h-3.5 md:w-4 h-4" />
                       <span>View Details</span>
