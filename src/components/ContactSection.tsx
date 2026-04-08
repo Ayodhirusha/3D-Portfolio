@@ -87,7 +87,7 @@ const ContactSection = () => {
             {[
               { icon: Mail, label: "Email", value: "ayodhirusha77@gmail.com", href: "mailto:ayodhirusha77@gmail.com" },
               { icon: Phone, label: "Phone", value: "077 0336504", href: "tel:+94770336504" },
-              { icon: MapPin, label: "Location", value: "Sri Lanka", href: "#" },
+              { icon: MapPin, label: "Location", value: "No. 437, Mahawatta, Pamunugama, Ja ela, Sri Lanka", href: "#" },
             ].map((item, i) => (
               <motion.a
                 key={item.label}

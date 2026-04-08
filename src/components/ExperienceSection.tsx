@@ -66,13 +66,6 @@ const ExperienceSection = () => {
 
   return (
     <section ref={ref} id="experience" className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8">
-      {/* Highlighted section background */}
-      <div className="absolute inset-x-2 sm:inset-x-4 md:inset-x-8 inset-y-0 rounded-3xl overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(15,23,42,0.95)] via-[rgba(10,15,30,0.9)] to-[rgba(15,23,42,0.95)] border border-[rgba(146,63,255,0.12)] rounded-3xl" />
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[rgba(146,63,255,0.3)] to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[rgba(125,191,255,0.2)] to-transparent" />
-      </div>
-
       <div className="max-w-5xl mx-auto relative z-10 px-2 sm:px-6 md:px-12 py-8 sm:py-12 md:py-16">
         <motion.div
           initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}

@@ -41,7 +41,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
             }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full opacity-30 blur-[120px]"
-            style={{ background: "radial-gradient(circle, #923FFF, transparent 70%)" }}
+            style={{ background: "radial-gradient(circle, #3B82F6, transparent 70%)" }}
           />
           <motion.div
             animate={{
@@ -51,7 +51,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
             }}
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
             className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] rounded-full opacity-25 blur-[100px]"
-            style={{ background: "radial-gradient(circle, #583FFF, transparent 70%)" }}
+            style={{ background: "radial-gradient(circle, #1E40AF, transparent 70%)" }}
           />
           <motion.div
             animate={{
@@ -60,7 +60,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
             }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full opacity-20 blur-[80px]"
-            style={{ background: "radial-gradient(circle, #7DBFFF, transparent 70%)" }}
+            style={{ background: "radial-gradient(circle, #60A5FA, transparent 70%)" }}
           />
 
           {/* Floating particles */}
@@ -85,7 +85,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
                 height: 2 + Math.random() * 3,
                 left: `${10 + Math.random() * 80}%`,
                 top: `${30 + Math.random() * 40}%`,
-                background: i % 3 === 0 ? "#923FFF" : i % 3 === 1 ? "#7DBFFF" : "#583FFF",
+                background: i % 3 === 0 ? "#3B82F6" : i % 3 === 1 ? "#60A5FA" : "#1E40AF",
               }}
             />
           ))}
@@ -98,8 +98,8 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
             className="relative z-10 text-center mb-12"
           >
             <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tight">
-              <span className="bg-gradient-to-r from-[#923FFF] via-[#583FFF] to-[#7DBFFF] bg-clip-text text-transparent">
-                MiladiCode
+              <span className="bg-gradient-to-r from-[#3B82F6] via-[#1E40AF] to-[#60A5FA] bg-clip-text text-transparent">
+                Ayod Hirusha
               </span>
             </h1>
             <motion.p
@@ -108,7 +108,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="font-body text-white/40 text-xs tracking-[0.4em] uppercase mt-3"
             >
-              Portfolio
+              Software Engineer · UI/UX Designer
             </motion.p>
           </motion.div>
 
@@ -132,7 +132,8 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
                 className="h-full rounded-full"
                 style={{
                   width: `${progress}%`,
-                  background: "linear-gradient(90deg, #923FFF, #583FFF, #7DBFFF)",
+                  background: "linear-gradient(90deg, #3B82F6, #1E40AF, #60A5FA)",
+                  transition: "width 0.05s",
                 }}
                 transition={{ duration: 0.05 }}
               />
@@ -140,24 +141,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
           </div>
 
           {/* Reveal wipe */}
-          {phase === "reveal" && (
-            <>
-              <motion.div
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-                className="absolute inset-0 z-20 origin-left"
-                style={{ background: "linear-gradient(90deg, #923FFF, #583FFF)" }}
-              />
-              <motion.div
-                initial={{ scaleX: 1 }}
-                animate={{ scaleX: 0 }}
-                transition={{ duration: 0.5, delay: 0.4, ease: [0.76, 0, 0.24, 1] }}
-                className="absolute inset-0 z-30 origin-right"
-                style={{ background: "linear-gradient(90deg, #923FFF, #583FFF)" }}
-              />
-            </>
-          )}
+         
         </motion.div>
       )}
     </AnimatePresence>

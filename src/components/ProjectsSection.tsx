@@ -58,22 +58,22 @@ const projects = [
     liveUrl: "https://pantilesdental.co.uk/"
   },
   {
-    title: "Learning Management System",
+    title: "Ceylon Innovations Website",
     category: "Development",
-    type: "WEB APPLICATION",
-    description: "An educational platform with video courses, quizzes, progress tracking, and certification. Features include student-teacher messaging, assignment submissions, and course recommendations.",
-    tags: ["Next.js", "Prisma", "PostgreSQL"],
-    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=800&auto=format&fit=crop",
-    liveUrl: "https://lms-demo.example.com"
+    type: "Frontend Development",
+    description: "At Ceylon Innovations, we empower businesses across diverse industries with forward-thinking software solutions tailored to meet modern challenges. Our technologies are designed to enhance productivity, streamline processes, and unlock new opportunities for growth.",
+    tags: ["React.js", "Vite", "Tailwind CSS"],
+    image: "Ceylon Innovation.png",
+    liveUrl: "https://www.ceyloninnovation.com/"
   },
   {
-    title: "Social Media Analytics",
+    title: "Flutter_web",
     category: "Development",
-    type: "DASHBOARD",
+    type: "Warehouse Management",
     description: "A comprehensive analytics dashboard for social media managers. Tracks engagement metrics, audience growth, and content performance across multiple platforms with AI-powered insights.",
-    tags: ["React", "D3.js", "Python"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
-    liveUrl: "https://analytics-demo.example.com"
+    tags: ["HTML", "C#", "Dart","Flutter","SQL"],
+    image: "Flutter WEB.png",
+    liveUrl: "https://github.com/Ayodhirusha/Flutter_web"
   },
   {
     title: "Fair Haven Villa",

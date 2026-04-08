@@ -136,7 +136,7 @@ const AboutSection = () => {
               className="group relative rounded-3xl bg-card border border-border p-6 md:p-8 shadow-xl hover:border-primary/50 hover:glow-box transition-all duration-500"
             >
               <h4 className="font-display text-lg md:text-xl font-bold mb-4 md:mb-6 text-gradient">Hi! I'm Ayod Hirusha,</h4>
-              <div className="space-y-3 md:space-y-4 font-body text-muted-foreground text-sm md:text-base leading-relaxed">
+              <div className="space-y-3 md:space-y-4 font-body text-muted-foreground text-sm md:text-base leading-relaxed text-justify">
                 <p>
                   I am a Software Engineering Graduate currently enrolled in the BSc (Hons) Software Engineering program at the University of Plymouth (UK). I have completed a Full Stack Development internship at Ceylon Innovations Pvt Ltd, where I gained practical industry experience.
                 </p>
