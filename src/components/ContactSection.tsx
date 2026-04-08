@@ -45,8 +45,8 @@ const ContactSection = () => {
         const errorData = await response.json().catch(() => ({}));
         throw new Error(errorData.message || "Failed to send message");
       }
-    } catch (error) {
-      toast.error("Failed to send message. Please try again.");
+    } catch (error: any) {
+      toast.error(error.message || "Failed to send message. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -173,9 +173,8 @@ const ContactSection = () => {
                 ].map((field) => (
                   <div key={field.name} className="relative group">
                     <label
-                      className={`absolute left-3 sm:left-4 font-body text-[9px] sm:text-[10px] md:text-xs transition-all duration-300 pointer-events-none z-10 ${
-                        focused === field.name ? "top-1.5 text-primary" : "top-3 sm:top-3.5 md:top-4 text-muted-foreground"
-                      }`}
+                      className={`absolute left-3 sm:left-4 font-body text-[9px] sm:text-[10px] md:text-xs transition-all duration-300 pointer-events-none z-10 ${focused === field.name ? "top-1.5 text-primary" : "top-3 sm:top-3.5 md:top-4 text-muted-foreground"
+                        }`}
                     >
                       {field.label}
                     </label>
@@ -193,9 +192,8 @@ const ContactSection = () => {
 
               <div className="relative group">
                 <label
-                  className={`absolute left-3 sm:left-4 font-body text-[9px] sm:text-[10px] md:text-xs transition-all duration-300 pointer-events-none z-10 ${
-                    focused === "subject" ? "top-1.5 text-primary" : "top-3 sm:top-4 text-muted-foreground"
-                  }`}
+                  className={`absolute left-3 sm:left-4 font-body text-[9px] sm:text-[10px] md:text-xs transition-all duration-300 pointer-events-none z-10 ${focused === "subject" ? "top-1.5 text-primary" : "top-3 sm:top-4 text-muted-foreground"
+                    }`}
                 >
                   Subject
                 </label>
@@ -211,9 +209,8 @@ const ContactSection = () => {
 
               <div className="relative group">
                 <label
-                  className={`absolute left-3 sm:left-4 font-body text-[9px] sm:text-[10px] md:text-xs transition-all duration-300 pointer-events-none z-10 ${
-                    focused === "message" ? "top-1.5 text-primary" : "top-3 sm:top-4 text-muted-foreground"
-                  }`}
+                  className={`absolute left-3 sm:left-4 font-body text-[9px] sm:text-[10px] md:text-xs transition-all duration-300 pointer-events-none z-10 ${focused === "message" ? "top-1.5 text-primary" : "top-3 sm:top-4 text-muted-foreground"
+                    }`}
                 >
                   Your Message
                 </label>

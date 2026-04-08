@@ -18,6 +18,14 @@ export const handler = async (event) => {
       };
     }
 
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.error('Server configuration error: Missing email credentials');
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ message: 'Server error: Email credentials are not configured in environment variables.' }),
+      };
+    }
+
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -49,7 +57,7 @@ export const handler = async (event) => {
     console.error('Error sending email:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: 'Failed to send email' }),
+      body: JSON.stringify({ message: 'Failed to send email: ' + error.message, error: error.message }),
     };
   }
 };

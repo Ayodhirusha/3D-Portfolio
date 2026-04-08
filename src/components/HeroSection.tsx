@@ -7,10 +7,23 @@ const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 100);
-    return () => clearTimeout(timer);
+
+    // Check if device is mobile to optimize 3D rendering
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', checkMobile);
+    };
   }, []);
 
   const { scrollYProgress } = useScroll({
@@ -26,6 +39,7 @@ const HeroSection = () => {
 
   const bgScale = useTransform(smoothScrollProgress, [0, 1], [1, 5]);
   const bgOpacity = useTransform(smoothScrollProgress, [0.7, 0.95], [1, 0]);
+  const bgFilter = useTransform(smoothScrollProgress, [0, 0.8], ["blur(0px)", "blur(12px)"]);
   const indicatorOpacity = useTransform(smoothScrollProgress, [0, 0.2], [1, 0]);
 
   const letterVariants = {
@@ -90,13 +104,13 @@ const HeroSection = () => {
           </motion.div>
 
           {/* 3D Spline Scene */}
-          <motion.div 
-            className="absolute inset-0 z-0 origin-center" 
-            style={{ 
-              scale: bgScale, 
+          <motion.div
+            className={`absolute inset-0 z-0 origin-center ${isMobile ? 'pointer-events-none' : ''}`}
+            style={{
+              scale: isMobile ? 1 : bgScale,
               opacity: useTransform(smoothScrollProgress, [0, 0.7, 0.95], [isLoaded ? 1 : 0, 1, 0]),
-              filter: useTransform(smoothScrollProgress, [0, 0.8], ["blur(0px)", "blur(12px)"]),
-              willChange: "transform, opacity"
+              filter: isMobile ? "none" : bgFilter,
+              willChange: isMobile ? "opacity" : "transform, opacity, filter"
             }}
           >
             <iframe
@@ -105,7 +119,7 @@ const HeroSection = () => {
               frameBorder="0"
               width="100%"
               height="100%"
-              style={{ 
+              style={{
                 border: 'none',
                 opacity: isLoaded ? 1 : 0,
                 transition: 'opacity 0.8s ease-out'
