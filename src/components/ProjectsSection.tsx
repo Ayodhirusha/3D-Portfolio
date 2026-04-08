@@ -4,28 +4,157 @@ import { useState } from "react";
 
 const projects = [
   {
-    title: "Caritas Sri Lanka",
+    title: "Caritas Galle Diocese",
     category: "Development",
-    type: "WEB-SITE",
-    description: "A comprehensive digital platform for Caritas Sri Lanka, focusing on social justice and community development. Features include real-time project tracking, donation integration, and a multi-language content management system.",
-    tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop",
+    type: "Full-Stack Development",
+    description: "Caritas SED Galle is a charitable organization dedicated to justice, peace, and human development in the Southern Province of Sri Lanka. As the Diocesan Centre for Social and Economic Development, we work towards uplifting the needy, fostering harmony, and providing essential support in times of crisis.",
+    tags: ["React.js", "Node.js & Express", "Vite", "Tailwind CSS", "SQL databases"],
+    image:" Caritas Galle .png ",
+    liveUrl: "https://caritasgalle.lk/"
   },
   {
-    title: "Pantiles Dental Center",
+    title: "Caritas Chilaw Diocese",
+    category: "Development",
+    type: "Full-Stack Development",
+    description:"Caritas Chilaw – Janasaviya SEDEC was established in 1969 under the visionary leadership of Rev. Fr. Philip Sethunga, marking the beginning of a mission rooted in compassion and service for the Diocese of Chilaw.",
+    tags: ["React.js", "Node.js & Express", "Vite", "Tailwind CSS", "SQL databases"],
+    image: "Caritas Chilaw.png",
+    liveUrl: "https://caritaschilaw.lk/"
+  },
+  {
+    title: "Caritas Colombo Diocese",
+    category: "Development",
+    type: "Full-Stack Development",
+    description: "Caritas Colombo - Seth Sarana is the official social service arm of the Archdiocese of Colombo, dedicated to promoting justice, peace, and human development. Established on 15th August 1986 by Rev. Fr. Malcolm Ranjith, now His Eminence Malcolm Cardinal Ranjith, the organization continues to serve as a beacon of faith-driven social action.",
+    tags: ["React.js", "Node.js & Express", "Vite", "Tailwind CSS", "SQL databases"],
+    image: "Caritas Colombo .png",
+    liveUrl: "https://sethsaranacc.org/"
+  },
+  {
+    title: "Caritas Badulla Diocese",
+    category: "Development",
+    type: "Full-Stack Development",
+    description: "Established in 1975, the USCOD Centre (Caritas Badulla) serves the Diocese of Badulla, which covers the Uva Province — the Diocese of Badulla and Monaragala.",
+    tags: ["React.js", "Node.js & Express", "Vite", "Tailwind CSS", "SQL databases"],
+    image: "Caritas Badulla.png",
+    liveUrl: "https://caritasbadullauscod.org/"
+  },
+  {
+    title: "Fair Heaven Villa",
+    category: "Development",
+    type: "Frontend Development",
+    description: "I handled this project end-to-end as both Website Developer and UI/UX Designer, working closely with the client to ensure the final website truly reflects the villa’s calm atmosphere and welcoming hospitality.",
+    tags: ["React.js", "Vite", "Tailwind CSS"],
+    image: "Fair Heaven Villa.png",
+    liveUrl: "https://fairheavenchilaw.com/"
+  },
+  {
+    title: "Real Estate Listings",
     category: "Development",
     type: "WEB-SITE",
-    description: "An extensive patient management and appointment scheduling platform for a UK-based dental clinic. Features 58+ custom pages with a focus on accessibility, medical security standards, and seamless user experience.",
-    tags: ["React", "TypeScript", "Node.js", "Tailwind CSS", "Medical UI"],
-    image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?q=80&w=2070&auto=format&fit=crop",
+    description: "A modern real estate platform with interactive map integration, advanced filtering, virtual tour support, and mortgage calculator. Features responsive design and instant property notifications.",
+    tags: ["React", "Mapbox", "Node.js"],
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop",
+    liveUrl: "https://realestate-demo.example.com"
+  },
+  {
+    title: "Learning Management System",
+    category: "Development",
+    type: "WEB APPLICATION",
+    description: "An educational platform with video courses, quizzes, progress tracking, and certification. Features include student-teacher messaging, assignment submissions, and course recommendations.",
+    tags: ["Next.js", "Prisma", "PostgreSQL"],
+    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=800&auto=format&fit=crop",
+    liveUrl: "https://lms-demo.example.com"
+  },
+  {
+    title: "Social Media Analytics",
+    category: "Development",
+    type: "DASHBOARD",
+    description: "A comprehensive analytics dashboard for social media managers. Tracks engagement metrics, audience growth, and content performance across multiple platforms with AI-powered insights.",
+    tags: ["React", "D3.js", "Python"],
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+    liveUrl: "https://analytics-demo.example.com"
   },
   {
     title: "Fair Haven Villa",
     category: "UI/UX Design",
-    type: "UX-DESIGN",
+    type: "CASE STUDY",
     description: "Designed a premium booking experience for a luxury villa in Chilaw. Created a visual identity that reflects tranquility and elegance, with a focus on high-conversion landing pages and immersive property showcases.",
-    tags: ["Figma", "Visual Identity", "Responsive Design"],
-    image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2070&auto=format&fit=crop",
+    tags: ["Figma", "Web Design", "Visual Identity"],
+    image: "fair heaven.png",
+    figmaUrl: "https://www.figma.com/design/h3XR1WoYfl5nsmePVc5k1g/Fair-Heaven?node-id=0-1&t=2az91xj0x8P6eIUd-1"
+  },
+  {
+    title: "Pantiles Dental Center",
+    category: "UI/UX Design",
+    type: "CASE STUDY",
+    description: "An extensive patient management and appointment scheduling platform for a UK-based dental clinic. Features 58+ custom pages with a focus on accessibility, medical security standards, and seamless user experience",
+    tags: ["Figma", "Web Design", "User Research"],
+    image: "Pantiles Dental.png",
+    figmaUrl: "https://www.figma.com/design/xQliGsa62I69VV00KjEAhd/Pantiles-Dental?node-id=0-1&t=MENSfoykaUwAIK9o-1"
+  },
+  {
+    title: "3D/2D Furniture Designer Pro ",
+    category: "UI/UX Design",
+    type: "CASE STUDY",
+    description: "A comprehensive web-based design tool that allows users to visualize furniture layouts in both 2D and 3D environments.This project emphasizes a customizable user experience through a robust dark/light mode system and a modular sidebar for precise spatial configuration.",
+    tags: ["Figma", "Web Design", "Design Tool"],
+    image: "HCI project.png",
+    figmaUrl: "https://www.figma.com/design/BaeUzxgvHeTYaYDcqi218h/HCI-Project-UI?node-id=0-1&t=2ZP3OlWJhBzmYz3x-1"
+  },
+  {
+    title: "Duskpine Earplugs",
+    category: "UI/UX Design",
+    type: "CASE STUDY",
+    description: "Duskpine is a direct to consumer brand selling handcrafted noise cancelling earplugs made from natural beeswax. Built for remote workers, light sleepers and frequent travellers aged 25-45 who are health conscious, willing to pay a premium and ",
+    tags: ["Figma", "Web Design", "Health Tech"],
+    image: "Duskpine_AyodHirusha.png",
+    figmaUrl: "https://www.figma.com/design/qFNwPoGnZTsn4iCHSaC5FK/Duskpine_AyodHirusha?node-id=3-2&t=O006yL0Ph1AO29BZ-1"
+  },
+  {
+    title: "Travel Agency",
+    category: "UI/UX Design",
+    type: "CASE STUDY",
+    description: "A comprehensive web design project for a travel agency, featuring a high-conversion landing page and detailed multi-day itinerary layouts. The project focuses on structured storytelling, using a clean vertical hierarchy to guide users through curated travel packages, day-by-day breakdowns, and immersive destination photography.",
+    tags: ["Figma", "Web Design", "Travel"],
+    image: "travel agency.png",
+    figmaUrl: "https://www.figma.com/design/Zig2E03sgVhDY3YJ09PCy0/travel-agency?node-id=0-1&t=b1TJfT6vKkR66HuJ-1"
+  },
+  {
+    title: "Food Delivery Platform",
+    category: "UI/UX Design",
+    type: "CASE STUDY",
+    description: "End-to-end food ordering experience with restaurant discovery, real-time tracking, and seamless checkout. Optimized for quick decisions and delightful interactions.",
+    tags: ["Figma", "Web Design", "On-Demand"],
+    image: "Manar project.png",
+    figmaUrl: "https://www.figma.com/design/jIp6qE430YxbqeZnA8Z5H6/Mannar-Step-1?node-id=0-1&t=JjLMPApTf9iumcS4-1"
+  },
+  {
+    title: "Blood donation",
+    category: "UI/UX Design",
+    type: "CASE STUDY",
+    description: "A comprehensive digital platform designed to streamline blood donation or medical collection logistics. This final year project features three distinct user interfaces tailored for Donors, Collectors, and Healthcare Professionals (Doctors).",
+    tags: ["Figma", "Web Design", "Medical"],
+    image: "blood donation UI.png",
+    figmaUrl: "https://www.figma.com/design/sRXJHUs3eXvOJZU2dQCY9S/final-year-project-UI?node-id=0-1&t=pFOKwpwOWO6GfL2W-1"
+  },
+  {
+    title: "Ceylon Innovations website",
+    category: "UI/UX Design",
+    type: "CASE STUDY",
+    description: "A full-scale corporate website design focused Software Development service offerings and technical innovation. This project demonstrates the ability to translate a professional brand identity across multiple landing pages, service-specific subpages, and team galleries, maintaining a cohesive aesthetic of trust and authority.",
+    tags: ["Figma", "Web Design", "Corporate"],
+    image: "CI websit.png",
+    figmaUrl: "https://www.figma.com/design/HPsGVCHjsu0evmgtvfwkbI/CI-WEBSITE?node-id=0-1&t=SANkQ5E6aqXugIJI-1"
+  },
+   {
+    title: "PC Build website",
+    category: "UI/UX Design",
+    type: "CASE STUDY",
+    description: "A dark-themed e-commerce platform designed for high-performance gaming hardware. The project centers on a Rig Configurator interface that simplifies complex technical choices into a streamlined, visual selection process. It balances a futuristic aesthetic with functional e-commerce elements like product catalogs, detailed spec sheets, and a seamless cart drawer.  ",
+    tags: ["Figma", "Web Design", "Corporate"],
+    image: "PC store.png",
+    figmaUrl: "https://www.figma.com/design/yBM9DroOsMZVNDl1ifSrZQ/PC-Build-web?node-id=0-1&t=xuPKf2Ul5JLXKo7P-1"
   },
   {
     title: "NFC Google Review Card",
@@ -324,12 +453,12 @@ const ProjectsSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {filteredProjects.map((project, i) => (
             <motion.div
-              key={project.title}
+              key={`${activeTab}-${i}`}
               initial={{ opacity: 0, y: 60, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-30px" }}
-              transition={{ duration: 0.6, delay: i * 0.12, type: "spring", bounce: 0.2 }}
-              whileHover={{ y: -10 }}
+              transition={{ duration: 0.5, delay: Math.min(i * 0.05, 0.5), type: "spring", bounce: 0.2 }}
+              exit={{ opacity: 0, scale: 0.9, y: -20 }}
               className="group relative flex flex-col h-full rounded-2xl md:rounded-3xl overflow-hidden transition-all duration-700"
               style={{
                 background: "hsla(var(--foreground) / 0.02)",
@@ -352,32 +481,52 @@ const ProjectsSection = () => {
                 </div>
               </div>
 
-              {activeTab !== 'Graphic Design' && (
-                <div className="flex-1 p-6 md:p-8 flex flex-col relative z-30">
-                  <h3 className="font-display text-xl md:text-2xl font-bold mb-3 md:mb-4 text-foreground group-hover:text-primary transition-colors duration-500">
+              {activeTab === 'UI/UX Design' && (
+                <div className="flex-1 p-5 md:p-6 flex flex-col relative z-30 bg-[#0a0a0a]">
+                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#A855F7] uppercase mb-2">UI/UX Case Study</span>
+                  <h3 className="font-display text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#A855F7] transition-colors duration-500">
                     {project.title}
                   </h3>
-                  <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed mb-6 md:mb-8 line-clamp-3 md:line-clamp-4 group-hover:text-foreground/70 transition-colors duration-500">
+                  <p className="font-body text-xs text-white/60 leading-relaxed mb-4 line-clamp-3">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-1.5 md:gap-2 mt-auto mb-6 md:mb-8">
+                  <a
+                    href={project.figmaUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto flex items-center gap-2 text-xs font-medium text-white/70 hover:text-[#A855F7] transition-colors pt-4 border-t border-white/10"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    <span>View Project</span>
+                  </a>
+                </div>
+              )}
+
+              {activeTab === 'Development' && (
+                <div className="flex-1 p-5 md:p-6 flex flex-col relative z-30 bg-[#0a0a0a]">
+                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#A855F7] uppercase mb-2">{project.type}</span>
+                  <h3 className="font-display text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#A855F7] transition-colors duration-500">
+                    {project.title}
+                  </h3>
+                  <p className="font-body text-xs text-white/60 leading-relaxed mb-4 line-clamp-4">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mt-auto mb-4">
                     {project.tags.map((tag) => (
-                      <span key={tag} className="px-2 md:px-3 py-1 rounded-lg bg-foreground/5 border border-foreground/5 text-[8px] md:text-[10px] text-muted-foreground font-medium">
+                      <span key={tag} className="px-2 py-1 rounded bg-white/10 text-[10px] text-white/70 font-medium">
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <div className="flex items-center justify-between pt-4 md:pt-6 border-t border-foreground/5">
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 text-[10px] md:text-xs font-bold text-muted-foreground group-hover:text-primary transition-colors duration-500"
-                    >
-                      <ExternalLink className="w-3.5 h-3.5 md:w-4 h-4" />
-                      <span>View Details</span>
-                    </motion.button>
-                    <ArrowUpRight className="w-4 h-4 md:w-5 h-5 text-white/20 group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500" />
-                  </div>
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-xs font-medium text-white/70 hover:text-[#A855F7] transition-colors pt-3 border-t border-white/10"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    <span>Live</span>
+                  </a>
                 </div>
               )}
 
