@@ -22,34 +22,40 @@ const skills = [
 ];
 
 const TechStackSection = () => {
-  // Use 3 copies for seamless infinite loop
   const duplicatedSkills = [...skills, ...skills, ...skills];
 
   return (
-    <section id="skills" className="relative py-16 md:py-24 px-4 sm:px-6 md:px-12 overflow-hidden">
-      <div className="max-w-7xl mx-auto relative px-4 sm:px-6 md:px-12 py-8 md:py-16">
-        <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.06),transparent_70%)] pointer-events-none" />
+    <section id="skills" className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 overflow-hidden">
+      {/* Highlighted section background */}
+      <div className="absolute inset-x-2 sm:inset-x-4 md:inset-x-8 inset-y-0 rounded-3xl overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(15,23,42,0.95)] via-[rgba(10,15,30,0.9)] to-[rgba(15,23,42,0.95)] border border-[rgba(146,63,255,0.12)] rounded-3xl" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[rgba(146,63,255,0.3)] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[rgba(125,191,255,0.2)] to-transparent" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10 px-2 sm:px-6 md:px-12 py-8 sm:py-12 md:py-16">
+        <div className="absolute top-0 right-0 w-[200px] md:w-[500px] h-[200px] md:h-[500px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.06),transparent_70%)] pointer-events-none" />
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <p className="font-body text-sm uppercase tracking-[0.3em] text-primary mb-4">Skills</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <p className="font-body text-[10px] sm:text-sm uppercase tracking-[0.3em] text-primary mb-3 sm:mb-4">Skills</p>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             My <span className="text-gradient">Tech Stack</span>
           </h2>
         </motion.div>
 
-        {/* Progress bars for key skills */}
+        {/* Progress bars */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20 max-w-4xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-12 sm:mb-20 max-w-4xl mx-auto"
         >
           {[
             { name: "React / Next.js", level: 90 },
@@ -61,17 +67,17 @@ const TechStackSection = () => {
           ].map((skill, i) => (
             <motion.div
               key={skill.name}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40, filter: "blur(4px)" }}
+              whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className="space-y-2"
             >
               <div className="flex justify-between items-center">
-                <span className="font-display text-sm font-medium text-foreground">{skill.name}</span>
-                <span className="font-display text-xs text-primary">{skill.level}%</span>
+                <span className="font-display text-[11px] sm:text-sm font-medium text-foreground">{skill.name}</span>
+                <span className="font-display text-[10px] sm:text-xs text-primary">{skill.level}%</span>
               </div>
-              <div className="h-2 bg-muted rounded-full overflow-hidden">
+              <div className="h-1.5 sm:h-2 bg-muted rounded-full overflow-hidden">
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: `${skill.level}%` }}
@@ -79,7 +85,7 @@ const TechStackSection = () => {
                   transition={{ duration: 1.2, delay: 0.3 + i * 0.1, ease: [0.25, 0.4, 0.25, 1] }}
                   className="h-full bg-gradient-primary rounded-full relative"
                 >
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white shadow-[0_0_10px_rgba(146,63,255,0.6)]" />
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-white shadow-[0_0_10px_rgba(146,63,255,0.6)]" />
                 </motion.div>
               </div>
             </motion.div>
@@ -87,30 +93,30 @@ const TechStackSection = () => {
         </motion.div>
       </div>
 
-      {/* Carousel Container - Full width for all 18 items */}
-      <div className="relative mt-12 w-full overflow-hidden">
+      {/* Carousel */}
+      <div className="relative mt-6 sm:mt-12 w-full overflow-hidden">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex gap-4 animate-scroll w-fit"
+          className="flex gap-3 sm:gap-4 animate-scroll w-fit"
         >
           {duplicatedSkills.map((skill, i) => (
             <div
               key={`${skill.name}-${i}`}
-              className="group flex-shrink-0 flex flex-col items-center gap-3 cursor-pointer px-2"
+              className="group flex-shrink-0 flex flex-col items-center gap-2 sm:gap-3 cursor-pointer px-1 sm:px-2"
             >
               <div className="relative">
-                <div className="tech-icon p-6 rounded-2xl bg-[#111] border border-foreground/10 hover:border-primary/40 hover:-translate-y-2 transition-all duration-500 shadow-2xl">
+                <div className="tech-icon p-3 sm:p-4 md:p-6 rounded-xl sm:rounded-2xl bg-[#111] border border-foreground/10 hover:border-primary/40 hover:-translate-y-2 transition-all duration-500 shadow-2xl">
                   <img
                     src={skill.image}
                     alt={skill.name}
-                    className="w-16 h-16 md:w-20 md:h-20 object-contain transition-all duration-500"
+                    className="w-10 h-10 sm:w-14 sm:h-14 md:w-20 md:h-20 object-contain transition-all duration-500"
                   />
                 </div>
               </div>
-              <p className="font-body text-xs text-muted-foreground group-hover:text-foreground transition-all">{skill.name}</p>
+              <p className="font-body text-[9px] sm:text-xs text-muted-foreground group-hover:text-foreground transition-all">{skill.name}</p>
             </div>
           ))}
         </motion.div>
