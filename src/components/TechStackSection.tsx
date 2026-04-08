@@ -22,8 +22,8 @@ const skills = [
 ];
 
 const TechStackSection = () => {
-  // Use exactly 2 copies for perfect seamless loop
-  const duplicatedSkills = [...skills, ...skills];
+  // Use 3 copies for seamless infinite loop
+  const duplicatedSkills = [...skills, ...skills, ...skills];
 
   return (
     <section id="skills" className="relative py-16 md:py-24 px-4 sm:px-6 md:px-12 overflow-hidden">
@@ -87,14 +87,14 @@ const TechStackSection = () => {
         </motion.div>
       </div>
 
-      {/* Carousel Container - Outside the blue box */}
-      <div className="relative mt-12 w-full max-w-7xl mx-auto px-4 md:px-8">
+      {/* Carousel Container - Full width for all 18 items */}
+      <div className="relative mt-12 w-full overflow-hidden">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex gap-4 animate-scroll"
+          className="flex gap-4 animate-scroll w-fit"
         >
           {duplicatedSkills.map((skill, i) => (
             <div
@@ -118,15 +118,16 @@ const TechStackSection = () => {
 
       <style>{`
         @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          0% { transform: translate3d(0, 0, 0); }
+          100% { transform: translate3d(-33.333%, 0, 0); }
         }
         .animate-scroll {
-          animation: scroll 15s linear infinite;
+          animation: scroll 50s linear infinite;
           will-change: transform;
-        }
-        .animate-scroll:hover {
-          animation-play-state: paused;
+          transform: translateZ(0);
+          backface-visibility: hidden;
+          contain: layout style;
+          width: max-content;
         }
         .tech-icon img {
           filter: grayscale(100%) brightness(0.6);

@@ -49,13 +49,13 @@ const projects = [
     liveUrl: "https://fairheavenchilaw.com/"
   },
   {
-    title: "Real Estate Listings",
+    title: "Pantiles Dental UK",
     category: "Development",
-    type: "WEB-SITE",
-    description: "A modern real estate platform with interactive map integration, advanced filtering, virtual tour support, and mortgage calculator. Features responsive design and instant property notifications.",
-    tags: ["React", "Mapbox", "Node.js"],
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop",
-    liveUrl: "https://realestate-demo.example.com"
+    type: "Frontend Development",
+    description: "This project focused on creating a clean, modern, and trustworthy digital experience for a dental practice, ensuring patients feel comfortable, informed, and confident from the first interaction.",
+    tags: ["React.js", "Vite", "Tailwind CSS"],
+    image: "Pantiles Dental web.png",
+    liveUrl: "https://pantilesdental.co.uk/"
   },
   {
     title: "Learning Management System",
