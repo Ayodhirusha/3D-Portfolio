@@ -87,13 +87,13 @@ const TechStackSection = () => {
       </div>
 
       {/* Carousel */}
-      <div className="relative mt-6 sm:mt-12 w-full overflow-hidden">
+      <div className="relative mt-6 sm:mt-12 w-full overflow-visible">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex gap-3 sm:gap-4 animate-scroll w-fit"
+          className="flex gap-3 sm:gap-4 animate-scroll w-fit py-10"
         >
           {duplicatedSkills.map((skill, i) => (
             <div
@@ -125,7 +125,6 @@ const TechStackSection = () => {
           will-change: transform;
           transform: translateZ(0);
           backface-visibility: hidden;
-          contain: layout style;
           width: max-content;
         }
         .tech-icon img {

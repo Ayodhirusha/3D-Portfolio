@@ -6,6 +6,12 @@ import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoaded(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -88,8 +94,9 @@ const HeroSection = () => {
             className="absolute inset-0 z-0 origin-center" 
             style={{ 
               scale: bgScale, 
-              opacity: bgOpacity,
-              filter: useTransform(smoothScrollProgress, [0, 0.8], ["blur(0px)", "blur(12px)"])
+              opacity: useTransform(smoothScrollProgress, [0, 0.7, 0.95], [isLoaded ? 1 : 0, 1, 0]),
+              filter: useTransform(smoothScrollProgress, [0, 0.8], ["blur(0px)", "blur(12px)"]),
+              willChange: "transform, opacity"
             }}
           >
             <iframe
@@ -98,9 +105,12 @@ const HeroSection = () => {
               frameBorder="0"
               width="100%"
               height="100%"
-              style={{ border: 'none' }}
+              style={{ 
+                border: 'none',
+                opacity: isLoaded ? 1 : 0,
+                transition: 'opacity 0.8s ease-out'
+              }}
               title="3D Scene"
-              loading="lazy"
             />
           </motion.div>
 
