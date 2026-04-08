@@ -65,26 +65,32 @@ const ExperienceSection = () => {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section ref={ref} id="experience" className="relative py-24 px-4 md:px-8">
-      <div className="max-w-5xl mx-auto relative px-6 md:px-12 py-16">
+    <section ref={ref} id="experience" className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8">
+      {/* Highlighted section background */}
+      <div className="absolute inset-x-2 sm:inset-x-4 md:inset-x-8 inset-y-0 rounded-3xl overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(15,23,42,0.95)] via-[rgba(10,15,30,0.9)] to-[rgba(15,23,42,0.95)] border border-[rgba(146,63,255,0.12)] rounded-3xl" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[rgba(146,63,255,0.3)] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[rgba(125,191,255,0.2)] to-transparent" />
+      </div>
+
+      <div className="max-w-5xl mx-auto relative z-10 px-2 sm:px-6 md:px-12 py-8 sm:py-12 md:py-16">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 md:mb-20"
         >
-          <p className="font-body text-sm uppercase tracking-[0.3em] text-primary mb-4">Experience</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <p className="font-body text-[10px] sm:text-sm uppercase tracking-[0.3em] text-primary mb-3 sm:mb-4">Experience</p>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
             Career <span className="text-gradient">Journey</span>
           </h2>
-          <p className="font-body text-muted-foreground max-w-xl mx-auto">
+          <p className="font-body text-xs sm:text-sm text-muted-foreground max-w-xl mx-auto px-4">
             From internships to freelance projects — each role shaped my skills in design, development, and building digital products.
           </p>
         </motion.div>
 
         <div className="relative">
-          {/* Animated vertical line that grows on scroll */}
           <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-border/30">
             <motion.div
               className="w-full bg-gradient-to-b from-primary via-secondary to-accent"
@@ -92,15 +98,15 @@ const ExperienceSection = () => {
             />
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-10 md:space-y-12">
             {experiences.map((exp, i) => (
               <motion.div
                 key={`${exp.company}-${i}`}
-                initial={{ opacity: 0, x: -60, filter: "blur(6px)" }}
+                initial={{ opacity: 0, x: -40, filter: "blur(6px)" }}
                 whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.7, delay: i * 0.1, ease: [0.25, 0.4, 0.25, 1] }}
-                className="relative pl-8 md:pl-20"
+                className="relative pl-6 sm:pl-8 md:pl-20"
               >
                 <motion.div
                   initial={{ scale: 0 }}
@@ -110,20 +116,20 @@ const ExperienceSection = () => {
                   className="absolute left-[-4px] md:left-6 top-6 w-2 h-2 rounded-full bg-primary ring-4 ring-background"
                 />
 
-                <div className="group bg-card border border-border rounded-2xl p-6 md:p-8 hover:border-primary/50 hover:glow-box transition-all duration-500">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                <div className="group bg-card border border-border rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:border-primary/50 hover:glow-box transition-all duration-500">
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 sm:gap-4 mb-3 sm:mb-4">
                     <div>
-                      <div className="flex items-center gap-3 mb-2 flex-wrap">
-                        <h3 className="font-display text-xl md:text-2xl font-semibold">{exp.role}</h3>
+                      <div className="flex items-center gap-2 sm:gap-3 mb-2 flex-wrap">
+                        <h3 className="font-display text-base sm:text-xl md:text-2xl font-semibold">{exp.role}</h3>
                         {exp.isCurrent && (
-                          <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 rounded-full border border-emerald-500/30">
+                          <span className="px-2 py-0.5 text-[8px] sm:text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 rounded-full border border-emerald-500/30">
                             Current
                           </span>
                         )}
                       </div>
                       <div className="flex items-center gap-2 text-muted-foreground">
-                        <Building2 className="w-4 h-4" />
-                        <span className="font-body text-sm">
+                        <Building2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                        <span className="font-body text-[11px] sm:text-sm">
                           {exp.company}
                           <span className="mx-2 text-border">·</span>
                           <span className="text-primary/70">{exp.type}</span>
@@ -131,14 +137,14 @@ const ExperienceSection = () => {
                       </div>
                     </div>
                     <div className="flex items-center gap-2 text-muted-foreground shrink-0">
-                      <Calendar className="w-4 h-4" />
-                      <span className="font-body text-sm">{exp.period}</span>
+                      <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                      <span className="font-body text-[10px] sm:text-sm">{exp.period}</span>
                     </div>
                   </div>
 
-                  <p className="font-body text-muted-foreground text-sm leading-relaxed mb-5">{exp.description}</p>
+                  <p className="font-body text-muted-foreground text-[11px] sm:text-sm leading-relaxed mb-3 sm:mb-5">{exp.description}</p>
 
-                  <ul className="space-y-2">
+                  <ul className="space-y-1.5 sm:space-y-2">
                     {exp.achievements.map((achievement, j) => (
                       <motion.li
                         key={j}
@@ -146,10 +152,10 @@ const ExperienceSection = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: 0.3 + j * 0.08 }}
-                        className="flex items-start gap-3"
+                        className="flex items-start gap-2 sm:gap-3"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mt-2 shrink-0" />
-                        <span className="font-body text-sm text-muted-foreground/80 leading-relaxed">{achievement}</span>
+                        <span className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-primary/60 mt-1.5 sm:mt-2 shrink-0" />
+                        <span className="font-body text-[10px] sm:text-sm text-muted-foreground/80 leading-relaxed">{achievement}</span>
                       </motion.li>
                     ))}
                   </ul>

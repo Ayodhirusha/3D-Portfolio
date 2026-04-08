@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import LoadingScreen from "@/components/LoadingScreen";
 
-// Lazy load sections for better initial performance
 const HeroSection = lazy(() => import("@/components/HeroSection"));
 const AboutSection = lazy(() => import("@/components/AboutSection"));
 const ServicesSection = lazy(() => import("@/components/ServicesSection"));
@@ -37,17 +36,14 @@ const Index = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="min-h-screen bg-background relative overflow-x-hidden w-full transition-colors duration-500"
       >
-        {/* Deep Dark Background with Blue Spotlight Patches */}
+        {/* Background ambient effects */}
         <div className="fixed inset-0 z-0 pointer-events-none transition-opacity duration-300 dark:opacity-100 opacity-20">
-          {/* Top spotlight */}
-          <div className="absolute top-[-10%] left-[20%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(30,58,138,0.15),transparent_70%)]" />
-          {/* Center-right spotlight */}
-          <div className="absolute top-[30%] right-[-5%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(37,99,235,0.08),transparent_65%)]" />
-          {/* Bottom-left spotlight */}
-          <div className="absolute bottom-[10%] left-[-5%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(30,58,138,0.12),transparent_65%)]" />
-          {/* Mid subtle glow */}
-          <div className="absolute top-[60%] left-[40%] w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.06),transparent_70%)]" />
+          <div className="absolute top-[-10%] left-[20%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.12),transparent_70%)]" />
+          <div className="absolute top-[30%] right-[-5%] w-[250px] md:w-[500px] h-[250px] md:h-[500px] rounded-full bg-[radial-gradient(circle,rgba(88,63,255,0.08),transparent_65%)]" />
+          <div className="absolute bottom-[10%] left-[-5%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] rounded-full bg-[radial-gradient(circle,rgba(125,191,255,0.1),transparent_65%)]" />
+          <div className="absolute top-[60%] left-[40%] w-[200px] md:w-[400px] h-[200px] md:h-[400px] rounded-full bg-[radial-gradient(circle,rgba(146,63,255,0.06),transparent_70%)]" />
         </div>
+
         <Suspense fallback={null}>
           <ParticleBackground />
           <FloatingGlassElements />
