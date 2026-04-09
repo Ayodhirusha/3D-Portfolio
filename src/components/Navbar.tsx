@@ -46,20 +46,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollTo = (id: string) => {
-    setActiveItem(id);
-    const elementId = id.toLowerCase();
-    const element = document.getElementById(elementId);
-    if (element) {
-      const offset = 100;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-    }
-    setMobileOpen(false);
-  };
 
   return (
     <motion.div
@@ -84,13 +70,13 @@ const Navbar = () => {
           <ul className="flex items-center gap-4 xl:gap-6">
             {navItems.map((item) => (
               <li key={item}>
-                <button
-                  onClick={() => scrollTo(item)}
-                  className={`font-display text-[10px] xl:text-[11px] uppercase tracking-widest transition-all duration-300 relative ${
-                    activeItem === item
+                <a
+                  href={`#${item.toLowerCase()}`}
+                  onClick={() => setMobileOpen(false)}
+                  className={`block font-display text-[10px] xl:text-[11px] uppercase tracking-widest transition-all duration-300 relative ${activeItem === item
                       ? "text-foreground"
                       : "text-muted-foreground hover:text-foreground/80"
-                  }`}
+                    }`}
                 >
                   {item}
                   {activeItem === item && (
@@ -100,7 +86,7 @@ const Navbar = () => {
                       transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     />
                   )}
-                </button>
+                </a>
               </li>
             ))}
           </ul>
@@ -113,12 +99,13 @@ const Navbar = () => {
               <MessageSquare className="w-3 h-3 xl:w-3.5 xl:h-3.5 fill-black group-hover:scale-110 transition-transform" />
               WhatsApp
             </Link>
-            <button
-              onClick={() => scrollTo("Contact")}
+            <a
+              href="#contact"
+              onClick={() => setMobileOpen(false)}
               className="font-display text-[10px] xl:text-[11px] uppercase tracking-widest px-4 xl:px-6 py-2 xl:py-2.5 rounded-full bg-primary text-white hover:bg-primary/90 transition-all duration-300 shadow-[0_0_20px_rgba(146,63,255,0.4)]"
             >
               Let's Talk
-            </button>
+            </a>
           </div>
         </motion.nav>
 
@@ -142,16 +129,16 @@ const Navbar = () => {
               <ul className="flex flex-col gap-1 sm:gap-2">
                 {navItems.map((item) => (
                   <li key={item}>
-                    <button
-                      onClick={() => scrollTo(item)}
-                      className={`font-display text-[10px] sm:text-xs uppercase tracking-[0.2em] w-full text-left py-3 sm:py-4 px-4 sm:px-6 rounded-xl sm:rounded-2xl transition-all duration-300 ${
-                        activeItem === item
+                    <a
+                      href={`#${item.toLowerCase()}`}
+                      onClick={() => setMobileOpen(false)}
+                      className={`block font-display text-[10px] sm:text-xs uppercase tracking-[0.2em] w-full text-left py-3 sm:py-4 px-4 sm:px-6 rounded-xl sm:rounded-2xl transition-all duration-300 ${activeItem === item
                           ? "bg-primary/20 text-foreground border border-primary/20"
                           : "text-muted-foreground hover:text-foreground/70 hover:bg-foreground/5"
-                      }`}
+                        }`}
                     >
                       {item}
-                    </button>
+                    </a>
                   </li>
                 ))}
                 <li className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-white/5 space-y-2 sm:space-y-3">
@@ -163,12 +150,13 @@ const Navbar = () => {
                     <MessageSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-black" />
                     WhatsApp
                   </Link>
-                  <button
-                    onClick={() => scrollTo("Contact")}
-                    className="w-full font-display text-[10px] sm:text-xs uppercase tracking-widest py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-primary text-white shadow-[0_10px_30px_rgba(146,63,255,0.3)]"
+                  <a
+                    href="#contact"
+                    onClick={() => setMobileOpen(false)}
+                    className="flex justify-center w-full font-display text-[10px] sm:text-xs uppercase tracking-widest py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-primary text-white shadow-[0_10px_30px_rgba(146,63,255,0.3)]"
                   >
                     Let's Talk
-                  </button>
+                  </a>
                 </li>
               </ul>
             </motion.div>

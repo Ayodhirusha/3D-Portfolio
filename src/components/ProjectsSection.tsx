@@ -9,7 +9,7 @@ const projects = [
     type: "Full-Stack Development",
     description: "Caritas SED Galle is a charitable organization dedicated to justice, peace, and human development in the Southern Province of Sri Lanka. As the Diocesan Centre for Social and Economic Development, we work towards uplifting the needy, fostering harmony, and providing essential support in times of crisis.",
     tags: ["React.js", "Node.js & Express", "Vite", "Tailwind CSS", "SQL databases"],
-    image: " Caritas Galle .png ",
+    image: " Caritas Galle .webp ",
     liveUrl: "https://caritasgalle.lk/"
   },
   {
@@ -18,7 +18,7 @@ const projects = [
     type: "Full-Stack Development",
     description: "Caritas Chilaw – Janasaviya SEDEC was established in 1969 under the visionary leadership of Rev. Fr. Philip Sethunga, marking the beginning of a mission rooted in compassion and service for the Diocese of Chilaw.",
     tags: ["React.js", "Node.js & Express", "Vite", "Tailwind CSS", "SQL databases"],
-    image: "Caritas Chilaw.png",
+    image: "Caritas Chilaw.webp",
     liveUrl: "https://caritaschilaw.lk/"
   },
   {
@@ -27,7 +27,7 @@ const projects = [
     type: "Full-Stack Development",
     description: "Caritas Colombo - Seth Sarana is the official social service arm of the Archdiocese of Colombo, dedicated to promoting justice, peace, and human development. Established on 15th August 1986 by Rev. Fr. Malcolm Ranjith, now His Eminence Malcolm Cardinal Ranjith, the organization continues to serve as a beacon of faith-driven social action.",
     tags: ["React.js", "Node.js & Express", "Vite", "Tailwind CSS", "SQL databases"],
-    image: "Caritas Colombo .png",
+    image: "Caritas Colombo .webp",
     liveUrl: "https://sethsaranacc.org/"
   },
   {
@@ -36,7 +36,7 @@ const projects = [
     type: "Full-Stack Development",
     description: "Established in 1975, the USCOD Centre (Caritas Badulla) serves the Diocese of Badulla, which covers the Uva Province — the Diocese of Badulla and Monaragala.",
     tags: ["React.js", "Node.js & Express", "Vite", "Tailwind CSS", "SQL databases"],
-    image: "Caritas Badulla.png",
+    image: "Caritas Badulla.webp",
     liveUrl: "https://caritasbadullauscod.org/"
   },
   {
@@ -45,7 +45,7 @@ const projects = [
     type: "Frontend Development",
     description: "I handled this project end-to-end as both Website Developer and UI/UX Designer, working closely with the client to ensure the final website truly reflects the villa’s calm atmosphere and welcoming hospitality.",
     tags: ["React.js", "Vite", "Tailwind CSS"],
-    image: "Fair Heaven Villa.png",
+    image: "Fair Heaven Villa.webp",
     liveUrl: "https://fairheavenchilaw.com/"
   },
   {
@@ -54,7 +54,7 @@ const projects = [
     type: "Frontend Development",
     description: "This project focused on creating a clean, modern, and trustworthy digital experience for a dental practice, ensuring patients feel comfortable, informed, and confident from the first interaction.",
     tags: ["React.js", "Vite", "Tailwind CSS"],
-    image: "Pantiles Dental web.png",
+    image: "Pantiles Dental web.webp",
     liveUrl: "https://pantilesdental.co.uk/"
   },
   {
@@ -63,16 +63,16 @@ const projects = [
     type: "Frontend Development",
     description: "At Ceylon Innovations, we empower businesses across diverse industries with forward-thinking software solutions tailored to meet modern challenges. Our technologies are designed to enhance productivity, streamline processes, and unlock new opportunities for growth.",
     tags: ["React.js", "Vite", "Tailwind CSS"],
-    image: "Ceylon Innovation.png",
+    image: "Ceylon Innovation.webp",
     liveUrl: "https://www.ceyloninnovation.com/"
   },
   {
-    title: "Flutter_web",
+    title: "PC_Parts Pro",
     category: "Development",
     type: "Warehouse Management",
-    description: "A comprehensive analytics dashboard for social media managers. Tracks engagement metrics, audience growth, and content performance across multiple platforms with AI-powered insights.",
+    description: "A dedicated administrative portal for managing a hardware retail ecosystem. This project focuses on the operational side of e-commerce, featuring real-time stock tracking, automated low-inventory alerts, and a comprehensive activity log for warehouse movements. It bridges the gap between high-level data overview and granular inventory control.",
     tags: ["HTML", "C#", "Dart", "Flutter", "SQL"],
-    image: "Flutter WEB.png",
+    image: "Pc parts pro.webp",
     liveUrl: "https://github.com/Ayodhirusha/Flutter_web"
   },
   {
@@ -81,7 +81,7 @@ const projects = [
     type: "CASE STUDY",
     description: "Designed a premium booking experience for a luxury villa in Chilaw. Created a visual identity that reflects tranquility and elegance, with a focus on high-conversion landing pages and immersive property showcases.",
     tags: ["Figma", "Web Design", "Visual Identity"],
-    image: "fair heaven.png",
+    image: "fair heaven.webp",
     figmaUrl: "https://www.figma.com/design/h3XR1WoYfl5nsmePVc5k1g/Fair-Heaven?node-id=0-1&t=2az91xj0x8P6eIUd-1"
   },
   {
@@ -90,7 +90,7 @@ const projects = [
     type: "CASE STUDY",
     description: "An extensive patient management and appointment scheduling platform for a UK-based dental clinic. Features 58+ custom pages with a focus on accessibility, medical security standards, and seamless user experience",
     tags: ["Figma", "Web Design", "User Research"],
-    image: "Pantiles Dental.png",
+    image: "Pantiles Dental.webp",
     figmaUrl: "https://www.figma.com/design/xQliGsa62I69VV00KjEAhd/Pantiles-Dental?node-id=0-1&t=MENSfoykaUwAIK9o-1"
   },
   {
@@ -99,7 +99,7 @@ const projects = [
     type: "CASE STUDY",
     description: "A comprehensive web-based design tool that allows users to visualize furniture layouts in both 2D and 3D environments.This project emphasizes a customizable user experience through a robust dark/light mode system and a modular sidebar for precise spatial configuration.",
     tags: ["Figma", "Web Design", "Design Tool"],
-    image: "HCI project.png",
+    image: "HCI project.webp",
     figmaUrl: "https://www.figma.com/design/BaeUzxgvHeTYaYDcqi218h/HCI-Project-UI?node-id=0-1&t=2ZP3OlWJhBzmYz3x-1"
   },
   {
@@ -108,7 +108,7 @@ const projects = [
     type: "CASE STUDY",
     description: "Duskpine is a direct to consumer brand selling handcrafted noise cancelling earplugs made from natural beeswax. Built for remote workers, light sleepers and frequent travellers aged 25-45 who are health conscious, willing to pay a premium and ",
     tags: ["Figma", "Web Design", "Health Tech"],
-    image: "Duskpine_AyodHirusha.png",
+    image: "Duskpine_AyodHirusha.webp",
     figmaUrl: "https://www.figma.com/design/qFNwPoGnZTsn4iCHSaC5FK/Duskpine_AyodHirusha?node-id=3-2&t=O006yL0Ph1AO29BZ-1"
   },
   {
@@ -117,7 +117,7 @@ const projects = [
     type: "CASE STUDY",
     description: "A comprehensive web design project for a travel agency, featuring a high-conversion landing page and detailed multi-day itinerary layouts. The project focuses on structured storytelling, using a clean vertical hierarchy to guide users through curated travel packages, day-by-day breakdowns, and immersive destination photography.",
     tags: ["Figma", "Web Design", "Travel"],
-    image: "travel agency.png",
+    image: "travel agency.webp",
     figmaUrl: "https://www.figma.com/design/Zig2E03sgVhDY3YJ09PCy0/travel-agency?node-id=0-1&t=b1TJfT6vKkR66HuJ-1"
   },
   {
@@ -126,7 +126,7 @@ const projects = [
     type: "CASE STUDY",
     description: "End-to-end food ordering experience with restaurant discovery, real-time tracking, and seamless checkout. Optimized for quick decisions and delightful interactions.",
     tags: ["Figma", "Web Design", "On-Demand"],
-    image: "Manar project.png",
+    image: "Manar project.webp",
     figmaUrl: "https://www.figma.com/design/jIp6qE430YxbqeZnA8Z5H6/Mannar-Step-1?node-id=0-1&t=JjLMPApTf9iumcS4-1"
   },
   {
@@ -135,7 +135,7 @@ const projects = [
     type: "CASE STUDY",
     description: "A comprehensive digital platform designed to streamline blood donation or medical collection logistics. This final year project features three distinct user interfaces tailored for Donors, Collectors, and Healthcare Professionals (Doctors).",
     tags: ["Figma", "Web Design", "Medical"],
-    image: "blood donation UI.png",
+    image: "blood donation UI.webp",
     figmaUrl: "https://www.figma.com/design/sRXJHUs3eXvOJZU2dQCY9S/final-year-project-UI?node-id=0-1&t=pFOKwpwOWO6GfL2W-1"
   },
   {
@@ -144,7 +144,7 @@ const projects = [
     type: "CASE STUDY",
     description: "A full-scale corporate website design focused Software Development service offerings and technical innovation. This project demonstrates the ability to translate a professional brand identity across multiple landing pages, service-specific subpages, and team galleries, maintaining a cohesive aesthetic of trust and authority.",
     tags: ["Figma", "Web Design", "Corporate"],
-    image: "CI websit.png",
+    image: "CI websit.webp",
     figmaUrl: "https://www.figma.com/design/HPsGVCHjsu0evmgtvfwkbI/CI-WEBSITE?node-id=0-1&t=SANkQ5E6aqXugIJI-1"
   },
   {
@@ -153,7 +153,7 @@ const projects = [
     type: "CASE STUDY",
     description: "A dark-themed e-commerce platform designed for high-performance gaming hardware. The project centers on a Rig Configurator interface that simplifies complex technical choices into a streamlined, visual selection process. It balances a futuristic aesthetic with functional e-commerce elements like product catalogs, detailed spec sheets, and a seamless cart drawer.  ",
     tags: ["Figma", "Web Design", "Corporate"],
-    image: "PC store.png",
+    image: "PC store.webp",
     figmaUrl: "https://www.figma.com/design/yBM9DroOsMZVNDl1ifSrZQ/PC-Build-web?node-id=0-1&t=xuPKf2Ul5JLXKo7P-1"
   },
   {
@@ -162,7 +162,7 @@ const projects = [
     type: "PRODUCT DESIGN",
     description: "Modern NFC-enabled Google Review card design for XTap. Features a clean, professional layout optimized for high-quality PVC printing and contactless technology integration.",
     tags: ["Photoshop", "Branding", "Product Design"],
-    image: "/Postcard Promo.jpg",
+    image: "/Postcard Promo.webp",
   },
   {
     title: "Educational Seminar Posters",
@@ -170,7 +170,7 @@ const projects = [
     type: "ADVERTISEMENT",
     description: "Series of high-impact educational posters for Economics and Accounting seminars. Designed to be eye-catching for G.C.E. A/L and O/L students while maintaining professional clarity.",
     tags: ["Photoshop", "Typography", "Marketing"],
-    image: "/Social Media Post New.jpg",
+    image: "/Social Media Post New.webp",
   },
   {
     title: "Personalised Postcards",
@@ -178,7 +178,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/Google Review post.jpg",
+    image: "/Google Review post.webp",
   },
   {
     title: "Personalised Postcards",
@@ -186,7 +186,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/Maximum Pre school.png",
+    image: "/Maximum Pre school.webp",
   },
   {
     title: "Personalised Postcards",
@@ -194,7 +194,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/thiwanka  Fitness Promo Post.jpg",
+    image: "/thiwanka  Fitness Promo Post.webp",
   },
   {
     title: "Personalised Postcards",
@@ -202,7 +202,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/dutch Banner.jpg",
+    image: "/dutch Banner.webp",
   },
   {
     title: "Personalised Postcards",
@@ -210,7 +210,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/Bill Till post.jpg",
+    image: "/Bill Till post.webp",
   },
   {
     title: "Personalised Postcards",
@@ -218,7 +218,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/travel tourism copy.jpg",
+    image: "/travel tourism copy.webp",
   },
   {
     title: "Personalised Postcards",
@@ -226,7 +226,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/vesak copy.jpg",
+    image: "/vesak copy.webp",
   },
   {
     title: "Personalised Postcards",
@@ -234,7 +234,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/yoga post copy.jpg",
+    image: "/yoga post copy.webp",
   },
   {
     title: "Personalised Postcards",
@@ -242,7 +242,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/Rashen aiya  A4 flyer B&W copy.jpg",
+    image: "/Rashen aiya  A4 flyer B&W copy.webp",
   },
   {
     title: "Personalised Postcards",
@@ -250,7 +250,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/Rashen Aiya posts copy Economics.jpg",
+    image: "/Rashen Aiya posts copy Economics.webp",
   },
   {
     title: "Personalised Postcards",
@@ -258,7 +258,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/Rashen Aiya posts copy.jpg",
+    image: "/Rashen Aiya posts copy.webp",
   },
   {
     title: "Personalised Postcards",
@@ -266,7 +266,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/Copy of japan busineess post2.jpg",
+    image: "/Copy of japan busineess post2.webp",
   },
   {
     title: "Personalised Postcards",
@@ -274,7 +274,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/Esela perehara copy.jpg",
+    image: "/Esela perehara copy.webp",
   },
   {
     title: "Personalised Postcards",
@@ -282,7 +282,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/Hela Osuwa copy.jpg",
+    image: "/Hela Osuwa copy.webp",
   },
   {
     title: "Personalised Postcards",
@@ -290,7 +290,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/japan student visa.jpg",
+    image: "/japan student visa.webp",
   },
   {
     title: "Personalised Postcards",
@@ -298,7 +298,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/nm digitals copy2.jpg",
+    image: "/nm digitals copy2.webp",
   },
   {
     title: "Personalised Postcards",
@@ -306,7 +306,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/Senu wedding cake post copy.jpg",
+    image: "/Senu wedding cake post copy.webp",
   },
   {
     title: "Personalised Postcards",
@@ -314,7 +314,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/teachers posts copy.jpg",
+    image: "/teachers posts copy.webp",
   },
   {
     title: "Personalised Postcards",
@@ -322,7 +322,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/A4 size Rashen aiya copy.jpg",
+    image: "/A4 size Rashen aiya copy.webp",
   },
   {
     title: "Personalised Postcards",
@@ -330,7 +330,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/Enosh class Post.jpg",
+    image: "/Enosh class Post.webp",
   },
   {
     title: "Personalised Postcards",
@@ -338,7 +338,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/NM digitals.jpg",
+    image: "/NM digitals.webp",
   },
   {
     title: "Personalised Postcards",
@@ -346,7 +346,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/qatar post.jpg",
+    image: "/qatar post.webp",
   },
   {
     title: "Personalised Postcards",
@@ -362,7 +362,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/Russia Post.jpg",
+    image: "/Russia Post.webp",
   },
   {
     title: "Personalised Postcards",
@@ -370,7 +370,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/Travel post.jpg",
+    image: "/Travel post.webp",
   },
   {
     title: "Personalised Postcards",
@@ -378,7 +378,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/curtain banner new.jpg",
+    image: "/curtain banner new.webp",
   },
   {
     title: "Personalised Postcards",
@@ -386,7 +386,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/perehara ticket copy.jpg",
+    image: "/perehara ticket copy.webp",
   },
   {
     title: "Personalised Postcards",
@@ -394,7 +394,7 @@ const projects = [
     type: "MARKETING",
     description: "Vintage-inspired personalised postcard designs for PrintingX. Combines classic aesthetic with modern marketing elements for events, promotions, and business branding.",
     tags: ["Illustrator", "Vintage Design", "Layout"],
-    image: "/Mushroom Soup Powder Tin package copy.jpg",
+    image: "/Mushroom Soup Powder Tin package copy.webp",
   },
 
 ];
@@ -471,9 +471,9 @@ const ProjectsSection = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className={`w-full h-full transition-transform duration-700 group-hover:scale-110 ${activeTab === 'Graphic Design' ? 'object-contain' : 'object-cover'}`}
+                  className={`w-full h-full transition-transform duration-700 group-hover:scale-110 active:scale-110 group-active:scale-110 ${activeTab === 'Graphic Design' ? 'object-contain' : 'object-cover'}`}
                 />
-                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20" />
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 active:opacity-100 group-active:opacity-100 transition-opacity duration-700 z-20" />
                 <div className="absolute top-4 left-4 md:top-6 md:left-6 z-30">
                   <span className="text-[8px] md:text-[10px] font-bold tracking-widest text-primary bg-black/40 backdrop-blur-md px-2 md:px-3 py-1 rounded-full border border-primary/20 uppercase">
                     {project.type}
@@ -484,7 +484,7 @@ const ProjectsSection = () => {
               {activeTab === 'UI/UX Design' && (
                 <div className="flex-1 p-5 md:p-6 flex flex-col relative z-30 bg-[#0a0a0a]">
                   <span className="text-[10px] font-bold tracking-[0.2em] text-[#A855F7] uppercase mb-2">UI/UX Case Study</span>
-                  <h3 className="font-display text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#A855F7] transition-colors duration-500">
+                  <h3 className="font-display text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#A855F7] active:text-[#A855F7] group-active:text-[#A855F7] transition-colors duration-500">
                     {project.title}
                   </h3>
                   <p className="font-body text-xs text-white/60 leading-relaxed mb-4 line-clamp-3">
@@ -505,7 +505,7 @@ const ProjectsSection = () => {
               {activeTab === 'Development' && (
                 <div className="flex-1 p-5 md:p-6 flex flex-col relative z-30 bg-[#0a0a0a]">
                   <span className="text-[10px] font-bold tracking-[0.2em] text-[#A855F7] uppercase mb-2">{project.type}</span>
-                  <h3 className="font-display text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#A855F7] transition-colors duration-500">
+                  <h3 className="font-display text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#A855F7] active:text-[#A855F7] group-active:text-[#A855F7] transition-colors duration-500">
                     {project.title}
                   </h3>
                   <p className="font-body text-xs text-white/60 leading-relaxed mb-4 line-clamp-4">
@@ -530,7 +530,7 @@ const ProjectsSection = () => {
                 </div>
               )}
 
-              <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center" />
+              <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-primary scale-x-0 group-hover:scale-x-100 active:scale-x-100 group-active:scale-x-100 transition-transform duration-700 origin-center" />
             </motion.div>
           ))}
         </div>

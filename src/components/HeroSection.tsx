@@ -2,15 +2,24 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Download, ArrowDown, Code2, Palette, Layers } from "lucide-react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { TypeAnimation } from 'react-type-animation';
 
 const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [paragraphKey, setParagraphKey] = useState(0);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoaded(true), 100);
+    const loopInterval = setInterval(() => {
+      setParagraphKey(prev => prev + 1);
+    }, 8000); // 8 seconds to allow reading before repeating
+    return () => clearInterval(loopInterval);
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoaded(true), 1200);
 
     // Check if device is mobile to optimize 3D rendering
     const checkMobile = () => {
@@ -41,41 +50,35 @@ const HeroSection = () => {
   const bgOpacity = useTransform(smoothScrollProgress, [0.7, 0.95], [1, 0]);
   const bgFilter = useTransform(smoothScrollProgress, [0, 0.8], ["blur(0px)", "blur(12px)"]);
   const indicatorOpacity = useTransform(smoothScrollProgress, [0, 0.2], [1, 0]);
-
-  const letterVariants = {
-    hidden: { opacity: 0, y: 80, rotateX: -90 },
-    visible: (i: number) => ({
+  const paragraphVariants = {
+    hidden: { opacity: 0 },
+    visible: {
       opacity: 1,
-      y: 0,
-      rotateX: 0,
       transition: {
-        duration: 0.8,
-        delay: 0.1 + i * 0.03,
-        ease: [0.25, 0.4, 0.25, 1],
+        staggerChildren: 0.015,
+        delayChildren: 0.8,
       },
-    }),
+    },
   };
 
-  const title1 = "Hi, I'm Ayod Hirusha ";
+  const letterVariants = {
+    hidden: { opacity: 0, filter: "blur(2px)" },
+    visible: {
+      opacity: 1,
+      filter: "blur(0px)",
+      transition: { duration: 0.1, ease: "linear" },
+    },
+  };
 
-  const renderAnimatedText = (text: string, startIndex: number, useGradient: boolean = false) => {
-    let charCount = startIndex;
-    return text.split(" ").map((word, wordIndex) => (
-      <span key={wordIndex} className="inline-block mr-[0.25em] whitespace-nowrap">
-        {word.split("").map((char, charIndex) => {
-          const currentIndex = charCount++;
-          return (
-            <motion.span
-              key={charIndex}
-              custom={currentIndex}
-              variants={letterVariants}
-              className={`inline-block ${useGradient ? "text-gradient" : "text-white"}`}
-            >
-              {char}
-            </motion.span>
-          );
-        })}
-      </span>
+  const renderLetters = (text: string, className?: string) => {
+    return text.split("").map((char, i) => (
+      <motion.span
+        key={`${char}-${i}`}
+        variants={letterVariants}
+        className={`inline-block whitespace-pre ${className || ""}`}
+      >
+        {char}
+      </motion.span>
     ));
   };
 
@@ -122,7 +125,7 @@ const HeroSection = () => {
               style={{
                 border: 'none',
                 opacity: isLoaded ? 1 : 0,
-                transition: 'opacity 0.8s ease-out'
+                transition: 'opacity 3.5s ease-in-out'
               }}
               title="3D Scene"
             />
@@ -134,17 +137,24 @@ const HeroSection = () => {
           <div className="absolute inset-x-0 bottom-[-1px] h-32 bg-background pointer-events-none z-[3] blur-xl opacity-50" />
 
           <div className="relative z-10 w-full px-4 sm:px-6 md:px-12 h-screen flex flex-col justify-center items-center text-center sm:items-start sm:text-left pt-20 pointer-events-none">
-            <motion.h1
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="font-display font-bold leading-[1.1] tracking-tight mb-4 sm:mb-6 pointer-events-auto w-full max-w-[100vw]"
-              style={{ perspective: "1000px" }}
+            <h1
+              className="font-display font-bold leading-[1.1] tracking-tight mb-4 sm:mb-6 pointer-events-auto w-full max-w-[100vw] flex justify-center sm:justify-start"
+              style={{ perspective: "1000px", minHeight: "1em" }}
             >
-              <span className="flex flex-wrap justify-center sm:justify-start overflow-hidden text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-                {renderAnimatedText(title1, 0, false)}
-              </span>
-            </motion.h1>
+              <TypeAnimation
+                sequence={[
+                  "Hi, I'm Ayod Hirusha",
+                  2500,
+                  "",
+                  1000,
+                ]}
+                wrapper="span"
+                speed={50}
+                className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl overflow-hidden"
+                repeat={Infinity}
+                cursor={true}
+              />
+            </h1>
 
             {/* Service Pills */}
             <motion.div
@@ -174,16 +184,20 @@ const HeroSection = () => {
             </motion.div>
 
             <motion.p
-              initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              key={paragraphKey}
+              initial="hidden"
+              animate="visible"
+              variants={paragraphVariants}
               className="font-body text-xs sm:text-sm md:text-base lg:text-lg text-white/80 max-w-2xl mb-6 sm:mb-10 leading-relaxed pointer-events-auto"
             >
-              Crafting intuitive digital experiences where <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-[#34D399] font-semibold">code meets creativity</span>.
+              {renderLetters("Crafting intuitive digital experiences where ")}
+              {renderLetters("code meets creativity.", "text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-[#34D399] font-semibold")}
               <br className="hidden sm:block" />
               <span className="sm:hidden"> </span>
-              Passionate about building <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A855F7] to-[#EC4899] font-semibold">modern</span>, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] to-[#06B6D4] font-semibold">user-focused</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F59E0B] to-[#EF4444] font-semibold">digital products</span>.
+              {renderLetters("Passionate about building ")}
+              {renderLetters("modern, ", "text-transparent bg-clip-text bg-gradient-to-r from-[#A855F7] to-[#EC4899] font-semibold")}
+              {renderLetters("user-focused ", "text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] to-[#06B6D4] font-semibold")}
+              {renderLetters("digital products.", "text-transparent bg-clip-text bg-gradient-to-r from-[#F59E0B] to-[#EF4444] font-semibold")}
             </motion.p>
 
             <div className="flex flex-col sm:flex-row items-center sm:items-center justify-center sm:justify-start gap-4 sm:gap-4 mb-12 w-full sm:w-auto mt-2">
