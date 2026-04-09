@@ -133,15 +133,15 @@ const HeroSection = () => {
           <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none z-[2]" />
           <div className="absolute inset-x-0 bottom-[-1px] h-32 bg-background pointer-events-none z-[3] blur-xl opacity-50" />
 
-          <div className="relative z-10 w-full px-4 sm:px-6 md:px-12 h-screen flex flex-col justify-center items-start text-left pt-20 pointer-events-none">
+          <div className="relative z-10 w-full px-4 sm:px-6 md:px-12 h-screen flex flex-col justify-center items-center text-center sm:items-start sm:text-left pt-20 pointer-events-none">
             <motion.h1
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="font-display font-bold leading-[1.1] tracking-tight mb-4 sm:mb-6 pointer-events-auto"
+              className="font-display font-bold leading-[1.1] tracking-tight mb-4 sm:mb-6 pointer-events-auto w-full max-w-[100vw]"
               style={{ perspective: "1000px" }}
             >
-              <span className="flex flex-wrap overflow-hidden text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+              <span className="flex flex-wrap justify-center sm:justify-start overflow-hidden text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
                 {renderAnimatedText(title1, 0, false)}
               </span>
             </motion.h1>
@@ -152,7 +152,7 @@ const HeroSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4 sm:mb-6 pointer-events-auto"
+              className="flex flex-wrap justify-center sm:justify-start items-center gap-2 sm:gap-3 mb-5 sm:mb-6 pointer-events-auto"
             >
               {[
                 { icon: Code2, label: "Web Development", color: "text-[#10B981]" },
@@ -186,7 +186,7 @@ const HeroSection = () => {
               Passionate about building <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A855F7] to-[#EC4899] font-semibold">modern</span>, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] to-[#06B6D4] font-semibold">user-focused</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F59E0B] to-[#EF4444] font-semibold">digital products</span>.
             </motion.p>
 
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-12 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-center sm:items-center justify-center sm:justify-start gap-4 sm:gap-4 mb-12 w-full sm:w-auto mt-2">
               <motion.a
                 href="/Ayod Hirusha Cv New.pdf"
                 target="_blank"
@@ -196,7 +196,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 whileHover={{ scale: 1.02, backgroundColor: "hsla(var(--foreground) / 0.05)" }}
                 whileTap={{ scale: 0.98 }}
-                className="flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl border border-white/20 text-white font-display text-[10px] sm:text-xs tracking-widest uppercase backdrop-blur-sm pointer-events-auto shadow-xl"
+                className="w-[85%] max-w-[280px] sm:w-auto sm:max-w-none flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl border border-white/20 text-white font-display text-[10px] sm:text-xs tracking-widest uppercase backdrop-blur-sm pointer-events-auto shadow-xl mx-auto sm:mx-0"
               >
                 Download CV <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </motion.a>

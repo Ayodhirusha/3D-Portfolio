@@ -9,14 +9,14 @@ const projects = [
     type: "Full-Stack Development",
     description: "Caritas SED Galle is a charitable organization dedicated to justice, peace, and human development in the Southern Province of Sri Lanka. As the Diocesan Centre for Social and Economic Development, we work towards uplifting the needy, fostering harmony, and providing essential support in times of crisis.",
     tags: ["React.js", "Node.js & Express", "Vite", "Tailwind CSS", "SQL databases"],
-    image:" Caritas Galle .png ",
+    image: " Caritas Galle .png ",
     liveUrl: "https://caritasgalle.lk/"
   },
   {
     title: "Caritas Chilaw Diocese",
     category: "Development",
     type: "Full-Stack Development",
-    description:"Caritas Chilaw – Janasaviya SEDEC was established in 1969 under the visionary leadership of Rev. Fr. Philip Sethunga, marking the beginning of a mission rooted in compassion and service for the Diocese of Chilaw.",
+    description: "Caritas Chilaw – Janasaviya SEDEC was established in 1969 under the visionary leadership of Rev. Fr. Philip Sethunga, marking the beginning of a mission rooted in compassion and service for the Diocese of Chilaw.",
     tags: ["React.js", "Node.js & Express", "Vite", "Tailwind CSS", "SQL databases"],
     image: "Caritas Chilaw.png",
     liveUrl: "https://caritaschilaw.lk/"
@@ -71,7 +71,7 @@ const projects = [
     category: "Development",
     type: "Warehouse Management",
     description: "A comprehensive analytics dashboard for social media managers. Tracks engagement metrics, audience growth, and content performance across multiple platforms with AI-powered insights.",
-    tags: ["HTML", "C#", "Dart","Flutter","SQL"],
+    tags: ["HTML", "C#", "Dart", "Flutter", "SQL"],
     image: "Flutter WEB.png",
     liveUrl: "https://github.com/Ayodhirusha/Flutter_web"
   },
@@ -147,7 +147,7 @@ const projects = [
     image: "CI websit.png",
     figmaUrl: "https://www.figma.com/design/HPsGVCHjsu0evmgtvfwkbI/CI-WEBSITE?node-id=0-1&t=SANkQ5E6aqXugIJI-1"
   },
-   {
+  {
     title: "PC Build website",
     category: "UI/UX Design",
     type: "CASE STUDY",
@@ -220,7 +220,7 @@ const projects = [
     tags: ["Illustrator", "Vintage Design", "Layout"],
     image: "/travel tourism copy.jpg",
   },
-    {
+  {
     title: "Personalised Postcards",
     category: "Graphic Design",
     type: "MARKETING",
@@ -228,7 +228,7 @@ const projects = [
     tags: ["Illustrator", "Vintage Design", "Layout"],
     image: "/vesak copy.jpg",
   },
-    {
+  {
     title: "Personalised Postcards",
     category: "Graphic Design",
     type: "MARKETING",
@@ -236,7 +236,7 @@ const projects = [
     tags: ["Illustrator", "Vintage Design", "Layout"],
     image: "/yoga post copy.jpg",
   },
-    {
+  {
     title: "Personalised Postcards",
     category: "Graphic Design",
     type: "MARKETING",
@@ -244,7 +244,7 @@ const projects = [
     tags: ["Illustrator", "Vintage Design", "Layout"],
     image: "/Rashen aiya  A4 flyer B&W copy.jpg",
   },
-    {
+  {
     title: "Personalised Postcards",
     category: "Graphic Design",
     type: "MARKETING",
@@ -252,7 +252,7 @@ const projects = [
     tags: ["Illustrator", "Vintage Design", "Layout"],
     image: "/Rashen Aiya posts copy Economics.jpg",
   },
-    {
+  {
     title: "Personalised Postcards",
     category: "Graphic Design",
     type: "MARKETING",
@@ -260,7 +260,7 @@ const projects = [
     tags: ["Illustrator", "Vintage Design", "Layout"],
     image: "/Rashen Aiya posts copy.jpg",
   },
-    {
+  {
     title: "Personalised Postcards",
     category: "Graphic Design",
     type: "MARKETING",
